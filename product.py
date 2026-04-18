@@ -9,9 +9,6 @@ _TIKTOK_PATH = Path(__file__).resolve().parent / "datasets" / "tiktok_keywords.j
 with _DATA_PATH.open("r", encoding="utf-8") as f:
     _product_data = json.load(f)
 
-# Cosine similarity below this means the trend has no close catalog match
-_NOVEL_THRESHOLD = 0.50
-
 with _TRENDS_PATH.open("r", encoding="utf-8") as f:
     _trends_data = json.load(f)
 
@@ -34,6 +31,7 @@ class Product:
         self.country_of_origin = data["country_of_origin"]
         self.shelf_life_months = data["shelf_life_months"]
         self.allergens         = data["allergens"]
+        self.ingredients       = data.get("key_ingredients")
 
     def __repr__(self):
         return f"Product({self.id!r}, {self.description!r})"
@@ -46,32 +44,46 @@ class _NewProductBase:
     description: str
 
     def __init__(self):
-        self.order_count       = None
-        self.total_qty_shipped = None
-        self.total_revenue     = None
-        self.avg_unit_cost     = None
-        self._category         = None
-        self._category_sim     = None
-        self._closest_id       = None
-        self._closest_sim      = None
-        self._signal_score     = None
+        self.order_count        = 0
+        self.total_qty_shipped  = 0
+        self.total_revenue      = 0
+        self.avg_unit_cost      = 0
+        self._category          = None
+        self._category_sim      = None
+        self._closest_id        = None
+        self._closest_sim       = None
+        self._signal_score      = None
+        self._new_match_name    = None
+        self._new_match_data    = None
+        self._used_newdataset   = False
 
     def _resolve_closest(self):
-        """Run embedding search once and cache both product_id and similarity score."""
         if self._closest_id is None:
             import categories
             self._closest_id, self._closest_sim = categories.classify_product_by_description(self.description)
+
+    def _resolve_newdataset_match(self):
+        if self._new_match_name is None:
+            import categories
+            self._new_match_name, self._new_match_data, _ = categories.get_newdataset_entry(self.description)
 
     @property
     def category(self) -> str:
         if self._category is None:
             import categories
             self._category, self._category_sim = categories.classify_product_by_category(self.description)
+            if self._category_sim is not None and self._category_sim < 0.5:
+                self._used_newdataset = True
+                name, data, sim = categories.get_newdataset_entry(self.description)
+                self._new_match_name = name
+                self._new_match_data = data
+                self._category = name or "other"
+                self._category_sim = sim
         return self._category
 
     @property
     def category_sim(self) -> Optional[float]:
-        _ = self.category  # ensure resolved
+        _ = self.category
         return self._category_sim
 
     @property
@@ -89,9 +101,38 @@ class _NewProductBase:
         return self._closest_sim
 
     @property
-    def is_existing(self) -> bool:
-        """True if this trend is close enough to a catalog product to reuse its metadata."""
-        return self._closest_sim is not None and self._closest_sim >= _NOVEL_THRESHOLD
+    def existing(self) -> bool:
+        """1 if category matched pre-existing catalog categories, 0 if fell back to new_dataset."""
+        _ = self.category  # ensure resolved
+        return not self._used_newdataset
+
+    @property
+    def country_of_origin(self) -> Optional[str]:
+        if self.existing:
+            return _product_data.get(self.closest_product_id, {}).get("country_of_origin")
+        self._resolve_newdataset_match()
+        return self._new_match_data.get("country_of_origin") if self._new_match_data else None
+
+    @property
+    def allergens(self) -> Optional[list]:
+        if self.existing:
+            return _product_data.get(self.closest_product_id, {}).get("allergens")
+        self._resolve_newdataset_match()
+        return self._new_match_data.get("key_ingredients") if self._new_match_data else None
+
+    @property
+    def shelf_life_months(self) -> Optional[str]:
+        if self.existing:
+            return _product_data.get(self.closest_product_id, {}).get("shelf_life_months")
+        self._resolve_newdataset_match()
+        return self._new_match_data.get("shelf_life") if self._new_match_data else None
+
+    @property
+    def ingredients(self) -> Optional[list]:
+        if self.existing:
+            return _product_data.get(self.closest_product_id, {}).get("key_ingredients")
+        self._resolve_newdataset_match()
+        return self._new_match_data.get("key_ingredients") if self._new_match_data else None
 
     @property
     def signal_score(self) -> float:
@@ -108,6 +149,15 @@ class GoogleTrendProduct(_NewProductBase):
         self.description      = query
         self.value            = value
         self._category_trends = category_trends
+
+    @property
+    def category(self) -> str:
+        if self._category is None:
+            import categories
+            self._category, self._category_sim = categories.classify_product_by_category(self.description)
+            if self._category_sim is not None and self._category_sim < 0.5:
+                self._category = "other"
+        return self._category
 
     @property
     def signal_score(self) -> float:
@@ -147,6 +197,13 @@ class TikTokProduct(_NewProductBase):
         if self._category is None:
             import categories
             self._category, self._category_sim = categories.classify_product_by_keyword(self.description)
+            if self._category_sim is not None and self._category_sim < 0.5:
+                self._used_newdataset = True
+                name, data, sim = categories.get_newdataset_entry(self.description)
+                self._new_match_name = name
+                self._new_match_data = data
+                self._category = name or "other"
+                self._category_sim = sim
         return self._category
 
     @property

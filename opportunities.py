@@ -85,8 +85,8 @@ def signal_strength(product, trends_data: dict) -> float:
 
     # ── 4. FINAL WEIGHTED COMBINATION ────────────────────────────────────────
 
-    # New products have no sales data so we redistribute that weight to trends
-    has_sales = product.order_count is not None
+    # Non-existing products have no real sales data; redistribute weight to trends
+    has_sales = getattr(product, 'existing', product.order_count > 0)
     if has_sales:
         weights = {'sales': 0.40, 'trends': 0.35, 'queries': 0.25}
     else:

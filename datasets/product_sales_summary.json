@@ -9,7 +9,7 @@
         "max_unit_cost": 36.87,
         "country_of_origin": "China",
         "shelf_life_months": "4 years",
-        "allergens": null
+        "key_ingredients": "Camphor, Menthol, Cajuput oil"
     },
     "T-32206": {
         "description": "Tiger Balm Patch Warm (MM)",
@@ -21,7 +21,7 @@
         "max_unit_cost": 2.332,
         "country_of_origin": "Malaysia",
         "shelf_life_months": "3 years",
-        "allergens": null
+        "key_ingredients": "Capsaicin, Menthol, Methyl salicylate"
     },
     "T-22010": {
         "description": "Tiger Balm 18g Red, Ext/St(MM)",
@@ -33,7 +33,7 @@
         "max_unit_cost": 31.647,
         "country_of_origin": "China",
         "shelf_life_months": "4 years",
-        "allergens": null
+        "key_ingredients": "Camphor, Clove oil, Menthol"
     },
     "T-31541": {
         "description": "Tiger Balm 50g, Ultra/St",
@@ -45,7 +45,7 @@
         "max_unit_cost": 63.519,
         "country_of_origin": "China",
         "shelf_life_months": "4 years",
-        "allergens": null
+        "key_ingredients": "Camphor, Menthol, Cajuput oil"
     },
     "T-31520": {
         "description": "Tiger Balm Ultra 10g",
@@ -57,7 +57,7 @@
         "max_unit_cost": 21.758,
         "country_of_origin": "China",
         "shelf_life_months": "4 years",
-        "allergens": null
+        "key_ingredients": "Camphor, Menthol, Paraffin"
     },
     "F-04111": {
         "description": "POP Ginger Chews Original 4 oz (12ct/cs)",
@@ -69,7 +69,7 @@
         "max_unit_cost": 7.25,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Peanuts, Coconut"
     },
     "T-47010": {
         "description": "Kwan Loong Oil 2 fl oz",
@@ -81,7 +81,7 @@
         "max_unit_cost": 36.432,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Eucalyptus oil, Menthol, Lavender oil"
     },
     "T-32202": {
         "description": "Tiger Balm Single Patch 12ct/disp",
@@ -93,7 +93,7 @@
         "max_unit_cost": 8.877,
         "country_of_origin": "Malaysia",
         "shelf_life_months": "3 years",
-        "allergens": null
+        "key_ingredients": "Methyl salicylate, Menthol, Capsaicin"
     },
     "T-32300": {
         "description": "Tiger Balm Patch - Large",
@@ -105,7 +105,7 @@
         "max_unit_cost": 38.419,
         "country_of_origin": "Taiwan",
         "shelf_life_months": "3 years",
-        "allergens": null
+        "key_ingredients": "Menthol, Methyl salicylate, Camphor"
     },
     "T-31510R": {
         "description": "Tiger Balm 18g, Ultra/St - RFID",
@@ -117,7 +117,7 @@
         "max_unit_cost": 37.385,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Camphor, Menthol, Cajuput oil"
     },
     "F-04070": {
         "description": "POP Ginger Chews Original 8 oz",
@@ -129,7 +129,7 @@
         "max_unit_cost": 10.305,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Peanuts, Coconut"
     },
     "J-63006": {
         "description": "Mazola Corn Oil 128 oz (1 gal)",
@@ -141,7 +141,7 @@
         "max_unit_cost": 86.28,
         "country_of_origin": "USA",
         "shelf_life_months": "1.5yrs",
-        "allergens": "corn oil"
+        "key_ingredients": "Corn oil, Vitamin E, Soy lecithin"
     },
     "D-04011": {
         "description": "POP In Ginger Honey Cytl 18gx30",
@@ -153,7 +153,7 @@
         "max_unit_cost": 70.725,
         "country_of_origin": "China",
         "shelf_life_months": "36 months",
-        "allergens": "NO"
+        "key_ingredients": "Ginger, Honey, Chrysanthemum"
     },
     "F-04112": {
         "description": "POP Ginger Chews Lemon 4 oz (12ct/cs)",
@@ -165,7 +165,7 @@
         "max_unit_cost": 8.647,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Lemon flavor, Peanuts"
     },
     "F-12402": {
         "description": "Ferrero Rocher 24 Pcs Diamond",
@@ -177,7 +177,7 @@
         "max_unit_cost": 60.05,
         "country_of_origin": "Poland",
         "shelf_life_months": "6 Months",
-        "allergens": "tree nuts (hazelnuts), wheat, milk, soy"
+        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
     },
     "F-04211": {
         "description": "POP Ginger Chews Original 2 oz",
@@ -189,7 +189,7 @@
         "max_unit_cost": 24.083,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Peanuts, Coconut"
     },
     "F-04071": {
         "description": "POP Ginger Chews Lemon 8 oz",
@@ -201,7 +201,7 @@
         "max_unit_cost": 10.571,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Lemon flavor, Peanuts"
     },
     "F-04073": {
         "description": "POP Ginger Chews Mango 8 oz",
@@ -213,7 +213,7 @@
         "max_unit_cost": 9.725,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Mango flavor, Coconut"
     },
     "F-04076": {
         "description": "POP Ginger Chews Assorted 8 oz",
@@ -225,7 +225,7 @@
         "max_unit_cost": 55.622,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Lychee"
+        "key_ingredients": "Peanuts, Lychee, Ginger extract"
     },
     "D-04061": {
         "description": "POP Ginger Honey Cytl Original 10ct(6x6)",
@@ -237,7 +237,7 @@
         "max_unit_cost": 38.063,
         "country_of_origin": "China",
         "shelf_life_months": "36 months",
-        "allergens": "NO"
+        "key_ingredients": "Ginger, Honey, Chrysanthemum"
     },
     "F-04114": {
         "description": "POP Ginger Chews Mango 4 oz (12ct/cs)",
@@ -249,7 +249,7 @@
         "max_unit_cost": 8.751,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Mango flavor, Coconut"
     },
     "D-04043": {
         "description": "POP In Ginger H Cytl w/Lemon 18gx30",
@@ -261,7 +261,7 @@
         "max_unit_cost": 70.725,
         "country_of_origin": "China",
         "shelf_life_months": "36 months",
-        "allergens": "NO"
+        "key_ingredients": "Ginger, Lemon, Honey"
     },
     "F-20141": {
         "description": "Ferrero Coll. 24 pcs (w/Hazelnut)#20148",
@@ -273,7 +273,7 @@
         "max_unit_cost": 60.05,
         "country_of_origin": "Poland",
         "shelf_life_months": "5 Months",
-        "allergens": "tree nuts (hazelnuts), wheat, milk, soy"
+        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
     },
     "F-04130": {
         "description": "POP Ginger Chews Plus+ Original 3 oz",
@@ -285,7 +285,7 @@
         "max_unit_cost": 70.635,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Peanuts, Coconut"
     },
     "J-72402": {
         "description": "Totole Chicken Bouillon 2.2 lbs",
@@ -297,7 +297,7 @@
         "max_unit_cost": 93.0,
         "country_of_origin": "China",
         "shelf_life_months": "2 Yrs",
-        "allergens": "Sesame Oil, soy"
+        "key_ingredients": "Sesame Oil, soy, Chicken flavor"
     },
     "A-61150": {
         "description": "AM GSG Candy 6 oz Bag",
@@ -309,7 +309,7 @@
         "max_unit_cost": 47.832,
         "country_of_origin": "China",
         "shelf_life_months": "24 months",
-        "allergens": null
+        "key_ingredients": "Cane sugar, Ginger, Natural flavors"
     },
     "F-12122": {
         "description": "Ferrero Rocher 12 Pcs",
@@ -321,7 +321,7 @@
         "max_unit_cost": 53.184,
         "country_of_origin": "Poland",
         "shelf_life_months": "6 Months",
-        "allergens": "tree nuts (hazelnuts), wheat, milk, soy"
+        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
     },
     "D-04037": {
         "description": "POP Ginger H Cytl.Lemon 10ct(6x6)",
@@ -333,7 +333,7 @@
         "max_unit_cost": 40.28,
         "country_of_origin": "China",
         "shelf_life_months": "36 months",
-        "allergens": "NO"
+        "key_ingredients": "Ginger, Lemon, Honey"
     },
     "F-04001": {
         "description": "POP Ginger Chews Original 1 lb Bulk",
@@ -345,7 +345,7 @@
         "max_unit_cost": 23.676,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Peanuts, Coconut"
     },
     "D-04033": {
         "description": "POP In Ginger H Cytl w/Turmeric 18gx25",
@@ -357,7 +357,7 @@
         "max_unit_cost": 66.686,
         "country_of_origin": "China",
         "shelf_life_months": "36 months",
-        "allergens": "NO"
+        "key_ingredients": "Ginger, Turmeric, Honey"
     },
     "F-04117": {
         "description": "POP Ginger Chews Blood Orange 4 oz (12ct/cs)",
@@ -369,7 +369,7 @@
         "max_unit_cost": 8.751,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Blood orange flavor, Peanuts"
     },
     "F-04074": {
         "description": "POP Ginger Chews Lychee 8 oz",
@@ -381,7 +381,7 @@
         "max_unit_cost": 9.725,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Lychee"
+        "key_ingredients": "Peanuts, Lychee, Ginger extract"
     },
     "F-97000": {
         "description": "MX Eggrolls (32pcs)",
@@ -393,7 +393,7 @@
         "max_unit_cost": 156.196,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Wheat flour, Cabbage, Sesame oil"
     },
     "F-12418": {
         "description": "Ferrero Rocher 24 pcs Diamond Display(48)",
@@ -405,7 +405,7 @@
         "max_unit_cost": 468.375,
         "country_of_origin": "Poland",
         "shelf_life_months": "6 Months",
-        "allergens": "tree nuts (hazelnuts), wheat, milk, soy"
+        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
     },
     "A-61117": {
         "description": "AM GSG Candy 1 lb / Bag",
@@ -417,7 +417,7 @@
         "max_unit_cost": 73.09,
         "country_of_origin": "China",
         "shelf_life_months": "24 months",
-        "allergens": null
+        "key_ingredients": "Cane sugar, Ginger, Natural flavors"
     },
     "F-76010": {
         "description": "Kjeldsens 1 lb Danish Cookie(#98838)",
@@ -429,7 +429,7 @@
         "max_unit_cost": 52.29,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Wheat flour, Butter, Sugar"
     },
     "F-04075": {
         "description": "POP Ginger Chews Blood Orange 8 oz",
@@ -441,7 +441,7 @@
         "max_unit_cost": 9.775,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Blood orange flavor, Coconut"
     },
     "F-12998": {
         "description": "Ferrero Rocher 48's Flat Gift Box",
@@ -453,7 +453,7 @@
         "max_unit_cost": 7906.64,
         "country_of_origin": "Poland",
         "shelf_life_months": "6 Months",
-        "allergens": "tree nuts (hazelnuts), wheat, milk, soy"
+        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
     },
     "F-04118": {
         "description": "POP Ginger Chews Pineapple Coconut 4 oz (12ct/cs)",
@@ -465,7 +465,7 @@
         "max_unit_cost": 28.677,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Pineapple flavor, Coconut"
     },
     "F-00491": {
         "description": "Loacker Wafer Hazelnut 250g(#10491)",
@@ -477,7 +477,7 @@
         "max_unit_cost": 47.0,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Hazelnuts, Wheat flour, Milk"
     },
     "D-13206": {
         "description": "POP OG Green Tea 1.8gx100 (6ct/cs)",
@@ -489,7 +489,7 @@
         "max_unit_cost": 11.438,
         "country_of_origin": "China",
         "shelf_life_months": "36 MONTHS",
-        "allergens": "NO"
+        "key_ingredients": "Green tea, EGCG, Antioxidants"
     },
     "D-14206": {
         "description": "POP OG Jasmine Tea 1.8gx100 (6ct/cs)",
@@ -501,7 +501,7 @@
         "max_unit_cost": 15.291,
         "country_of_origin": "China",
         "shelf_life_months": "36 MONTHS",
-        "allergens": "NO"
+        "key_ingredients": "Jasmine green tea, Natural jasmine flavor, Antioxidants"
     },
     "D-15206": {
         "description": "POP OG Oolong Tea 1.8gx100 (6ct/cs)",
@@ -513,7 +513,7 @@
         "max_unit_cost": 11.759,
         "country_of_origin": "China",
         "shelf_life_months": "36 MONTHS",
-        "allergens": "NO"
+        "key_ingredients": "Oolong tea, Polyphenols, Antioxidants"
     },
     "F-50139": {
         "description": "Gavottes Crepes 500g",
@@ -525,7 +525,7 @@
         "max_unit_cost": 72.579,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Wheat flour, Butter, Sugar"
     },
     "D-18206": {
         "description": "POP OG White Tea 1.8gx100 (6ct/cs)",
@@ -537,7 +537,7 @@
         "max_unit_cost": 13.606,
         "country_of_origin": "China",
         "shelf_life_months": "36 MONTHS",
-        "allergens": "NO"
+        "key_ingredients": "White tea, L-theanine, Antioxidants"
     },
     "F-04131": {
         "description": "POP Ginger Chews Plus+ Lemon 3 oz",
@@ -549,7 +549,7 @@
         "max_unit_cost": 57.531,
         "country_of_origin": "Indonesia",
         "shelf_life_months": "24 months",
-        "allergens": "Peanuts, Coconut"
+        "key_ingredients": "Ginger extract, Lemon flavor, Peanuts"
     },
     "D-04032": {
         "description": "POP In Ginger H Cytl w/Turmeric 10ct(6x6)",
@@ -561,7 +561,7 @@
         "max_unit_cost": 37.959,
         "country_of_origin": "China",
         "shelf_life_months": "36 months",
-        "allergens": "NO"
+        "key_ingredients": "Ginger, Turmeric, Honey"
     },
     "F-50140": {
         "description": "Gavottes Crepes 1250g #011120",
@@ -573,7 +573,7 @@
         "max_unit_cost": 83.038,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Wheat flour, Butter, Sugar"
     },
     "J-63004": {
         "description": "Mazola Corn Oil 40 oz",
@@ -585,7 +585,7 @@
         "max_unit_cost": 52.8,
         "country_of_origin": "USA",
         "shelf_life_months": "1.5yrs",
-        "allergens": "corn oil"
+        "key_ingredients": "Corn oil, Vitamin E, Soy lecithin"
     },
     "D-03053": {
         "description": "Blood Sugar Herbal Tea production D-03053",
@@ -597,7 +597,7 @@
         "max_unit_cost": 0.868,
         "country_of_origin": "USA",
         "shelf_life_months": "60",
-        "allergens": null
+        "key_ingredients": "Gymnema sylvestre, Cinnamon, Berberine"
     },
     "D-03052": {
         "description": "Blood Pressure Herbal Tea production D-03052",
@@ -609,7 +609,7 @@
         "max_unit_cost": 0.868,
         "country_of_origin": "USA",
         "shelf_life_months": "60",
-        "allergens": null
+        "key_ingredients": "Hibiscus, Hawthorn berry, Valerian root"
     },
     "D-03054": {
         "description": "Cholesterol Herbal Tea production D-03054",
@@ -621,7 +621,7 @@
         "max_unit_cost": 0.868,
         "country_of_origin": "USA",
         "shelf_life_months": "60",
-        "allergens": null
+        "key_ingredients": "Red yeast rice, Psyllium husk, Green tea"
     },
     "F-00372": {
         "description": "Loacker GP Bisc Noisette Choc 3.53oz(#10392)",
@@ -633,7 +633,7 @@
         "max_unit_cost": 28.617,
         "country_of_origin": "Italy",
         "shelf_life_months": "13",
-        "allergens": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
+        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
     },
     "F-00378": {
         "description": "Loacker GP Dark Hazelnut 3.53oz(#10338)",
@@ -645,7 +645,7 @@
         "max_unit_cost": 28.617,
         "country_of_origin": "Italy",
         "shelf_life_months": "13",
-        "allergens": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
+        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
     },
     "F-00375": {
         "description": "Loacker GP Bisc Cappuc Choc 3.53oz(#10398)",
@@ -657,7 +657,7 @@
         "max_unit_cost": 28.617,
         "country_of_origin": "Italy",
         "shelf_life_months": "13",
-        "allergens": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
+        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
     },
     "F-00373": {
         "description": "Loacker GP White Coconut 3.53oz",
@@ -669,7 +669,7 @@
         "max_unit_cost": 28.617,
         "country_of_origin": "Italy",
         "shelf_life_months": "13",
-        "allergens": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
+        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
     },
     "F-00376": {
         "description": "Loacker GP Bisc Coconut Choc 3.53oz(#10396)",
@@ -681,7 +681,7 @@
         "max_unit_cost": 28.617,
         "country_of_origin": "Italy",
         "shelf_life_months": "13",
-        "allergens": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
+        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
     },
     "F-00377": {
         "description": "Loacker GP Bisc Orange Choc 3.53oz(#10397)",
@@ -693,7 +693,7 @@
         "max_unit_cost": 28.617,
         "country_of_origin": "Italy",
         "shelf_life_months": "13",
-        "allergens": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
+        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
     },
     "D-13200N": {
         "description": "POP Organic Green Tea 1.8gx100",
@@ -705,7 +705,7 @@
         "max_unit_cost": 46.76,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Organic green tea, EGCG, Antioxidants"
     },
     "D-18200N": {
         "description": "POP Organic White Tea 1.8gx100",
@@ -717,7 +717,7 @@
         "max_unit_cost": 55.498,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Organic white tea, L-theanine, Antioxidants"
     },
     "D-15200N": {
         "description": "POP Organic Oolong Tea 1.8gx100",
@@ -729,7 +729,7 @@
         "max_unit_cost": 48.081,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Organic oolong tea, Polyphenols, Antioxidants"
     },
     "D-14200N": {
         "description": "POP Organic Jasmine Tea 1.8gx100",
@@ -741,6 +741,6 @@
         "max_unit_cost": 55.79,
         "country_of_origin": null,
         "shelf_life_months": null,
-        "allergens": null
+        "key_ingredients": "Organic jasmine tea, Natural jasmine flavor, Antioxidants"
     }
 }
