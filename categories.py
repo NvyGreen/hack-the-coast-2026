@@ -60,25 +60,12 @@ def classify_product_by_category(product_name):
     return best_category
 
 
-def build_description_index():
-    index = {}
-    for product_id, product in product_sales_summary.items():
-        for word in product["description"].lower().split():
-            index.setdefault(word, []).append(product_id)
-    return index
-
-_description_index = build_description_index()
-
 def exact_match_product(product_name):
-    words = product_name.lower().split()
-    scores = {}
-    for word in words:
-        for product_id in _description_index.get(word, []):
-            scores[product_id] = scores.get(product_id, 0) + 1
-    if not scores:
-        return None
-    return max(scores, key=scores.get)
-
+    name_lower = product_name.lower()
+    for product_id, product in product_sales_summary.items():
+        if name_lower in product["description"].lower():
+            return product_id
+    return None
 
 def classify_product_by_description(product_name):
     match = exact_match_product(product_name)
@@ -95,3 +82,12 @@ def classify_product_by_description(product_name):
             max_similarity = sim
             best_product_id = product_id
     return best_product_id
+
+
+if __name__ == "__main__":
+    # Example usage
+    category_embeddings = get_categories()
+    print("Category Embeddings:", category_embeddings)
+
+    product_descr_embeddings = get_product_descriptions()
+    print("Product Description Embeddings:", product_descr_embeddings)
