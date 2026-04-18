@@ -1,0 +1,14 @@
+{
+  "American Ginseng": ["american ginseng", "us ginseng"],
+  "Asian Ginseng": ["asian ginseng", "korean ginseng", "panax"],
+  "Candies": ["candy", "chew", "sweet", "toffee"],
+  "Chocolates": ["chocolate", "cocoa"],
+  "Cookies": ["cookie", "biscuit"],
+  "Ginger": ["ginger", "ginger slice"],
+  "Instant Food/Seasonings": ["instant", "noodle", "soup", "seasoning"],
+  "Mooncakes": ["mooncake"],
+  "Nuts/Dried Fruits": ["nuts", "almond", "cashew", "dried fruit", "raisin"],
+  "Supplements/Personal Care": ["supplement", "vitamin", "capsule", "balm", "cream"],
+  "Teas/Instant Beverage": ["tea", "herbal tea", "drink", "beverage"],
+  "Tiger Balm": ["tiger balm"]
+}
