@@ -1,6 +1,7 @@
 import json
 import numpy as np
 from pathlib import Path
+from typing import Optional, Tuple
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
@@ -50,18 +51,18 @@ def get_product_descriptions():
     return product_descr_embeddings
 
 
-def classify_product_by_category(product_name):
+def classify_product_by_category(product_name) -> Tuple[str, float]:
+    """Returns (category, similarity_score)."""
     category_embeddings = get_categories()
-    product_name = product_name.lower()
-    product_embedding = model.encode(product_name)
-    max_similarity = -1
+    product_embedding = model.encode(product_name.lower())
+    max_similarity = -1.0
     best_category = None
     for category, embedding in category_embeddings.items():
-        sim = cosine_similarity([product_embedding], [embedding])[0][0]
+        sim = float(cosine_similarity([product_embedding], [embedding])[0][0])
         if sim > max_similarity:
             max_similarity = sim
             best_category = category
-    return best_category
+    return best_category, max_similarity
 
 
 def exact_match_product(product_name):
@@ -71,21 +72,34 @@ def exact_match_product(product_name):
             return product_id
     return None
 
-def classify_product_by_description(product_name):
+def classify_product_by_keyword(keyword: str) -> tuple[str, float]:
+    """Match a short keyword (e.g. TikTok) against category keyword lists first,
+    then fall back to embedding similarity. Returns (category, score)."""
+    with (BASE / "categories.txt").open("r", encoding="utf-8") as f:
+        categories_map = json.load(f)
+    keyword_lower = keyword.lower()
+    for category, keywords in categories_map.items():
+        if keyword_lower in keywords:
+            return category, 1.0
+    category, score = classify_product_by_category(keyword)
+    return category, score
+
+
+def classify_product_by_description(product_name) -> Tuple[Optional[str], float]:
+    """Returns (product_id, similarity_score). Score is 1.0 for exact string matches."""
     match = exact_match_product(product_name)
     if match:
-        return match
+        return match, 1.0
     product_descr_embeddings = get_product_descriptions()
-    product_name = product_name.lower()
-    product_embedding = model.encode(product_name)
-    max_similarity = -1
+    product_embedding = model.encode(product_name.lower())
+    max_similarity = -1.0
     best_product_id = None
     for product_id, descr_embedding in product_descr_embeddings.items():
-        sim = cosine_similarity([product_embedding], [descr_embedding])[0][0]
+        sim = float(cosine_similarity([product_embedding], [descr_embedding])[0][0])
         if sim > max_similarity:
             max_similarity = sim
             best_product_id = product_id
-    return best_product_id
+    return best_product_id, max_similarity
 
 
 if __name__ == "__main__":
