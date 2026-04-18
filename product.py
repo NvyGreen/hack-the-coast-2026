@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from typing import Optional
 
 _DATA_PATH   = Path(__file__).resolve().parent / "datasets" / "product_sales_summary.json"
 _TRENDS_PATH = Path(__file__).resolve().parent / "datasets" / "trends_data.json"
@@ -7,6 +8,9 @@ _TIKTOK_PATH = Path(__file__).resolve().parent / "datasets" / "tiktok_keywords.j
 
 with _DATA_PATH.open("r", encoding="utf-8") as f:
     _product_data = json.load(f)
+
+# Cosine similarity below this means the trend has no close catalog match
+_NOVEL_THRESHOLD = 0.50
 
 with _TRENDS_PATH.open("r", encoding="utf-8") as f:
     _trends_data = json.load(f)
@@ -47,22 +51,47 @@ class _NewProductBase:
         self.total_revenue     = None
         self.avg_unit_cost     = None
         self._category         = None
+        self._category_sim     = None
         self._closest_id       = None
+        self._closest_sim      = None
         self._signal_score     = None
+
+    def _resolve_closest(self):
+        """Run embedding search once and cache both product_id and similarity score."""
+        if self._closest_id is None:
+            import categories
+            self._closest_id, self._closest_sim = categories.classify_product_by_description(self.description)
 
     @property
     def category(self) -> str:
         if self._category is None:
             import categories
-            self._category = categories.classify_product_by_category(self.description)
+            self._category, self._category_sim = categories.classify_product_by_category(self.description)
         return self._category
 
     @property
-    def closest_product_id(self) -> str:
-        if self._closest_id is None:
-            import categories
-            self._closest_id = categories.classify_product_by_description(self.description)
+    def category_sim(self) -> Optional[float]:
+        _ = self.category  # ensure resolved
+        return self._category_sim
+
+    @property
+    def is_food_related(self) -> bool:
+        return self.category_sim is not None and self.category_sim >= 0.30
+
+    @property
+    def closest_product_id(self) -> Optional[str]:
+        self._resolve_closest()
         return self._closest_id
+
+    @property
+    def sim_score(self) -> Optional[float]:
+        self._resolve_closest()
+        return self._closest_sim
+
+    @property
+    def is_existing(self) -> bool:
+        """True if this trend is close enough to a catalog product to reuse its metadata."""
+        return self._closest_sim is not None and self._closest_sim >= _NOVEL_THRESHOLD
 
     @property
     def signal_score(self) -> float:
@@ -74,11 +103,13 @@ class _NewProductBase:
 class GoogleTrendProduct(_NewProductBase):
     """A trending search query from Google Trends related_queries."""
 
-    def __init__(self, query: str, value: int, category_trends: dict):
+    def __init__(self, query: str, value: int, category_trends: dict, category: str = None):
         super().__init__()
-        self.description     = query
-        self.value           = value   # Google's 0–100 relative interest score
+        self.description      = query
+        self.value            = value
         self._category_trends = category_trends
+        self._category        = category  # already known from registry, skip re-classification
+        self._category_sim    = 1.0 if category else None
 
     @property
     def signal_score(self) -> float:
@@ -112,6 +143,13 @@ class TikTokProduct(_NewProductBase):
         self.shares           = data.get("shares")
         self.comments         = data.get("comments")
         self._raw             = data
+
+    @property
+    def category(self) -> str:
+        if self._category is None:
+            import categories
+            self._category, self._category_sim = categories.classify_product_by_keyword(self.description)
+        return self._category
 
     @property
     def signal_score(self) -> float:
@@ -162,7 +200,7 @@ class TrendRegistry:
         for category, trends in _trends_data.items():
             top = trends.get("related_queries", {}).get("top", [])[:5]
             self._by_category[category] = [
-                GoogleTrendProduct(item["query"], item["value"], trends)
+                GoogleTrendProduct(item["query"], item["value"], trends, category=category)
                 for item in top
             ]
         self._built = True

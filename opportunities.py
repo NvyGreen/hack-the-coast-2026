@@ -77,8 +77,9 @@ def signal_strength(product, trends_data: dict) -> float:
 
     rising_score = 0.0
     if rising_queries:
-        avg_rising = sum(q['value'] for q in rising_queries) / len(rising_queries)
-        rising_score = min(avg_rising / 500.0, 1.0)
+        numeric = [q['value'] for q in rising_queries if isinstance(q['value'], (int, float))]
+        if numeric:
+            rising_score = min(sum(numeric) / len(numeric) / 500.0, 1.0)
 
     query_score = (top_score * 0.65) + (rising_score * 0.35)
 
@@ -109,8 +110,8 @@ def socialmedia_signal_strength(data: dict) -> float:
         if isinstance(val, (int, float)):
             return float(val)
         val = str(val).replace('%', '').replace('USD', '').replace(',', '').strip()
-        multiplier = 1_000 if val.endswith('K') else 1
-        val = val.rstrip('K').strip()
+        multiplier = 1_000_000 if val.endswith('M') else 1_000 if val.endswith('K') else 1
+        val = val.rstrip('KM').strip()
         return float(val) * multiplier
 
     popularity   = parse_num(data.get('popularity', 0))
