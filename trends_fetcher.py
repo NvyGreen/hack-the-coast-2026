@@ -40,8 +40,11 @@ def needs_fetch(entry):
     if 'error' in entry:
         return True
     iot = entry.get('interest_over_time', {})
-    # Empty dict or all-empty sub-dicts means no real data
-    return not any(iot.values())
+    rq = entry.get('related_queries', {})
+    # Matches the exact empty structure: {} interest_over_time + empty top/rising
+    if iot == {} and rq.get('top') == [] and rq.get('rising') == []:
+        return True
+    return False
 
 
 def run_fetcher():
