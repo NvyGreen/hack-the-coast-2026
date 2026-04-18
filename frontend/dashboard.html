@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prince of Peace — Browse &amp; Filter</title>
+        <style>
+            :root {
+                --navy: #1B3A5C;
+                --navy-mid: #2557A7;
+                --gold: #C9963A;
+                --gold-light: #F2D38A;
+                --green: #2E7D52;
+                --orange: #C05621;
+                --text-primary: #1B2740;
+                --text-sec: #4A5568;
+                --text-muted: #8A96A8;
+                --cream: #F5F3EE;
+                --cream-dark: #E8E4DA;
+                --bd: rgba(27,58,92,0.11);
+                --fd: 'Libre Baskerville', Georgia, serif;
+                --fb: 'DM Sans', system-ui, sans-serif;
+            }
+
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+            body { font-family: var(--fb); background: var(--cream); color: var(--text-primary); }
+
+            /* ── Topbar ── */
+            .topbar {
+                background: var(--navy); height: 52px;
+                display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;
+            }
+
+            .logo-area { display: flex; align-items: center; gap: 10px; }
+            .logo-mark {
+                width: 30px; height: 30px; background: white; border-radius: 6px;
+                display: flex; align-items: center; justify-content: center;
+                font-family: var(--fd); font-size: 12px; font-weight: 700; color: var(--navy);
+                transition: transform 0.2s ease;
+            }
+            .logo-mark:hover { transform: rotate(-8deg) scale(1.1); }
+            .logo-text { font-family: var(--fd); font-size: 13px; color: rgba(255,255,255,0.88); }
+
+            .nav { display: flex; gap: 3px; }
+            .nav-btn {
+                font-size: 12px; color: rgba(255,255,255,0.55); padding: 5px 13px;
+                border-radius: 20px; cursor: pointer; border: none; background: none;
+                font-family: var(--fb); transition: background 0.15s, color 0.15s;
+            }
+            .nav-btn:hover { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85); }
+            .nav-btn.active { background: rgba(255,255,255,0.15); color: white; }
+
+            .page-wrap { display: flex; min-height: calc(100vh - 52px); }
+
+            /* ── Sidebar ── */
+            .sidebar {
+                width: 215px; min-width: 215px; background: white;
+                border-right: 0.5px solid var(--bd); padding: 1.25rem 1rem;
+                display: flex; flex-direction: column; gap: 1.5rem;
+            }
+            .sb-label {
+                font-size: 10px; font-weight: 500; letter-spacing: 1.2px;
+                text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;
+            }
+
+            .search-wrap { position: relative; }
+            .search-input {
+                width: 100%; height: 34px; border: 0.5px solid var(--bd); border-radius: 8px;
+                background: var(--cream); padding: 0 10px 0 30px;
+                font-size: 13px; font-family: var(--fb); color: var(--text-primary); outline: none;
+                transition: border-color 0.15s, background 0.15s;
+            }
+            .search-input:focus { border-color: var(--navy-mid); background: white; }
+            .search-icon {
+                position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+                width: 14px; height: 14px; pointer-events: none; color: var(--text-muted);
+            }
+
+            .cat-list { display: flex; flex-direction: column; gap: 2px; }
+            .cat-item {
+                display: flex; align-items: center; justify-content: space-between;
+                padding: 7px 9px; border-radius: 8px; cursor: pointer;
+                font-size: 13px; color: var(--text-sec);
+                transition: background 0.12s, color 0.12s, transform 0.12s;
+                border: 0.5px solid transparent;
+            }
+            .cat-item:hover { background: var(--cream); color: var(--text-primary); transform: translateX(2px); }
+            .cat-item.active { background: #EBF3FD; color: #0C447C; border-color: rgba(37,87,167,0.15); }
+            .cat-item.active .cat-count { color: #0C447C; }
+            .cat-left { display: flex; align-items: center; gap: 7px; }
+            .cat-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+            .cat-count { font-size: 11px; color: var(--text-muted); }
+            .divider { height: 0.5px; background: var(--bd); margin: 0 -1rem; }
+
+            .check-list { display: flex; flex-direction: column; gap: 5px; }
+            .check-row {
+                display: flex; align-items: center; gap: 7px;
+                font-size: 13px; color: var(--text-sec); cursor: pointer; padding: 4px 0;
+                transition: color 0.12s;
+            }
+            .check-row:hover { color: var(--text-primary); }
+            .check-box {
+                width: 15px; height: 15px; border-radius: 3px; border: 0.5px solid var(--bd); background: white;
+                display: flex; align-items: center; justify-content: center;
+                flex-shrink: 0; transition: background 0.15s, border-color 0.15s, transform 0.15s;
+            }
+            .check-box.active { background: var(--navy); border-color: var(--navy); }
+            .check-row:hover .check-box { transform: scale(1.1); }
+            .check-box svg { display: none; }
+            .check-box.active svg { display: block; }
+            .check-pip { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+            .type-list { display: flex; flex-direction: column; gap: 5px; }
+            .type-item {
+                padding: 7px 9px; border-radius: 8px; font-size: 13px; color: var(--text-sec); cursor: pointer;
+                border: 0.5px solid transparent; transition: background 0.12s, color 0.12s, transform 0.12s;
+            }
+            .type-item:hover { background: var(--cream); transform: translateX(2px); }
+            .type-item.active { background: #FEF6E6; color: #7A4F10; border-color: rgba(201,150,58,0.25); }
+
+            /* ── Main ── */
+            .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+            .main-header {
+                background: var(--navy); padding: 1.75rem 1.5rem 2.25rem;
+                position: relative; overflow: hidden;
+            }
+            .main-header::after {
+                content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+                height: 24px; background: var(--cream); border-radius: 18px 18px 0 0;
+            }
+
+            .header-eyebrow {
+                font-size: 10px; font-weight: 500; letter-spacing: 1.6px;
+                text-transform: uppercase; color: var(--gold-light); margin-bottom: 6px;
+            }
+            .header-title { font-family: var(--fd); font-size: 32px; color: white; line-height: 1.2; }
+            .header-sub { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 300; margin-top: 5px; }
+            .content { padding: 1.25rem 1.5rem; flex: 1; overflow-y: auto; }
+
+            .toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+            .toolbar-search { flex: 1; position: relative; }
+            .toolbar-input {
+                width: 100%; height: 38px; border: 0.5px solid var(--bd); border-radius: 20px;
+                background: white; padding: 0 14px 0 36px;
+                font-size: 13px; font-family: var(--fb); color: var(--text-primary); outline: none;
+                transition: border-color 0.15s;
+            }
+            .toolbar-input:focus { border-color: var(--navy-mid); }
+            .toolbar-icon {
+                position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+                width: 14px; height: 14px; color: var(--text-muted); pointer-events: none;
+            }
+
+            .sort-select {
+                height: 38px; border: 0.5px solid var(--bd); border-radius: 20px;
+                background: white; padding: 0 14px;
+                font-size: 12px; font-family: var(--fb); color: var(--text-sec); outline: none; cursor: pointer;
+                transition: border-color 0.15s;
+            }
+            .sort-select:hover { border-color: rgba(27,58,92,0.25); }
+
+            .results-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+            .results-count { font-size: 13px; color: var(--text-muted); }
+            .results-count span { color: var(--text-primary); font-weight: 500; }
+
+            .active-chips { display: flex; gap: 5px; flex-wrap: wrap; }
+            .chip {
+                background: #EBF3FD; color: #0C447C; font-size: 11px; padding: 3px 10px; border-radius: 20px;
+                display: flex; align-items: center; gap: 4px; cursor: pointer; transition: filter 0.15s;
+            }
+            .chip:hover { filter: brightness(0.93); }
+            .chip-x { font-size: 14px; line-height: 1; }
+
+            /* ── Grid — 3 columns ── */
+            .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+            /* ── Product Card — larger, centered ── */
+            .product-card {
+                background: white; border-radius: 18px; border: 0.5px solid var(--bd);
+                padding: 2rem 1.75rem 1.5rem;
+                display: flex; flex-direction: column; align-items: center; text-align: center;
+                cursor: pointer; position: relative; overflow: hidden;
+                transition: border-color 0.2s, transform 0.2s ease, box-shadow 0.2s ease;
+                animation: cardIn 0.25s ease both;
+            }
+            @keyframes cardIn {
+                
+            to   { opacity: 1; transform: translateY(0); }
+            }
+            .product-card:hover {
+                border-color: rgba(37,87,167,0.4);
+                transform: translateY(-5px);
+                box-shadow: 0 12px 28px rgba(27,58,92,0.11);
+            }
+            .product-card:hover .card-icon { transform: scale(1.15) rotate(5deg); }
+
+            .card-status {
+                position: absolute;
+                top: 14px;
+                right: 12px;
+                font-size: 10px;
+                font-weight: 700;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+            }
+            .status-approved { background: #E6F4EA; color: #1E7E34; }
+            .status-rejected  { background: #FCE8E8; color: #C0392B; }
+
+            .card-icon {
+                width: 88px; height: 88px; border-radius: 22px; background: var(--cream);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 44px; margin-bottom: 20px; transition: transform 0.25s ease;
+            }
+            .card-name { font-size: 16px; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin-bottom: 6px; }
+            .card-cat { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; }
+            .card-divider { width: 100%; height: 0.5px; background: var(--bd); margin-bottom: 16px; }
+            .card-bottom { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+            .signal-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+
+            .pips { display: flex; gap: 3px; align-items: flex-end; }
+            .pip { width: 5px; border-radius: 2px; background: var(--cream-dark); }
+            .pip.active { background: var(--navy-mid); }
+            .pip.strong { background: var(--navy); }
+
+            .signal-score { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-left: 7px; }
+            .type-badge { font-size: 14px; padding: 5px 12px; border-radius: 8px; font-weight: 500; }
+            .empty { font-size: 13px; color: var(--text-muted); padding: 2rem 0; text-align: center; grid-column: 1 / -1; }
+
+            /* ── Popup ── */
+            .popup-overlay {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(27,39,64,0.75); display: none;
+                align-items: center; justify-content: center; z-index: 1000; transition: opacity 0.2s;
+            }
+            .popup {
+                background: white; border-radius: 22px; width: 580px; max-width: 92%;
+                box-shadow: 0 25px 50px rgba(27,58,92,0.3); overflow: hidden; position: relative;
+            }
+            .popup-header { padding: 40px 40px 28px; text-align: center; border-bottom: 1px solid var(--cream-dark); }
+            .popup-icon {
+                width: 110px; height: 110px; border-radius: 28px; background: var(--cream);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 58px; margin: 0 auto 22px;
+            }
+            .popup-name { font-size: 22px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+            .popup-cat { font-size: 14px; color: var(--text-muted); }
+            .popup-close {
+                position: absolute; top: 20px; right: 20px; width: 40px; height: 40px;
+                border-radius: 50%; background: var(--cream);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 22px; color: var(--text-muted); cursor: pointer; transition: all 0.2s;
+            }
+            .popup-close:hover { background: var(--cream-dark); color: var(--text-primary); }
+            .popup-body { padding: 8px 40px 32px; }
+            .popup-row {
+                display: flex; justify-content: space-between; padding: 16px 0;
+                border-bottom: 1px solid var(--cream-dark); align-items: center;
+            }
+            .popup-row:last-child { border-bottom: none; }
+            .popup-label { font-size: 14px; color: var(--text-sec); font-weight: 500; }
+            .popup-value { font-size: 15px; font-weight: 500; color: var(--text-primary); text-align: right; max-width: 300px; }
+            .popup-keywords { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; justify-content: flex-end; }
+            .popup-keyword { background: var(--cream); color: var(--text-sec); font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+        </style>
+    </head>
+    <body>
+
+    <div class="topbar">
+        <div class="logo-area">
+            <div class="logo-mark">PoP</div>
+            <span class="logo-text">Prince of Peace &mdash; Trend Intelligence</span>
+        </div>
+
+        <nav class="nav">
+            <button class="nav-btn" onclick="window.location.href='index.html';">Home</button>
+            <button class="nav-btn active">Browse</button>
+        </nav>
+    </div>
+
+    <div class="page-wrap">
+        <aside class="sidebar">
+            <div>
+                <div class="sb-label">Search</div>
+                <div class="search-wrap">
+                    <svg class="search-icon" viewBox="0 0 16 16" fill="none">
+                        <circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.2"/>
+                        <path d="M10 10l3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                    </svg>
+                    <input class="search-input" id="sideSearch" placeholder="Product, ingredient…">
+                </div>
+            </div>
+
+            <div>
+                <div class="sb-label">Category</div>
+                <div class="cat-list" id="catList">
+                    <div class="cat-item active" data-cat="all"><div class="cat-left"><div class="cat-dot" style="background:#993C1D"></div>All</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="americanginseng"><div class="cat-left"><div class="cat-dot" style="background:var(--navy)"></div>American Ginseng</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="asianginseng"><div class="cat-left"><div class="cat-dot" style="background:#2557A7"></div>Asian Ginseng</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="candies"><div class="cat-left"><div class="cat-dot" style="background:#2E7D52"></div>Candies</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="chocolates"><div class="cat-left"><div class="cat-dot" style="background:#C9963A"></div>Chocolates</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="cookies"><div class="cat-left"><div class="cat-dot" style="background:#993556"></div>Cookies</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="ginger"><div class="cat-left"><div class="cat-dot" style="background:#534AB7"></div>Ginger</div><span class="cat-count">X</span></div>
+                    
+                    <div class="cat-item" data-cat="instantfood"><div class="cat-left"><div class="cat-dot" style="background:#993C1D"></div>Instant food / seasonings</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="nutsfruits"><div class="cat-left"><div class="cat-dot" style="background:#2557A7"></div>Ginseng</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="personalcare"><div class="cat-left"><div class="cat-dot" style="background:#2E7D52"></div>Teas</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="teas"><div class="cat-left"><div class="cat-dot" style="background:#C9963A"></div>Confections</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="tigerbalm"><div class="cat-left"><div class="cat-dot" style="background:#993556"></div>Wellness</div><span class="cat-count">X</span></div>
+                    <div class="cat-item" data-cat="other"><div class="cat-left"><div class="cat-dot" style="background:#534AB7"></div>Personal care</div><span class="cat-count">X</span></div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+                <div class="sb-label">Trend status</div>
+                <div class="check-list">
+                    <div class="check-row" data-check="hot">
+                        <div class="check-box active" id="chkHot"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></div>
+                        <span class="check-pip" style="background:var(--orange)"></span>Hot (9&ndash;10)
+                    </div>
+                    <div class="check-row" data-check="rising">
+                        <div class="check-box active" id="chkRising"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></div>
+                        <span class="check-pip" style="background:var(--green)"></span>Rising (7&ndash;8)
+                    </div>
+                    <div class="check-row" data-check="new">
+                        <div class="check-box active" id="chkNew"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></div>
+                        <span class="check-pip" style="background:var(--navy-mid)"></span>New entry
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+                <div class="sb-label">Opportunity type</div>
+                <div class="type-list" id="typeList">
+                    <div class="type-item active" data-type="all">All types</div>
+                    <div class="type-item" data-type="distribute">Distribute existing</div>
+                    <div class="type-item" data-type="develop">Develop PoP brand</div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="main">
+            <div class="main-header">
+                <div class="header-eyebrow">Browse &amp; Filter</div>
+                <div class="header-title">All recommendations</div>
+                <div class="header-sub" id="headerSub">24 results &middot; Sorted by signal strength</div>
+            </div>
+
+            <div class="content">
+                <div class="toolbar">
+                    <div class="toolbar-search">
+                        <svg class="toolbar-icon" viewBox="0 0 16 16" fill="none">
+                        <circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.2"/>
+                        <path d="M10 10l3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>
+                        <input class="toolbar-input" id="mainSearch" placeholder="Search by product, ingredient, or category…">
+                    </div>
+                    <select class="sort-select" id="sortSelect">
+                        <option value="signal">Signal strength</option>
+                        <option value="name">Name A&ndash;Z</option>
+                        <option value="category">Category</option>
+                    </select>
+                </div>
+
+                <div class="results-meta">
+                    <div class="results-count">Showing <span id="resultCount">24</span> results</div>
+                    <div class="active-chips" id="activeChips"></div>
+                </div>
+
+                <div class="grid" id="productGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const PRODUCTS = [
+            { name: 'Ginger Chew Candy',           cat: 'ginger',          signal: 10, badge: 'hot',    approved: true,    icon: '🍬', type: 'distribute' },
+            { name: 'Asian Ginseng Root Powder',   cat: 'asianginseng',    signal: 9, badge: 'hot',    approved: true,    icon: '🌾', type: 'develop'    },
+            { name: 'Chrysanthemum Tea Bags',      cat: 'teas',            signal: 8, badge: 'hot',    approved: true,    icon: '🌸', type: 'distribute' },
+            { name: 'Tiger Balm Sport Roll-On',    cat: 'tigerbalm',       signal: 8, badge: 'hot',    approved: true,    icon: '🐯', type: 'distribute' },
+            { name: "Lion's Mane Capsules",        cat: 'personalcare',    signal: 8, badge: 'new',    approved: true,    icon: '🧠', type: 'distribute' },
+            { name: 'American Ginseng Slices',     cat: 'americanginseng', signal: 8, badge: 'hot',    approved: true,    icon: '🌱', type: 'distribute' },
+            { name: 'Dark Chocolate Ginger',       cat: 'chocolates',      signal: 8, badge: 'hot',    approved: true,    icon: '🍫', type: 'develop'    },
+            { name: 'Herbal Throat Drops',         cat: 'personalcare',    signal: 8, badge: 'hot',    approved: true,    icon: '🌿', type: 'distribute' },
+            { name: 'Turmeric Supplement',         cat: 'personalcare',    signal: 8, badge: 'hot',    approved: true,    icon: '💊', type: 'distribute' },
+            { name: 'Ginseng Energy Shot',         cat: 'americanginseng', signal: 7, badge: 'rising', approved: true,    icon: '⚡', type: 'develop'    },
+            { name: 'Oolong Loose Leaf Tea',       cat: 'teas',            signal: 7, badge: 'rising', approved: true,    icon: '🍵', type: 'distribute' },
+            { name: 'Matcha Latte Mix',            cat: 'teas',            signal: 7, badge: 'new',    approved: true,    icon: '🫖', type: 'distribute' },
+            { name: 'Probiotic Blend',             cat: 'personalcare',    signal: 7, badge: 'rising', approved: true,    icon: '🫙', type: 'distribute' },
+            { name: 'Almond Sesame Brittle',       cat: 'candies',         signal: 7, badge: 'rising', approved: true,    icon: '🥜', type: 'distribute' },
+            { name: 'Instant Pho Kit',             cat: 'instantfood',     signal: 7, badge: 'hot',    approved: true,    icon: '🍜', type: 'distribute' },
+            { name: 'Herbal Muscle Rub',           cat: 'personalcare',    signal: 7, badge: 'rising', approved: true,    icon: '💪', type: 'develop'    },
+            { name: 'Green Tea Extract',           cat: 'teas',            signal: 7, badge: 'rising', approved: false,   icon: '🌿', type: 'develop'    },
+            { name: 'Ginger Candy Assortment',     cat: 'ginger',          signal: 7, badge: 'rising', approved: true,    icon: '🍡', type: 'distribute' },
+            { name: 'Ginseng Honey Sticks',        cat: 'asianginseng',    signal: 6, badge: 'rising', approved: true,    icon: '🍯', type: 'develop'    },
+            { name: 'Ginseng-Adaptogen Snack',     cat: 'asianginseng',    signal: 6, badge: 'rising', approved: false,   icon: '🌾', type: 'develop'    },
+            { name: 'Ginger Kombucha Mix',         cat: 'ginger',          signal: 6, badge: 'new',    approved: false,   icon: '🧪', type: 'develop'    },
+            { name: 'Mooncake — Red Bean',         cat: 'mooncakes',       signal: 6, badge: 'rising', approved: true,    icon: '🥮', type: 'distribute' },
+            { name: 'Ginseng Face Serum',          cat: 'americanginseng', signal: 6, badge: 'new',    approved: true,    icon: '✨', type: 'develop'    },
+            { name: 'Dried Lychee Fruit',          cat: 'nutsfruits',      signal: 6, badge: 'new',    approved: true,    icon: '🍈', type: 'distribute' },
+        ];
+
+        const PRODUCT_DETAILS = {
+            "Ginger Chew Candy": {
+                shelfLife: 18, origin: "Thailand / USA",
+                ingredients: "Ginger extract, cane sugar, natural flavors",
+                keywords: ["ginger", "great deal", "limited time"],
+                status: "New Product - Develop", statusColor: "#2E7D52"
+            },
+            "Asian Ginseng Root Powder": {
+                shelfLife: 24, origin: "South Korea",
+                ingredients: "100% Pure Korean Red Ginseng Root Powder",
+                keywords: ["ginseng", "adaptogen", "immune support"],
+                status: "Existing - Expand Distribution", statusColor: "#185FA5"
+            },
+            "Chrysanthemum Tea Bags": {
+                shelfLife: 36, origin: "China",
+                ingredients: "Dried Chrysanthemum flowers",
+                keywords: ["herbal tea", "chrysanthemum"],
+                status: "Existing - Distribute", statusColor: "#185FA5"
+            },
+            "Tiger Balm Sport Roll-On": {
+                shelfLife: 36, origin: "Singapore",
+                ingredients: "Camphor, Menthol, Cajuput Oil, Cassia Oil",
+                keywords: ["tiger balm", "summer"],
+                status: "Existing - Expand Line", statusColor: "#185FA5"
+            },
+            "Lion's Mane Capsules": {
+                shelfLife: 24, origin: "USA / China",
+                ingredients: "Lion's Mane Mushroom Extract, Vegetable Capsule",
+                keywords: ["lion's mane", "mushroom blend", "adaptogen"],
+                status: "New Product - Develop", statusColor: "#2E7D52"
+            },
+        };
+
+        const DEFAULT_DETAILS = {
+            shelfLife: 24, origin: "Multiple", ingredients: "Proprietary blend",
+            keywords: ["wellness"], status: "New Product", statusColor: "#2E7D52"
+        };
+
+        const state = {
+            cat: 'all', type: 'all', sort: 'signal', search: '',
+            checks: { hot: true, rising: true, new: true },
+        };
+
+        function applyFilters() {
+            let list = [...PRODUCTS];
+            if (state.cat !== 'all')  list = list.filter(p => p.cat === state.cat);
+            if (state.type !== 'all') list = list.filter(p => p.type === state.type);
+            list = list.filter(p => state.checks[p.badge]);
+            if (state.search) list = list.filter(p =>
+                p.name.toLowerCase().includes(state.search) || p.cat.toLowerCase().includes(state.search)
+            );
+            if (state.sort === 'name')          list.sort((a, b) => a.name.localeCompare(b.name));
+            else if (state.sort === 'category') list.sort((a, b) => a.cat.localeCompare(b.cat));
+            else                                list.sort((a, b) => b.signal - a.signal);
+            renderGrid(list);
+            renderMeta(list.length);
+            renderChips();
+        }
+
+        function renderGrid(list) {
+            const grid = document.getElementById('productGrid');
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty">No results match your filters.</div>';
+                return;
+            }
+            grid.innerHTML = list.map((p, i) => {
+                const catLabel   = p.cat.charAt(0).toUpperCase() + p.cat.slice(1);
+                const typeStyle  = p.type === 'develop' ? 'background:#EAF5EE;color:#2E7D52' : 'background:#EBF3FD;color:#185FA5';
+                const typeLabel  = p.type === 'develop' ? 'Develop' : 'Distribute';
+                const pips = [0,1,2,3,4].map(j => {
+                    const filled = j < Math.round(p.signal / 2);
+                    const strong = filled && p.signal >= 8;
+                    return `<div class="pip${filled ? (strong ? ' strong' : ' active') : ''}" style="height:${10 + j * 3}px"></div>`;
+                }).join('');
+                return `
+                    <div class="product-card" data-name="${p.name}" style="animation-delay:${i * 30}ms">
+                        <span class="card-status ${p.approved ? 'status-approved' : 'status-rejected'}">
+                            ${p.approved ? '✔' : '✖'}
+                        </span>
+                        <div class="card-icon">${p.icon}</div>
+                        <div class="card-name">${p.name}</div>
+                        <div class="card-cat">${catLabel}</div>
+                        <div class="card-divider"></div>
+                        <div class="card-bottom">
+                            <div>
+                                <div class="signal-label">Trend signal</div>
+                                <div style="display:flex;align-items:center">
+                                    <div class="pips">${pips}</div>
+                                    <span class="signal-score">${p.signal}/10</span>
+                                </div>
+                            </div>
+                            <div class="type-badge" style="${typeStyle}">${typeLabel}</div>
+                        </div>
+                    </div>
+            `;}).join('');
+
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', () => showPopup(card.dataset.name));
+            });
+        }
+
+        function renderMeta(count) {
+            const sortLabel = state.sort === 'signal' ? 'signal strength' : state.sort;
+            document.getElementById('resultCount').textContent = count;
+            document.getElementById('headerSub').textContent = `${count} results \u00b7 Sorted by ${sortLabel}`;
+        }
+
+        function renderChips() {
+            const chips = [];
+            if (state.cat !== 'all')  chips.push(`<div class="chip">${state.cat} <span class="chip-x" data-clear="cat">&times;</span></div>`);
+            if (state.type !== 'all') chips.push(`<div class="chip">${state.type} <span class="chip-x" data-clear="type">&times;</span></div>`);
+            document.getElementById('activeChips').innerHTML = chips.join('');
+            document.querySelectorAll('.chip-x').forEach(el => {
+            el.addEventListener('click', () => {
+                    if (el.dataset.clear === 'cat') {
+                        state.cat = 'all';
+                        document.querySelectorAll('.cat-item').forEach(e => e.classList.remove('active'));
+                        document.querySelector('[data-cat="all"]').classList.add('active');
+                    } else {
+                        state.type = 'all';
+                        document.querySelectorAll('.type-item').forEach(e => e.classList.remove('active'));
+                        document.querySelector('[data-type="all"]').classList.add('active');
+                    }
+                    applyFilters();
+                });
+            });
+        }
+
+        function showPopup(name) {
+            const product = PRODUCTS.find(p => p.name === name);
+            if (!product) return;
+            const data = PRODUCT_DETAILS[name] || DEFAULT_DETAILS;
+            const catLabel = product.cat.charAt(0).toUpperCase() + product.cat.slice(1);
+            const existing = document.getElementById('productPopup');
+            if (existing) existing.remove();
+            document.body.insertAdjacentHTML('beforeend', `
+                <div class="popup-overlay" id="productPopup">
+                    <div class="popup">
+                        <div class="popup-close" id="popupClose">&times;</div>
+                        <div class="popup-header">
+                            <div class="popup-icon">${product.icon}</div>
+                            <div class="popup-name">${product.name}</div>
+                            <div class="popup-cat">${catLabel}</div>
+                        </div>
+                        <div class="popup-body">
+                            <div class="popup-row">
+                                <div class="popup-label">Signal strength</div>
+                                <div class="popup-value">${product.signal}/10</div>
+                            </div>
+                            <div class="popup-row">
+                                <div class="popup-label">Shelf life</div>
+                                <div class="popup-value">${data.shelfLife} months</div>
+                            </div>
+                            <div class="popup-row">
+                                <div class="popup-label">Country of origin</div>
+                                <div class="popup-value">${data.origin}</div>
+                            </div>
+                            <div class="popup-row">
+                                <div class="popup-label">Ingredients</div>
+                                <div class="popup-value">${data.ingredients}</div>
+                            </div>
+                            <div class="popup-row">
+                                <div class="popup-label">Related trends</div>
+                                <div class="popup-value">
+                                    <div class="popup-keywords">${data.keywords.map(kw => `<span class="popup-keyword">${kw}</span>`).join('')}</div>
+                                </div>
+                            </div>
+                            <div class="popup-row">
+                                <div class="popup-label">Recommendation</div>
+                                <div class="popup-value" style="color:${data.statusColor};font-weight:600">${data.status}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `);
+            const overlay = document.getElementById('productPopup');
+            setTimeout(() => overlay.style.display = 'flex', 10);
+            overlay.addEventListener('click', e => { if (e.target === overlay) closePopup(); });
+            document.getElementById('popupClose').addEventListener('click', closePopup);
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('productPopup');
+            if (!popup) return;
+            popup.style.opacity = '0';
+            setTimeout(() => popup.remove(), 200);
+        }
+
+        // ── Event listeners ──
+
+        document.getElementById('catList').addEventListener('click', e => {
+            const item = e.target.closest('.cat-item');
+            if (!item) return;
+            document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
+            item.classList.add('active');
+            state.cat = item.dataset.cat;
+            applyFilters();
+        });
+
+        document.getElementById('typeList').addEventListener('click', e => {
+            const item = e.target.closest('.type-item');
+            if (!item) return;
+            document.querySelectorAll('.type-item').forEach(el => el.classList.remove('active'));
+            item.classList.add('active');
+            state.type = item.dataset.type;
+            applyFilters();
+        });
+
+        document.querySelectorAll('.check-row').forEach(row => {
+            row.addEventListener('click', () => {
+                const key = row.dataset.check;
+                state.checks[key] = !state.checks[key];
+                row.querySelector('.check-box').classList.toggle('active', state.checks[key]);
+                applyFilters();
+            });
+        });
+
+        function onSearchInput(value) {
+            state.search = value.toLowerCase();
+            document.getElementById('sideSearch').value = value;
+            document.getElementById('mainSearch').value = value;
+            applyFilters();
+        }
+        document.getElementById('sideSearch').addEventListener('input', e => onSearchInput(e.target.value));
+        document.getElementById('mainSearch').addEventListener('input', e => onSearchInput(e.target.value));
+
+        document.getElementById('sortSelect').addEventListener('change', e => {
+            state.sort = e.target.value;
+            applyFilters();
+        });
+
+        applyFilters();
+    </script>
+
+    </body>
+</html>

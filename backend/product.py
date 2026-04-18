@@ -2,9 +2,9 @@ import json
 from pathlib import Path
 from typing import Optional
 
-_DATA_PATH   = Path(__file__).resolve().parent / "datasets" / "product_sales_summary.json"
-_TRENDS_PATH = Path(__file__).resolve().parent / "datasets" / "trends_data.json"
-_TIKTOK_PATH = Path(__file__).resolve().parent / "datasets" / "tiktok_keywords.json"
+_DATA_PATH   = Path(__file__).resolve().parent.parent / "datasets" / "product_sales_summary.json"
+_TRENDS_PATH = Path(__file__).resolve().parent.parent / "datasets" / "trends_data.json"
+_TIKTOK_PATH = Path(__file__).resolve().parent.parent / "datasets" / "tiktok_keywords.json"
 
 with _DATA_PATH.open("r", encoding="utf-8") as f:
     _product_data = json.load(f)
@@ -59,18 +59,18 @@ class _NewProductBase:
 
     def _resolve_closest(self):
         if self._closest_id is None:
-            import categories
+            import backend.categories as categories
             self._closest_id, self._closest_sim = categories.classify_product_by_description(self.description)
 
     def _resolve_newdataset_match(self):
         if self._new_match_name is None:
-            import categories
+            import backend.categories as categories
             self._new_match_name, self._new_match_data, _ = categories.get_newdataset_entry(self.description)
 
     @property
     def category(self) -> str:
         if self._category is None:
-            import categories
+            import backend.categories as categories
             self._category, self._category_sim = categories.classify_product_by_category(self.description)
             if self._category_sim is not None and self._category_sim < 0.5:
                 self._used_newdataset = True
@@ -153,7 +153,7 @@ class GoogleTrendProduct(_NewProductBase):
     @property
     def category(self) -> str:
         if self._category is None:
-            import categories
+            import backend.categories as categories
             self._category, self._category_sim = categories.classify_product_by_category(self.description)
             if self._category_sim is not None and self._category_sim < 0.5:
                 self._category = "other"
@@ -162,7 +162,7 @@ class GoogleTrendProduct(_NewProductBase):
     @property
     def signal_score(self) -> float:
         if self._signal_score is None:
-            import opportunities
+            import backend.opportunities as opportunities
             self._signal_score = opportunities.signal_strength(self, self._category_trends)
         return self._signal_score
 
@@ -195,7 +195,7 @@ class TikTokProduct(_NewProductBase):
     @property
     def category(self) -> str:
         if self._category is None:
-            import categories
+            import backend.categories as categories
             self._category, self._category_sim = categories.classify_product_by_keyword(self.description)
             if self._category_sim is not None and self._category_sim < 0.5:
                 self._used_newdataset = True
@@ -209,7 +209,7 @@ class TikTokProduct(_NewProductBase):
     @property
     def signal_score(self) -> float:
         if self._signal_score is None:
-            import opportunities
+            import backend.opportunities as opportunities
             self._signal_score = opportunities.socialmedia_signal_strength(self._raw)
         return self._signal_score
 

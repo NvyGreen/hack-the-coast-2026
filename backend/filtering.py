@@ -1,15 +1,18 @@
 # Shelf life in months
 # Allergens: string or None
 # Country as string
-import categories
-from product import registry
+from pathlib import Path
+import backend.categories as categories
+from backend.product import registry
+
+_DATASETS = Path(__file__).resolve().parent.parent / "datasets"
 
 class FilterIngredients:
     def __init__(self):
-        with open("datasets/restrictions/ingredients.txt", "r") as i:
+        with (_DATASETS / "restrictions" / "ingredients.txt").open("r") as i:
             self.banned_ingredients = set(i.read().splitlines())
 
-        with open("datasets/restrictions/countries.txt", "r") as c:
+        with (_DATASETS / "restrictions" / "countries.txt").open("r") as c:
             self.restricted_countries = set(c.read().splitlines())
 
     def filter(self, allergens, country):

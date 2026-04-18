@@ -5,7 +5,7 @@ from typing import Optional, Tuple
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
-BASE = Path(__file__).resolve().parent / "datasets"
+BASE = Path(__file__).resolve().parent.parent / "datasets"
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 

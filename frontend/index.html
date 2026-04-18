@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prince of Peace — Trend Intelligence</title>
+        <style>
+            :root {
+                --navy: #1B3A5C;
+                --navy-mid: #2557A7;
+                --navy-light: #3A7BD5;
+                --gold: #C9963A;
+                --green: #2E7D52;
+                --orange: #C05621;
+                --text-primary: #1B2740;
+                --text-sec: #4A5568;
+                --text-muted: #8A96A8;
+                --cream: #F5F3EE;
+                --cream-dark: #E8E4DA;
+                --bd: rgba(27,58,92,0.11);
+                --fd: 'Libre Baskerville', Georgia, serif;
+                --fb: 'DM Sans', system-ui, sans-serif;
+            }
+
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+            body { font-family: var(--fb); background: var(--cream); color: var(--text-primary); }
+
+            /* ── Topbar ── */
+            .topbar {
+                background: var(--navy); height: 52px;
+                display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;
+            }
+
+            .logo-area { display: flex; align-items: center; gap: 10px; }
+            .logo-mark {
+                width: 30px; height: 30px; background: white; border-radius: 6px;
+                display: flex; align-items: center; justify-content: center;
+                font-family: var(--fd); font-size: 12px; font-weight: 700; color: var(--navy);
+                transition: transform 0.2s ease;
+            }
+            .logo-mark:hover { transform: rotate(-8deg) scale(1.1); }
+            .logo-text { font-family: var(--fd); font-size: 13px; color: rgba(255,255,255,0.88); }
+
+            .nav { display: flex; gap: 3px; }
+            .nav-btn {
+                font-size: 12px; color: rgba(255,255,255,0.55); padding: 5px 13px;
+                border-radius: 20px; cursor: pointer; border: none; background: none;
+                font-family: var(--fb); transition: background 0.15s, color 0.15s;
+            }
+            .nav-btn:hover { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85); }
+            .nav-btn.active { background: rgba(255,255,255,0.15); color: white; }
+
+            /* ── Hero ── */
+            .hero {
+                background: var(--navy); padding: 2.5rem 2rem 3.5rem;
+                position: relative; overflow: hidden;
+            }
+            .hero::before {
+                content: ''; position: absolute; top: -60px; right: -60px;
+                width: 300px; height: 300px; border-radius: 50%;
+                background: rgba(58,123,213,0.08);
+            }
+            .hero::after {
+                content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+                height: 32px; background: var(--cream); border-radius: 24px 24px 0 0;
+            }
+            .hero-inner { max-width: 700px; position: relative; z-index: 1; }
+            .hero-eyebrow {
+                font-size: 10px; font-weight: 500; letter-spacing: 1.6px;
+                text-transform: uppercase; color: #F2D38A; margin-bottom: 10px;
+            }
+            .hero-title { font-family: var(--fd); font-size: 32px; color: white; line-height: 1.18; margin-bottom: 10px; }
+            .hero-title em { font-style: italic; color: #F2D38A; }
+            .hero-sub { font-size: 14px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.6; max-width: 520px; }
+
+            /* ── Stats strip ── */
+            .stats-strip {
+                background: white;
+                border-bottom: 0.5px solid var(--bd);
+                display: flex;
+                align-items: stretch;
+                padding: 0 2rem;
+            }
+            .stat {
+                flex: 1; display: flex; align-items: center;
+                padding: 1.25rem 0; border-right: 0.5px solid var(--bd);
+                transition: background 0.15s;
+                cursor: default;
+            }
+            .stat:last-child { border-right: none; }
+            .stat:hover { background: var(--cream); }
+            .stat-inner { padding: 0 1.75rem; display: flex; flex-direction: column; gap: 3px; }
+            .stat-val {
+                font-family: var(--fd); font-size: 26px; font-weight: 700; color: var(--text-primary);
+                transition: transform 0.2s ease;
+            }
+            .stat:hover .stat-val { transform: scale(1.06); }
+            .stat-label { font-size: 12px; color: var(--text-muted); }
+
+            /* ── Body ── */
+            .body { padding: 1.5rem 2rem 2.5rem; display: flex; flex-direction: column; gap: 2rem; }
+
+            .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1rem; }
+            .section-title { font-family: var(--fd); font-size: 18px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+            .section-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+            .section-link {
+                font-size: 12px; color: var(--navy-mid); cursor: pointer;
+                display: flex; align-items: center; gap: 3px; transition: gap 0.15s;
+            }
+            .section-link:hover { gap: 6px; }
+
+            /* ── Top 5 Cards ── */
+            .top5-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+            .card {
+                background: white; border-radius: 14px; border: 0.5px solid var(--bd);
+                padding: 1.25rem 1rem;
+                display: flex; flex-direction: column; align-items: center; text-align: center;
+                position: relative; overflow: hidden; cursor: pointer;
+                transition: border-color 0.2s, transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .card:hover {
+                border-color: rgba(37,87,167,0.4);
+                transform: translateY(-4px);
+                box-shadow: 0 8px 20px rgba(27,58,92,0.1);
+            }
+            .card:hover .card-icon { transform: scale(1.15) rotate(5deg); }
+
+            .card-rank { position: absolute; top: 10px; left: 10px; font-family: var(--fd); font-size: 11px; color: var(--text-muted); font-weight: 700; }
+            .card-badge { position: absolute; top: 10px; right: 32px; font-size: 9px; font-weight: 500; padding: 3px 7px; border-radius: 10px; }
+            .badge-hot { background: #FEF0E6; color: var(--orange); }
+            .badge-new { background: #EBF3FD; color: var(--navy-mid); }
+
+            .card-status {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 10px;
+                font-weight: 700;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .status-approved { background: #E6F4EA; color: #1E7E34; }
+            .status-rejected  { background: #FCE8E8; color: #C0392B; }
+
+            .card-icon {
+                width: 68px; height: 68px; border-radius: 16px; background: var(--cream);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 32px; margin-bottom: 14px; transition: transform 0.25s ease;
+            }
+            .card-name { font-size: 13.5px; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin-bottom: 4px; }
+            .card-cat { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
+
+            .bar-wrap { width: 100%; height: 5px; background: var(--cream-dark); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+            .bar { height: 100%; border-radius: 3px; width: 0; transition: width 0.9s cubic-bezier(0.4,0,0.2,1); }
+            .card-score { font-size: 12px; color: var(--text-sec); font-weight: 500; }
+
+            /* ── Keyword Cloud ── */
+            .kw-panel { background: white; border-radius: 16px; border: 0.5px solid var(--bd); padding: 1.25rem 1.5rem; }
+            .kw-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+            .kw-title { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+            .kw-sub { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+            .kw-legend { display: flex; gap: 10px; }
+            .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; }
+            .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+            .kw-cloud { position: relative; height: 420px; width: 100%; overflow: hidden; padding: 30px 25px; }
+            .kw-tag {
+                padding: 5px 14px; border-radius: 20px; cursor: pointer; border: 0.5px solid transparent;
+                white-space: nowrap; font-family: var(--fb);
+                transition: transform 0.15s ease, filter 0.15s, background 0.15s, color 0.15s, border-color 0.15s;
+            }
+            .kw-tag:hover { transform: scale(1.1) !important; filter: brightness(0.93); }
+
+            .kw-tag.size-xl { font-size: 27px; font-weight: 500; }
+            .kw-tag.size-lg { font-size: 19px; font-weight: 500; }
+            .kw-tag.size-md { font-size: 15.5px; }
+            .kw-tag.size-sm { font-size: 12px; }
+
+            .kw-tag.tier-hot { background: #FEF0E6; color: #7A3010; }
+            .kw-tag.tier-mid { background: #EBF3FD; color: #0C447C; }
+            .kw-tag.tier-low { background: var(--cream); color: var(--text-sec); }
+
+            .kw-tag.selected { background: var(--navy); color: white; border-color: var(--navy); }
+
+            /* ── Insights Grid ── */
+            .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+            .ins-card { background: white; border-radius: 14px; border: 0.5px solid var(--bd); padding: 1.1rem 1.25rem; }
+            .ins-title { font-size: 13px; font-weight: 500; color: var(--text-sec); margin-bottom: 0.85rem; display: flex; align-items: center; gap: 6px; }
+            .ins-dot { width: 5px; height: 5px; border-radius: 50%; }
+
+            .opp-list { display: flex; flex-direction: column; gap: 7px; }
+            .opp-row {
+                display: flex; align-items: center; gap: 8px; font-size: 13px;
+                padding: 6px 8px; border-radius: 8px; margin: 0 -8px; transition: background 0.15s;
+            }
+            .opp-row:hover { background: var(--cream); }
+            .opp-row:hover .opp-icon { transform: scale(1.15); }
+            .opp-icon {
+                width: 32px; height: 32px; border-radius: 8px; background: var(--cream);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 16px; flex-shrink: 0; transition: transform 0.2s ease;
+            }
+            .opp-name { font-weight: 500; color: var(--text-primary); line-height: 1.2; }
+            .opp-sub { font-size: 10px; color: var(--text-muted); }
+            .opp-badge { font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 8px; white-space: nowrap; }
+
+            .alert-list { display: flex; flex-direction: column; gap: 6px; }
+            .alert-chip {
+                display: inline-flex; align-items: center; gap: 5px;
+                background: #FEF6E6; color: #7A5010;
+                font-size: 11px; padding: 3px 10px; border-radius: 20px; margin-bottom: 0.5rem;
+            }
+            .chip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s ease-in-out infinite; }
+            @keyframes pulse {
+                0%, 100% { opacity: 1; transform: scale(1); }
+                50%       { opacity: 0.5; transform: scale(0.8); }
+            }
+
+            .alert-row {
+                display: flex; align-items: flex-start; gap: 8px;
+                padding: 8px 10px; border-radius: 8px;
+                background: var(--cream); border: 0.5px solid var(--bd);
+                transition: border-color 0.15s, transform 0.15s ease;
+            }
+            .alert-row:hover { border-color: rgba(27,58,92,0.25); transform: translateX(3px); }
+            .alert-dot { width: 7px; height: 7px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+            .alert-text { font-size: 12px; color: var(--text-sec); line-height: 1.5; }
+            .alert-text strong { color: var(--text-primary); font-weight: 500; }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="topbar">
+            <div class="logo-area">
+                <div class="logo-mark">PoP</div>
+                <span class="logo-text">Prince of Peace &mdash; Trend Intelligence</span>
+            </div>
+
+            <nav class="nav">
+                <button class="nav-btn active">Home</button>
+                <button class="nav-btn" onclick="window.location.href='dashboard.html';">Browse</button>
+            </nav>
+        </div>
+
+        <div class="hero">
+            <div class="hero-inner">
+                <div class="hero-eyebrow">Product Discovery Platform</div>
+                <div class="hero-title">Find the next trend <em>before</em> competitors do.</div>
+                <div class="hero-sub">AI-powered signal scanning across Amazon, Google Trends, and social platforms — filtered against PoP's sourcing criteria and product categories.</div>
+            </div>
+        </div>
+
+        <div class="stats-strip">
+            <div class="stat"><div class="stat-inner"><div class="stat-val">847</div><div class="stat-label">Trends scanned</div></div></div>
+            <div class="stat"><div class="stat-inner"><div class="stat-val">24</div><div class="stat-label">Actionable signals</div></div></div>
+            <div class="stat"><div class="stat-inner"><div class="stat-val">12</div><div class="stat-label">PoP adjacencies</div></div></div>
+            <div class="stat"><div class="stat-inner"><div class="stat-val">6</div><div class="stat-label">FDA flags removed</div></div></div>
+        </div>
+
+        <div class="body">
+
+            <div>
+                <div class="section-header">
+                    <div class="section-title"><div class="section-dot"></div>Top 3 recommendations this week</div>
+                    <div class="section-link">See all 24 &rarr;</div>
+                </div>
+                <div class="top5-grid" id="top5"></div>
+            </div>
+
+            <div class="kw-panel">
+                <div class="kw-header">
+                    <div>
+                        <div class="kw-title">Trending keywords across data sources</div>
+                        <div class="kw-sub">Sized by search volume &nbsp;&middot;&nbsp; Click any keyword to explore</div>
+                    </div>
+                    <div class="kw-legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#C05621"></div><span style="color:#C05621">Top 40%</span></div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--navy-mid)"></div><span style="color:var(--navy-mid)">40–80%</span></div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--text-muted)"></div><span style="color:var(--text-muted)">80–100%</span></div>
+                    </div>
+                </div>
+                <div class="kw-cloud" id="kwCloud"></div>
+            </div>
+
+            <div class="insights-grid">
+                <div class="ins-card">
+                    <div class="ins-title"><div class="ins-dot" style="background:var(--green)"></div>PoP product development opportunities</div>
+                    <div class="opp-list" id="oppList"></div>
+                </div>
+                <div class="ins-card">
+                    <div class="ins-title"><div class="ins-dot" style="background:var(--orange)"></div>Sourcing alerts &amp; market signals</div>
+                    <div class="alert-chip"><div class="chip-dot"></div>Updated April 18, 2026</div>
+                    <div class="alert-list" id="alertList"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            const API_BASE = '';
+
+            const POSITIONS = [
+                { top: '32%', left: '49%' }, { top: '26%', left: '37%' },
+                { top: '38%', left: '66%' }, { top: '21%', left: '68%' },
+                { top: '50%', left: '47%' }, { top: '46%', left: '78%' },
+                { top: '62%', left: '29%' }, { top: '57%', left: '57%' },
+                { top: '18%', left: '52%' }, { top: '74%', left: '51%' },
+                { top: '37%', left: '16%' }, { top: '29%', left: '81%' },
+                { top: '79%', left: '69%' }, { top: '23%', left: '26%' },
+                { top: '68%', left: '79%' }, { top: '54%', left: '17%' },
+                { top: '71%', left: '39%' }, { top: '42%', left: '23%' },
+                { top: '79%', left: '21%' }, { top: '49%', left: '86%' },
+            ];
+
+            const SIZE_MAP    = { xl: 27, lg: 19, md: 15.5, sm: 12 };
+            const OPACITY_MAP = { hot: 1.0, mid: 0.78, low: 0.52 };
+
+            function renderCards(products) {
+                document.getElementById('top5').innerHTML = products.map(p => `
+                    <div class="card">
+                        <span class="card-rank">#${p.rank}</span>
+                        <span class="card-status ${p.approved ? 'status-approved' : 'status-rejected'}">
+                            ${p.approved ? '✔' : '✖'}
+                        </span>
+                        <span class="card-badge ${p.badge === 'hot' ? 'badge-hot' : 'badge-new'}">${p.badge === 'hot' ? 'Hot' : 'New'}</span>
+                        <div class="card-icon">${p.icon}</div>
+                        <div class="card-name">${p.name}</div>
+                        <div class="card-cat">${p.category}</div>
+                        <div class="bar-wrap"><div class="bar" data-width="${p.bar}" style="background:${p.color}"></div></div>
+                        <div class="card-score">${p.signal}/10 signal strength</div>
+                    </div>
+                `).join('');
+                requestAnimationFrame(() => {
+                    document.querySelectorAll('.bar').forEach(bar => { bar.style.width = bar.dataset.width + '%'; });
+                });
+            }
+
+            let selectedKw = null;
+
+            function renderKeywords(keywords) {
+                const cloud = document.getElementById('kwCloud');
+                cloud.innerHTML = '';
+                keywords.forEach((kw, i) => {
+                    const fontSize = SIZE_MAP[kw.size];
+                    const sizeClass = fontSize >= 25 ? 'size-xl' : fontSize >= 18 ? 'size-lg' : fontSize >= 14 ? 'size-md' : 'size-sm';
+                    const tag = document.createElement('div');
+                    tag.className = `kw-tag tier-${kw.tier} ${sizeClass}${selectedKw === kw.text ? ' selected' : ''}`;
+                    tag.textContent = kw.text;
+                    const pos = POSITIONS[i] || { top: '50%', left: '50%' };
+                    tag.style.cssText = `position:absolute;top:${pos.top};left:${pos.left};font-size:${fontSize}px;opacity:${OPACITY_MAP[kw.tier]};transform:translate(-50%,-50%);`;
+                    tag.addEventListener('click', () => {
+                        selectedKw = selectedKw === kw.text ? null : kw.text;
+                        renderKeywords(keywords);
+                    });
+                    cloud.appendChild(tag);
+                });
+            }
+
+            function renderOpportunities(opps) {
+                document.getElementById('oppList').innerHTML = opps.map(o => `
+                    <div class="opp-row">
+                        <div class="opp-icon">${o.icon}</div>
+                        <div style="flex:1"><div class="opp-name">${o.name}</div><div class="opp-sub">${o.sub}</div></div>
+                        <div class="opp-badge" style="background:${o.bc};color:${o.bt}">${o.badge}</div>
+                    </div>
+                `).join('');
+            }
+
+            function renderStats(stats) {
+                const strip = document.querySelector('.stats-strip');
+                strip.innerHTML = `
+                    <div class="stat"><div class="stat-inner"><div class="stat-val">${stats.trends_scanned}</div><div class="stat-label">Trends scanned</div></div></div>
+                    <div class="stat"><div class="stat-inner"><div class="stat-val">${stats.actionable_signals}</div><div class="stat-label">Actionable signals</div></div></div>
+                    <div class="stat"><div class="stat-inner"><div class="stat-val">${stats.pop_adjacencies}</div><div class="stat-label">PoP adjacencies</div></div></div>
+                    <div class="stat"><div class="stat-inner"><div class="stat-val">${stats.fda_flags_removed}</div><div class="stat-label">FDA flags removed</div></div></div>
+                `;
+            }
+
+            async function loadDashboard() {
+                try {
+                    const res = await fetch(`${API_BASE}/api/dashboard`);
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    const data = await res.json();
+                    renderCards(data.top_products);
+                    renderKeywords(data.keywords);
+                    renderOpportunities(data.opportunities);
+                    renderStats(data.stats);
+                } catch (err) {
+                    console.error('Failed to load dashboard data:', err);
+                    document.getElementById('top5').innerHTML =
+                        '<p style="color:var(--text-muted);padding:1rem">Could not connect to API — is the Flask server running?</p>';
+                }
+            }
+
+            loadDashboard();
+        </script>
+
+    </body>
+</html>

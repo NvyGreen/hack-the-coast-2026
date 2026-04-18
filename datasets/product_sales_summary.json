@@ -1,746 +1,1017 @@
 {
-    "T-31510": {
-        "description": "Tiger Balm 18g, Ultra/St",
-        "order_count": 186,
-        "total_qty_shipped": 650691,
-        "total_revenue": 39281589.11,
-        "avg_unit_cost": 31.4402,
-        "min_unit_cost": 29.319,
-        "max_unit_cost": 36.87,
-        "country_of_origin": "China",
-        "shelf_life_months": "4 years",
-        "key_ingredients": "Camphor, Menthol, Cajuput oil"
-    },
-    "T-32206": {
-        "description": "Tiger Balm Patch Warm (MM)",
-        "order_count": 210,
-        "total_qty_shipped": 6160027,
-        "total_revenue": 23493967.78,
-        "avg_unit_cost": 1.9653,
-        "min_unit_cost": 1.882,
-        "max_unit_cost": 2.332,
-        "country_of_origin": "Malaysia",
-        "shelf_life_months": "3 years",
-        "key_ingredients": "Capsaicin, Menthol, Methyl salicylate"
-    },
-    "T-22010": {
-        "description": "Tiger Balm 18g Red, Ext/St(MM)",
-        "order_count": 207,
-        "total_qty_shipped": 437157,
-        "total_revenue": 22451187.66,
-        "avg_unit_cost": 26.7249,
-        "min_unit_cost": 24.81,
-        "max_unit_cost": 31.647,
-        "country_of_origin": "China",
-        "shelf_life_months": "4 years",
-        "key_ingredients": "Camphor, Clove oil, Menthol"
-    },
-    "T-31541": {
-        "description": "Tiger Balm 50g, Ultra/St",
-        "order_count": 107,
-        "total_qty_shipped": 176838,
-        "total_revenue": 18610831.2,
-        "avg_unit_cost": 54.0922,
-        "min_unit_cost": 50.57,
-        "max_unit_cost": 63.519,
-        "country_of_origin": "China",
-        "shelf_life_months": "4 years",
-        "key_ingredients": "Camphor, Menthol, Cajuput oil"
-    },
-    "T-31520": {
-        "description": "Tiger Balm Ultra 10g",
-        "order_count": 113,
-        "total_qty_shipped": 283546,
-        "total_revenue": 9917780.05,
-        "avg_unit_cost": 18.3613,
-        "min_unit_cost": 17.337,
-        "max_unit_cost": 21.758,
-        "country_of_origin": "China",
-        "shelf_life_months": "4 years",
-        "key_ingredients": "Camphor, Menthol, Paraffin"
-    },
-    "F-04111": {
-        "description": "POP Ginger Chews Original 4 oz (12ct/cs)",
-        "order_count": 187,
-        "total_qty_shipped": 630970,
-        "total_revenue": 6669302.02,
-        "avg_unit_cost": 5.4781,
-        "min_unit_cost": 4.51,
-        "max_unit_cost": 7.25,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Peanuts, Coconut"
-    },
-    "T-47010": {
-        "description": "Kwan Loong Oil 2 fl oz",
-        "order_count": 94,
-        "total_qty_shipped": 103958,
-        "total_revenue": 6262459.08,
-        "avg_unit_cost": 30.6741,
-        "min_unit_cost": 24.08,
-        "max_unit_cost": 36.432,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Eucalyptus oil, Menthol, Lavender oil"
-    },
-    "T-32202": {
-        "description": "Tiger Balm Single Patch 12ct/disp",
-        "order_count": 72,
-        "total_qty_shipped": 487744,
-        "total_revenue": 6170726.5,
-        "avg_unit_cost": 6.4713,
-        "min_unit_cost": 5.512,
-        "max_unit_cost": 8.877,
-        "country_of_origin": "Malaysia",
-        "shelf_life_months": "3 years",
-        "key_ingredients": "Methyl salicylate, Menthol, Capsaicin"
-    },
-    "T-32300": {
-        "description": "Tiger Balm Patch - Large",
-        "order_count": 93,
-        "total_qty_shipped": 87386,
-        "total_revenue": 5428768.75,
-        "avg_unit_cost": 23.2359,
-        "min_unit_cost": 2.575,
-        "max_unit_cost": 38.419,
-        "country_of_origin": "Taiwan",
-        "shelf_life_months": "3 years",
-        "key_ingredients": "Menthol, Methyl salicylate, Camphor"
-    },
-    "T-31510R": {
-        "description": "Tiger Balm 18g, Ultra/St - RFID",
-        "order_count": 110,
-        "total_qty_shipped": 78641,
-        "total_revenue": 4787142.9,
-        "avg_unit_cost": 31.573,
-        "min_unit_cost": 29.319,
-        "max_unit_cost": 37.385,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Camphor, Menthol, Cajuput oil"
-    },
-    "F-04070": {
-        "description": "POP Ginger Chews Original 8 oz",
-        "order_count": 196,
-        "total_qty_shipped": 273085,
-        "total_revenue": 4380074.69,
-        "avg_unit_cost": 8.1361,
-        "min_unit_cost": 6.51,
-        "max_unit_cost": 10.305,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Peanuts, Coconut"
-    },
-    "J-63006": {
-        "description": "Mazola Corn Oil 128 oz (1 gal)",
-        "order_count": 88,
-        "total_qty_shipped": 62317,
-        "total_revenue": 4168902.12,
-        "avg_unit_cost": 67.2035,
-        "min_unit_cost": 57.12,
-        "max_unit_cost": 86.28,
-        "country_of_origin": "USA",
-        "shelf_life_months": "1.5yrs",
-        "key_ingredients": "Corn oil, Vitamin E, Soy lecithin"
-    },
-    "D-04011": {
-        "description": "POP In Ginger Honey Cytl 18gx30",
-        "order_count": 137,
-        "total_qty_shipped": 39825,
-        "total_revenue": 4057634.52,
-        "avg_unit_cost": 52.4373,
-        "min_unit_cost": 42.35,
-        "max_unit_cost": 70.725,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 months",
-        "key_ingredients": "Ginger, Honey, Chrysanthemum"
-    },
-    "F-04112": {
-        "description": "POP Ginger Chews Lemon 4 oz (12ct/cs)",
-        "order_count": 121,
-        "total_qty_shipped": 279974,
-        "total_revenue": 3435514.76,
-        "avg_unit_cost": 6.3462,
-        "min_unit_cost": 5.66,
-        "max_unit_cost": 8.647,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Lemon flavor, Peanuts"
-    },
-    "F-12402": {
-        "description": "Ferrero Rocher 24 Pcs Diamond",
-        "order_count": 259,
-        "total_qty_shipped": 37179,
-        "total_revenue": 3411702.57,
-        "avg_unit_cost": 49.0507,
-        "min_unit_cost": 43.29,
-        "max_unit_cost": 60.05,
-        "country_of_origin": "Poland",
-        "shelf_life_months": "6 Months",
-        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
-    },
-    "F-04211": {
-        "description": "POP Ginger Chews Original 2 oz",
-        "order_count": 86,
-        "total_qty_shipped": 78153,
-        "total_revenue": 3028892.87,
-        "avg_unit_cost": 19.3639,
-        "min_unit_cost": 17.2,
-        "max_unit_cost": 24.083,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Peanuts, Coconut"
-    },
-    "F-04071": {
-        "description": "POP Ginger Chews Lemon 8 oz",
-        "order_count": 160,
-        "total_qty_shipped": 179798,
-        "total_revenue": 3010844.55,
-        "avg_unit_cost": 8.3784,
-        "min_unit_cost": 6.76,
-        "max_unit_cost": 10.571,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Lemon flavor, Peanuts"
-    },
-    "F-04073": {
-        "description": "POP Ginger Chews Mango 8 oz",
-        "order_count": 122,
-        "total_qty_shipped": 192090,
-        "total_revenue": 2872230.3,
-        "avg_unit_cost": 7.8087,
-        "min_unit_cost": 6.9,
-        "max_unit_cost": 9.725,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Mango flavor, Coconut"
-    },
-    "F-04076": {
-        "description": "POP Ginger Chews Assorted 8 oz",
-        "order_count": 100,
-        "total_qty_shipped": 137497,
-        "total_revenue": 2591147.66,
-        "avg_unit_cost": 9.8028,
-        "min_unit_cost": 6.9,
-        "max_unit_cost": 55.622,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Peanuts, Lychee, Ginger extract"
-    },
-    "D-04061": {
-        "description": "POP Ginger Honey Cytl Original 10ct(6x6)",
-        "order_count": 146,
-        "total_qty_shipped": 45671,
-        "total_revenue": 2542699.14,
-        "avg_unit_cost": 27.7866,
-        "min_unit_cost": 22.43,
-        "max_unit_cost": 38.063,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 months",
-        "key_ingredients": "Ginger, Honey, Chrysanthemum"
-    },
-    "F-04114": {
-        "description": "POP Ginger Chews Mango 4 oz (12ct/cs)",
-        "order_count": 97,
-        "total_qty_shipped": 206980,
-        "total_revenue": 2482355.75,
-        "avg_unit_cost": 6.3494,
-        "min_unit_cost": 5.66,
-        "max_unit_cost": 8.751,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Mango flavor, Coconut"
-    },
-    "D-04043": {
-        "description": "POP In Ginger H Cytl w/Lemon 18gx30",
-        "order_count": 108,
-        "total_qty_shipped": 21561,
-        "total_revenue": 2148988.17,
-        "avg_unit_cost": 52.5577,
-        "min_unit_cost": 42.35,
-        "max_unit_cost": 70.725,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 months",
-        "key_ingredients": "Ginger, Lemon, Honey"
-    },
-    "F-20141": {
-        "description": "Ferrero Coll. 24 pcs (w/Hazelnut)#20148",
-        "order_count": 253,
-        "total_qty_shipped": 21543,
-        "total_revenue": 1986789.57,
-        "avg_unit_cost": 49.2073,
-        "min_unit_cost": 43.29,
-        "max_unit_cost": 60.05,
-        "country_of_origin": "Poland",
-        "shelf_life_months": "5 Months",
-        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
-    },
-    "F-04130": {
-        "description": "POP Ginger Chews Plus+ Original 3 oz",
-        "order_count": 70,
-        "total_qty_shipped": 54893,
-        "total_revenue": 1847895.42,
-        "avg_unit_cost": 18.4212,
-        "min_unit_cost": 13.4,
-        "max_unit_cost": 70.635,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Peanuts, Coconut"
-    },
-    "J-72402": {
-        "description": "Totole Chicken Bouillon 2.2 lbs",
-        "order_count": 121,
-        "total_qty_shipped": 11614,
-        "total_revenue": 1797140.0,
-        "avg_unit_cost": 84.9072,
-        "min_unit_cost": 77.69,
-        "max_unit_cost": 93.0,
-        "country_of_origin": "China",
-        "shelf_life_months": "2 Yrs",
-        "key_ingredients": "Sesame Oil, soy, Chicken flavor"
-    },
-    "A-61150": {
-        "description": "AM GSG Candy 6 oz Bag",
-        "order_count": 61,
-        "total_qty_shipped": 29581,
-        "total_revenue": 1778162.3,
-        "avg_unit_cost": 30.0962,
-        "min_unit_cost": 21.43,
-        "max_unit_cost": 47.832,
-        "country_of_origin": "China",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Cane sugar, Ginger, Natural flavors"
-    },
-    "F-12122": {
-        "description": "Ferrero Rocher 12 Pcs",
-        "order_count": 236,
-        "total_qty_shipped": 20185,
-        "total_revenue": 1678689.12,
-        "avg_unit_cost": 43.9185,
-        "min_unit_cost": 38.07,
-        "max_unit_cost": 53.184,
-        "country_of_origin": "Poland",
-        "shelf_life_months": "6 Months",
-        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
-    },
-    "D-04037": {
-        "description": "POP Ginger H Cytl.Lemon 10ct(6x6)",
-        "order_count": 111,
-        "total_qty_shipped": 29282,
-        "total_revenue": 1640183.01,
-        "avg_unit_cost": 29.6781,
-        "min_unit_cost": 23.97,
-        "max_unit_cost": 40.28,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 months",
-        "key_ingredients": "Ginger, Lemon, Honey"
-    },
-    "F-04001": {
-        "description": "POP Ginger Chews Original 1 lb Bulk",
-        "order_count": 52,
-        "total_qty_shipped": 43017,
-        "total_revenue": 1583055.42,
-        "avg_unit_cost": 18.4831,
-        "min_unit_cost": 16.5,
-        "max_unit_cost": 23.676,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Peanuts, Coconut"
-    },
-    "D-04033": {
-        "description": "POP In Ginger H Cytl w/Turmeric 18gx25",
-        "order_count": 94,
-        "total_qty_shipped": 16220,
-        "total_revenue": 1531621.19,
-        "avg_unit_cost": 49.6855,
-        "min_unit_cost": 39.9,
-        "max_unit_cost": 66.686,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 months",
-        "key_ingredients": "Ginger, Turmeric, Honey"
-    },
-    "F-04117": {
-        "description": "POP Ginger Chews Blood Orange 4 oz (12ct/cs)",
-        "order_count": 87,
-        "total_qty_shipped": 124222,
-        "total_revenue": 1521891.9,
-        "avg_unit_cost": 6.3792,
-        "min_unit_cost": 5.66,
-        "max_unit_cost": 8.751,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Blood orange flavor, Peanuts"
-    },
-    "F-04074": {
-        "description": "POP Ginger Chews Lychee 8 oz",
-        "order_count": 78,
-        "total_qty_shipped": 95195,
-        "total_revenue": 1410912.37,
-        "avg_unit_cost": 7.7487,
-        "min_unit_cost": 6.9,
-        "max_unit_cost": 9.725,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Peanuts, Lychee, Ginger extract"
-    },
-    "F-97000": {
-        "description": "MX Eggrolls (32pcs)",
-        "order_count": 22,
-        "total_qty_shipped": 4855,
-        "total_revenue": 1325009.12,
-        "avg_unit_cost": 136.6369,
-        "min_unit_cost": 122.65,
-        "max_unit_cost": 156.196,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Wheat flour, Cabbage, Sesame oil"
-    },
-    "F-12418": {
-        "description": "Ferrero Rocher 24 pcs Diamond Display(48)",
-        "order_count": 65,
-        "total_qty_shipped": 1683,
-        "total_revenue": 1296168.73,
-        "avg_unit_cost": 390.2628,
-        "min_unit_cost": 346.32,
-        "max_unit_cost": 468.375,
-        "country_of_origin": "Poland",
-        "shelf_life_months": "6 Months",
-        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
-    },
-    "A-61117": {
-        "description": "AM GSG Candy 1 lb / Bag",
-        "order_count": 55,
-        "total_qty_shipped": 13492,
-        "total_revenue": 1267907.22,
-        "avg_unit_cost": 48.2149,
-        "min_unit_cost": 34.92,
-        "max_unit_cost": 73.09,
-        "country_of_origin": "China",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Cane sugar, Ginger, Natural flavors"
-    },
-    "F-76010": {
-        "description": "Kjeldsens 1 lb Danish Cookie(#98838)",
-        "order_count": 49,
-        "total_qty_shipped": 11121,
-        "total_revenue": 1154380.85,
-        "avg_unit_cost": 51.9001,
-        "min_unit_cost": 51.89,
-        "max_unit_cost": 52.29,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Wheat flour, Butter, Sugar"
-    },
-    "F-04075": {
-        "description": "POP Ginger Chews Blood Orange 8 oz",
-        "order_count": 71,
-        "total_qty_shipped": 75136,
-        "total_revenue": 1112109.41,
-        "avg_unit_cost": 7.8096,
-        "min_unit_cost": 6.9,
-        "max_unit_cost": 9.775,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Blood orange flavor, Coconut"
-    },
-    "F-12998": {
-        "description": "Ferrero Rocher 48's Flat Gift Box",
-        "order_count": 142,
-        "total_qty_shipped": 380,
-        "total_revenue": 964961.17,
-        "avg_unit_cost": 4429.6566,
-        "min_unit_cost": 194.832,
-        "max_unit_cost": 7906.64,
-        "country_of_origin": "Poland",
-        "shelf_life_months": "6 Months",
-        "key_ingredients": "tree nuts (hazelnuts), wheat, milk, soy"
-    },
-    "F-04118": {
-        "description": "POP Ginger Chews Pineapple Coconut 4 oz (12ct/cs)",
-        "order_count": 49,
-        "total_qty_shipped": 72124,
-        "total_revenue": 962583.56,
-        "avg_unit_cost": 7.438,
-        "min_unit_cost": 5.717,
-        "max_unit_cost": 28.677,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Pineapple flavor, Coconut"
-    },
-    "F-00491": {
-        "description": "Loacker Wafer Hazelnut 250g(#10491)",
-        "order_count": 51,
-        "total_qty_shipped": 18204,
-        "total_revenue": 851095.79,
-        "avg_unit_cost": 46.3909,
-        "min_unit_cost": 31.5,
-        "max_unit_cost": 47.0,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Hazelnuts, Wheat flour, Milk"
-    },
-    "D-13206": {
-        "description": "POP OG Green Tea 1.8gx100 (6ct/cs)",
-        "order_count": 64,
-        "total_qty_shipped": 40059,
-        "total_revenue": 715036.06,
-        "avg_unit_cost": 8.925,
-        "min_unit_cost": 7.92,
-        "max_unit_cost": 11.438,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 MONTHS",
-        "key_ingredients": "Green tea, EGCG, Antioxidants"
-    },
-    "D-14206": {
-        "description": "POP OG Jasmine Tea 1.8gx100 (6ct/cs)",
-        "order_count": 64,
-        "total_qty_shipped": 30502,
-        "total_revenue": 679958.2,
-        "avg_unit_cost": 11.2891,
-        "min_unit_cost": 9.6,
-        "max_unit_cost": 15.291,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 MONTHS",
-        "key_ingredients": "Jasmine green tea, Natural jasmine flavor, Antioxidants"
-    },
-    "D-15206": {
-        "description": "POP OG Oolong Tea 1.8gx100 (6ct/cs)",
-        "order_count": 56,
-        "total_qty_shipped": 35632,
-        "total_revenue": 652739.88,
-        "avg_unit_cost": 9.2632,
-        "min_unit_cost": 8.16,
-        "max_unit_cost": 11.759,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 MONTHS",
-        "key_ingredients": "Oolong tea, Polyphenols, Antioxidants"
-    },
-    "F-50139": {
-        "description": "Gavottes Crepes 500g",
-        "order_count": 19,
-        "total_qty_shipped": 8400,
-        "total_revenue": 587306.1,
-        "avg_unit_cost": 70.0146,
-        "min_unit_cost": 67.014,
-        "max_unit_cost": 72.579,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Wheat flour, Butter, Sugar"
-    },
-    "D-18206": {
-        "description": "POP OG White Tea 1.8gx100 (6ct/cs)",
-        "order_count": 60,
-        "total_qty_shipped": 27030,
-        "total_revenue": 574778.11,
-        "avg_unit_cost": 10.6391,
-        "min_unit_cost": 9.54,
-        "max_unit_cost": 13.606,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 MONTHS",
-        "key_ingredients": "White tea, L-theanine, Antioxidants"
-    },
-    "F-04131": {
-        "description": "POP Ginger Chews Plus+ Lemon 3 oz",
-        "order_count": 50,
-        "total_qty_shipped": 16377,
-        "total_revenue": 563529.01,
-        "avg_unit_cost": 18.6086,
-        "min_unit_cost": 13.4,
-        "max_unit_cost": 57.531,
-        "country_of_origin": "Indonesia",
-        "shelf_life_months": "24 months",
-        "key_ingredients": "Ginger extract, Lemon flavor, Peanuts"
-    },
-    "D-04032": {
-        "description": "POP In Ginger H Cytl w/Turmeric 10ct(6x6)",
-        "order_count": 86,
-        "total_qty_shipped": 9827,
-        "total_revenue": 545679.69,
-        "avg_unit_cost": 27.8205,
-        "min_unit_cost": 22.076,
-        "max_unit_cost": 37.959,
-        "country_of_origin": "China",
-        "shelf_life_months": "36 months",
-        "key_ingredients": "Ginger, Turmeric, Honey"
-    },
-    "F-50140": {
-        "description": "Gavottes Crepes 1250g #011120",
-        "order_count": 17,
-        "total_qty_shipped": 6220,
-        "total_revenue": 496381.72,
-        "avg_unit_cost": 80.7215,
-        "min_unit_cost": 77.572,
-        "max_unit_cost": 83.038,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Wheat flour, Butter, Sugar"
-    },
-    "J-63004": {
-        "description": "Mazola Corn Oil 40 oz",
-        "order_count": 45,
-        "total_qty_shipped": 10635,
-        "total_revenue": 472329.89,
-        "avg_unit_cost": 44.3284,
-        "min_unit_cost": 40.45,
-        "max_unit_cost": 52.8,
-        "country_of_origin": "USA",
-        "shelf_life_months": "1.5yrs",
-        "key_ingredients": "Corn oil, Vitamin E, Soy lecithin"
-    },
-    "D-03053": {
-        "description": "Blood Sugar Herbal Tea production D-03053",
-        "order_count": 7,
-        "total_qty_shipped": 150540,
-        "total_revenue": 125964.14,
-        "avg_unit_cost": 0.84,
-        "min_unit_cost": 0.819,
-        "max_unit_cost": 0.868,
-        "country_of_origin": "USA",
-        "shelf_life_months": "60",
-        "key_ingredients": "Gymnema sylvestre, Cinnamon, Berberine"
-    },
-    "D-03052": {
-        "description": "Blood Pressure Herbal Tea production D-03052",
-        "order_count": 6,
-        "total_qty_shipped": 132236,
-        "total_revenue": 111588.01,
-        "avg_unit_cost": 0.8435,
-        "min_unit_cost": 0.819,
-        "max_unit_cost": 0.868,
-        "country_of_origin": "USA",
-        "shelf_life_months": "60",
-        "key_ingredients": "Hibiscus, Hawthorn berry, Valerian root"
-    },
-    "D-03054": {
-        "description": "Cholesterol Herbal Tea production D-03054",
-        "order_count": 4,
-        "total_qty_shipped": 89064,
-        "total_revenue": 76413.21,
-        "avg_unit_cost": 0.8557,
-        "min_unit_cost": 0.819,
-        "max_unit_cost": 0.868,
-        "country_of_origin": "USA",
-        "shelf_life_months": "60",
-        "key_ingredients": "Red yeast rice, Psyllium husk, Green tea"
-    },
-    "F-00372": {
-        "description": "Loacker GP Bisc Noisette Choc 3.53oz(#10392)",
-        "order_count": 31,
-        "total_qty_shipped": 2389,
-        "total_revenue": 63258.2,
-        "avg_unit_cost": 26.3851,
-        "min_unit_cost": 25.608,
-        "max_unit_cost": 28.617,
-        "country_of_origin": "Italy",
-        "shelf_life_months": "13",
-        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
-    },
-    "F-00378": {
-        "description": "Loacker GP Dark Hazelnut 3.53oz(#10338)",
-        "order_count": 25,
-        "total_qty_shipped": 2047,
-        "total_revenue": 54124.32,
-        "avg_unit_cost": 26.4512,
-        "min_unit_cost": 25.608,
-        "max_unit_cost": 28.617,
-        "country_of_origin": "Italy",
-        "shelf_life_months": "13",
-        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
-    },
-    "F-00375": {
-        "description": "Loacker GP Bisc Cappuc Choc 3.53oz(#10398)",
-        "order_count": 22,
-        "total_qty_shipped": 1684,
-        "total_revenue": 44449.04,
-        "avg_unit_cost": 26.4294,
-        "min_unit_cost": 25.608,
-        "max_unit_cost": 28.617,
-        "country_of_origin": "Italy",
-        "shelf_life_months": "13",
-        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
-    },
-    "F-00373": {
-        "description": "Loacker GP White Coconut 3.53oz",
-        "order_count": 22,
-        "total_qty_shipped": 1548,
-        "total_revenue": 40969.19,
-        "avg_unit_cost": 26.5661,
-        "min_unit_cost": 25.608,
-        "max_unit_cost": 28.617,
-        "country_of_origin": "Italy",
-        "shelf_life_months": "13",
-        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
-    },
-    "F-00376": {
-        "description": "Loacker GP Bisc Coconut Choc 3.53oz(#10396)",
-        "order_count": 19,
-        "total_qty_shipped": 1522,
-        "total_revenue": 40113.89,
-        "avg_unit_cost": 26.4005,
-        "min_unit_cost": 25.608,
-        "max_unit_cost": 28.617,
-        "country_of_origin": "Italy",
-        "shelf_life_months": "13",
-        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
-    },
-    "F-00377": {
-        "description": "Loacker GP Bisc Orange Choc 3.53oz(#10397)",
-        "order_count": 12,
-        "total_qty_shipped": 839,
-        "total_revenue": 21864.87,
-        "avg_unit_cost": 26.3609,
-        "min_unit_cost": 25.608,
-        "max_unit_cost": 28.617,
-        "country_of_origin": "Italy",
-        "shelf_life_months": "13",
-        "key_ingredients": "Contains milk, hazelnuts,coconut, wheat and soy. May contain almonds,peanuts, and sesame"
-    },
-    "D-13200N": {
-        "description": "POP Organic Green Tea 1.8gx100",
-        "order_count": 2,
-        "total_qty_shipped": 350,
-        "total_revenue": 16366.0,
-        "avg_unit_cost": 46.76,
-        "min_unit_cost": 46.76,
-        "max_unit_cost": 46.76,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Organic green tea, EGCG, Antioxidants"
-    },
-    "D-18200N": {
-        "description": "POP Organic White Tea 1.8gx100",
-        "order_count": 1,
-        "total_qty_shipped": 220,
-        "total_revenue": 12209.56,
-        "avg_unit_cost": 55.498,
-        "min_unit_cost": 55.498,
-        "max_unit_cost": 55.498,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Organic white tea, L-theanine, Antioxidants"
-    },
-    "D-15200N": {
-        "description": "POP Organic Oolong Tea 1.8gx100",
-        "order_count": 1,
-        "total_qty_shipped": 240,
-        "total_revenue": 11539.44,
-        "avg_unit_cost": 48.081,
-        "min_unit_cost": 48.081,
-        "max_unit_cost": 48.081,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Organic oolong tea, Polyphenols, Antioxidants"
-    },
-    "D-14200N": {
-        "description": "POP Organic Jasmine Tea 1.8gx100",
-        "order_count": 2,
-        "total_qty_shipped": 200,
-        "total_revenue": 10571.6,
-        "avg_unit_cost": 54.1335,
-        "min_unit_cost": 52.477,
-        "max_unit_cost": 55.79,
-        "country_of_origin": null,
-        "shelf_life_months": null,
-        "key_ingredients": "Organic jasmine tea, Natural jasmine flavor, Antioxidants"
-    }
+  "T-31510": {
+    "description": "Tiger Balm 18g, Ultra/St",
+    "order_count": 186,
+    "total_qty_shipped": 650691,
+    "total_revenue": 39281589.11,
+    "avg_unit_cost": 31.4402,
+    "min_unit_cost": 29.319,
+    "max_unit_cost": 36.87,
+    "country_of_origin": "China",
+    "shelf_life_months": "4 years",
+    "key_ingredients": [
+      "Camphor",
+      "Menthol",
+      "Cajuput oil"
+    ]
+  },
+  "T-32206": {
+    "description": "Tiger Balm Patch Warm (MM)",
+    "order_count": 210,
+    "total_qty_shipped": 6160027,
+    "total_revenue": 23493967.78,
+    "avg_unit_cost": 1.9653,
+    "min_unit_cost": 1.882,
+    "max_unit_cost": 2.332,
+    "country_of_origin": "Malaysia",
+    "shelf_life_months": "3 years",
+    "key_ingredients": [
+      "Capsaicin",
+      "Menthol",
+      "Methyl salicylate"
+    ]
+  },
+  "T-22010": {
+    "description": "Tiger Balm 18g Red, Ext/St(MM)",
+    "order_count": 207,
+    "total_qty_shipped": 437157,
+    "total_revenue": 22451187.66,
+    "avg_unit_cost": 26.7249,
+    "min_unit_cost": 24.81,
+    "max_unit_cost": 31.647,
+    "country_of_origin": "China",
+    "shelf_life_months": "4 years",
+    "key_ingredients": [
+      "Camphor",
+      "Clove oil",
+      "Menthol"
+    ]
+  },
+  "T-31541": {
+    "description": "Tiger Balm 50g, Ultra/St",
+    "order_count": 107,
+    "total_qty_shipped": 176838,
+    "total_revenue": 18610831.2,
+    "avg_unit_cost": 54.0922,
+    "min_unit_cost": 50.57,
+    "max_unit_cost": 63.519,
+    "country_of_origin": "China",
+    "shelf_life_months": "4 years",
+    "key_ingredients": [
+      "Camphor",
+      "Menthol",
+      "Cajuput oil"
+    ]
+  },
+  "T-31520": {
+    "description": "Tiger Balm Ultra 10g",
+    "order_count": 113,
+    "total_qty_shipped": 283546,
+    "total_revenue": 9917780.05,
+    "avg_unit_cost": 18.3613,
+    "min_unit_cost": 17.337,
+    "max_unit_cost": 21.758,
+    "country_of_origin": "China",
+    "shelf_life_months": "4 years",
+    "key_ingredients": [
+      "Camphor",
+      "Menthol",
+      "Paraffin"
+    ]
+  },
+  "F-04111": {
+    "description": "POP Ginger Chews Original 4 oz (12ct/cs)",
+    "order_count": 187,
+    "total_qty_shipped": 630970,
+    "total_revenue": 6669302.02,
+    "avg_unit_cost": 5.4781,
+    "min_unit_cost": 4.51,
+    "max_unit_cost": 7.25,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Peanuts",
+      "Coconut"
+    ]
+  },
+  "T-47010": {
+    "description": "Kwan Loong Oil 2 fl oz",
+    "order_count": 94,
+    "total_qty_shipped": 103958,
+    "total_revenue": 6262459.08,
+    "avg_unit_cost": 30.6741,
+    "min_unit_cost": 24.08,
+    "max_unit_cost": 36.432,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Eucalyptus oil",
+      "Menthol",
+      "Lavender oil"
+    ]
+  },
+  "T-32202": {
+    "description": "Tiger Balm Single Patch 12ct/disp",
+    "order_count": 72,
+    "total_qty_shipped": 487744,
+    "total_revenue": 6170726.5,
+    "avg_unit_cost": 6.4713,
+    "min_unit_cost": 5.512,
+    "max_unit_cost": 8.877,
+    "country_of_origin": "Malaysia",
+    "shelf_life_months": "3 years",
+    "key_ingredients": [
+      "Methyl salicylate",
+      "Menthol",
+      "Capsaicin"
+    ]
+  },
+  "T-32300": {
+    "description": "Tiger Balm Patch - Large",
+    "order_count": 93,
+    "total_qty_shipped": 87386,
+    "total_revenue": 5428768.75,
+    "avg_unit_cost": 23.2359,
+    "min_unit_cost": 2.575,
+    "max_unit_cost": 38.419,
+    "country_of_origin": "Taiwan",
+    "shelf_life_months": "3 years",
+    "key_ingredients": [
+      "Menthol",
+      "Methyl salicylate",
+      "Camphor"
+    ]
+  },
+  "T-31510R": {
+    "description": "Tiger Balm 18g, Ultra/St - RFID",
+    "order_count": 110,
+    "total_qty_shipped": 78641,
+    "total_revenue": 4787142.9,
+    "avg_unit_cost": 31.573,
+    "min_unit_cost": 29.319,
+    "max_unit_cost": 37.385,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Camphor",
+      "Menthol",
+      "Cajuput oil"
+    ]
+  },
+  "F-04070": {
+    "description": "POP Ginger Chews Original 8 oz",
+    "order_count": 196,
+    "total_qty_shipped": 273085,
+    "total_revenue": 4380074.69,
+    "avg_unit_cost": 8.1361,
+    "min_unit_cost": 6.51,
+    "max_unit_cost": 10.305,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Peanuts",
+      "Coconut"
+    ]
+  },
+  "J-63006": {
+    "description": "Mazola Corn Oil 128 oz (1 gal)",
+    "order_count": 88,
+    "total_qty_shipped": 62317,
+    "total_revenue": 4168902.12,
+    "avg_unit_cost": 67.2035,
+    "min_unit_cost": 57.12,
+    "max_unit_cost": 86.28,
+    "country_of_origin": "USA",
+    "shelf_life_months": "1.5yrs",
+    "key_ingredients": [
+      "Corn oil",
+      "Vitamin E",
+      "Soy lecithin"
+    ]
+  },
+  "D-04011": {
+    "description": "POP In Ginger Honey Cytl 18gx30",
+    "order_count": 137,
+    "total_qty_shipped": 39825,
+    "total_revenue": 4057634.52,
+    "avg_unit_cost": 52.4373,
+    "min_unit_cost": 42.35,
+    "max_unit_cost": 70.725,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 months",
+    "key_ingredients": [
+      "Ginger",
+      "Honey",
+      "Chrysanthemum"
+    ]
+  },
+  "F-04112": {
+    "description": "POP Ginger Chews Lemon 4 oz (12ct/cs)",
+    "order_count": 121,
+    "total_qty_shipped": 279974,
+    "total_revenue": 3435514.76,
+    "avg_unit_cost": 6.3462,
+    "min_unit_cost": 5.66,
+    "max_unit_cost": 8.647,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Lemon flavor",
+      "Peanuts"
+    ]
+  },
+  "F-12402": {
+    "description": "Ferrero Rocher 24 Pcs Diamond",
+    "order_count": 259,
+    "total_qty_shipped": 37179,
+    "total_revenue": 3411702.57,
+    "avg_unit_cost": 49.0507,
+    "min_unit_cost": 43.29,
+    "max_unit_cost": 60.05,
+    "country_of_origin": "Poland",
+    "shelf_life_months": "6 Months",
+    "key_ingredients": [
+      "tree nuts (hazelnuts)",
+      "wheat",
+      "milk",
+      "soy"
+    ]
+  },
+  "F-04211": {
+    "description": "POP Ginger Chews Original 2 oz",
+    "order_count": 86,
+    "total_qty_shipped": 78153,
+    "total_revenue": 3028892.87,
+    "avg_unit_cost": 19.3639,
+    "min_unit_cost": 17.2,
+    "max_unit_cost": 24.083,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Peanuts",
+      "Coconut"
+    ]
+  },
+  "F-04071": {
+    "description": "POP Ginger Chews Lemon 8 oz",
+    "order_count": 160,
+    "total_qty_shipped": 179798,
+    "total_revenue": 3010844.55,
+    "avg_unit_cost": 8.3784,
+    "min_unit_cost": 6.76,
+    "max_unit_cost": 10.571,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Lemon flavor",
+      "Peanuts"
+    ]
+  },
+  "F-04073": {
+    "description": "POP Ginger Chews Mango 8 oz",
+    "order_count": 122,
+    "total_qty_shipped": 192090,
+    "total_revenue": 2872230.3,
+    "avg_unit_cost": 7.8087,
+    "min_unit_cost": 6.9,
+    "max_unit_cost": 9.725,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Mango flavor",
+      "Coconut"
+    ]
+  },
+  "F-04076": {
+    "description": "POP Ginger Chews Assorted 8 oz",
+    "order_count": 100,
+    "total_qty_shipped": 137497,
+    "total_revenue": 2591147.66,
+    "avg_unit_cost": 9.8028,
+    "min_unit_cost": 6.9,
+    "max_unit_cost": 55.622,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Peanuts",
+      "Lychee",
+      "Ginger extract"
+    ]
+  },
+  "D-04061": {
+    "description": "POP Ginger Honey Cytl Original 10ct(6x6)",
+    "order_count": 146,
+    "total_qty_shipped": 45671,
+    "total_revenue": 2542699.14,
+    "avg_unit_cost": 27.7866,
+    "min_unit_cost": 22.43,
+    "max_unit_cost": 38.063,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 months",
+    "key_ingredients": [
+      "Ginger",
+      "Honey",
+      "Chrysanthemum"
+    ]
+  },
+  "F-04114": {
+    "description": "POP Ginger Chews Mango 4 oz (12ct/cs)",
+    "order_count": 97,
+    "total_qty_shipped": 206980,
+    "total_revenue": 2482355.75,
+    "avg_unit_cost": 6.3494,
+    "min_unit_cost": 5.66,
+    "max_unit_cost": 8.751,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Mango flavor",
+      "Coconut"
+    ]
+  },
+  "D-04043": {
+    "description": "POP In Ginger H Cytl w/Lemon 18gx30",
+    "order_count": 108,
+    "total_qty_shipped": 21561,
+    "total_revenue": 2148988.17,
+    "avg_unit_cost": 52.5577,
+    "min_unit_cost": 42.35,
+    "max_unit_cost": 70.725,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 months",
+    "key_ingredients": [
+      "Ginger",
+      "Lemon",
+      "Honey"
+    ]
+  },
+  "F-20141": {
+    "description": "Ferrero Coll. 24 pcs (w/Hazelnut)#20148",
+    "order_count": 253,
+    "total_qty_shipped": 21543,
+    "total_revenue": 1986789.57,
+    "avg_unit_cost": 49.2073,
+    "min_unit_cost": 43.29,
+    "max_unit_cost": 60.05,
+    "country_of_origin": "Poland",
+    "shelf_life_months": "5 Months",
+    "key_ingredients": [
+      "tree nuts (hazelnuts)",
+      "wheat",
+      "milk",
+      "soy"
+    ]
+  },
+  "F-04130": {
+    "description": "POP Ginger Chews Plus+ Original 3 oz",
+    "order_count": 70,
+    "total_qty_shipped": 54893,
+    "total_revenue": 1847895.42,
+    "avg_unit_cost": 18.4212,
+    "min_unit_cost": 13.4,
+    "max_unit_cost": 70.635,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Peanuts",
+      "Coconut"
+    ]
+  },
+  "J-72402": {
+    "description": "Totole Chicken Bouillon 2.2 lbs",
+    "order_count": 121,
+    "total_qty_shipped": 11614,
+    "total_revenue": 1797140.0,
+    "avg_unit_cost": 84.9072,
+    "min_unit_cost": 77.69,
+    "max_unit_cost": 93.0,
+    "country_of_origin": "China",
+    "shelf_life_months": "2 Yrs",
+    "key_ingredients": [
+      "Sesame Oil",
+      "soy",
+      "Chicken flavor"
+    ]
+  },
+  "A-61150": {
+    "description": "AM GSG Candy 6 oz Bag",
+    "order_count": 61,
+    "total_qty_shipped": 29581,
+    "total_revenue": 1778162.3,
+    "avg_unit_cost": 30.0962,
+    "min_unit_cost": 21.43,
+    "max_unit_cost": 47.832,
+    "country_of_origin": "China",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Cane sugar",
+      "Ginger",
+      "Natural flavors"
+    ]
+  },
+  "F-12122": {
+    "description": "Ferrero Rocher 12 Pcs",
+    "order_count": 236,
+    "total_qty_shipped": 20185,
+    "total_revenue": 1678689.12,
+    "avg_unit_cost": 43.9185,
+    "min_unit_cost": 38.07,
+    "max_unit_cost": 53.184,
+    "country_of_origin": "Poland",
+    "shelf_life_months": "6 Months",
+    "key_ingredients": [
+      "tree nuts (hazelnuts)",
+      "wheat",
+      "milk",
+      "soy"
+    ]
+  },
+  "D-04037": {
+    "description": "POP Ginger H Cytl.Lemon 10ct(6x6)",
+    "order_count": 111,
+    "total_qty_shipped": 29282,
+    "total_revenue": 1640183.01,
+    "avg_unit_cost": 29.6781,
+    "min_unit_cost": 23.97,
+    "max_unit_cost": 40.28,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 months",
+    "key_ingredients": [
+      "Ginger",
+      "Lemon",
+      "Honey"
+    ]
+  },
+  "F-04001": {
+    "description": "POP Ginger Chews Original 1 lb Bulk",
+    "order_count": 52,
+    "total_qty_shipped": 43017,
+    "total_revenue": 1583055.42,
+    "avg_unit_cost": 18.4831,
+    "min_unit_cost": 16.5,
+    "max_unit_cost": 23.676,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Peanuts",
+      "Coconut"
+    ]
+  },
+  "D-04033": {
+    "description": "POP In Ginger H Cytl w/Turmeric 18gx25",
+    "order_count": 94,
+    "total_qty_shipped": 16220,
+    "total_revenue": 1531621.19,
+    "avg_unit_cost": 49.6855,
+    "min_unit_cost": 39.9,
+    "max_unit_cost": 66.686,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 months",
+    "key_ingredients": [
+      "Ginger",
+      "Turmeric",
+      "Honey"
+    ]
+  },
+  "F-04117": {
+    "description": "POP Ginger Chews Blood Orange 4 oz (12ct/cs)",
+    "order_count": 87,
+    "total_qty_shipped": 124222,
+    "total_revenue": 1521891.9,
+    "avg_unit_cost": 6.3792,
+    "min_unit_cost": 5.66,
+    "max_unit_cost": 8.751,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Blood orange flavor",
+      "Peanuts"
+    ]
+  },
+  "F-04074": {
+    "description": "POP Ginger Chews Lychee 8 oz",
+    "order_count": 78,
+    "total_qty_shipped": 95195,
+    "total_revenue": 1410912.37,
+    "avg_unit_cost": 7.7487,
+    "min_unit_cost": 6.9,
+    "max_unit_cost": 9.725,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Peanuts",
+      "Lychee",
+      "Ginger extract"
+    ]
+  },
+  "F-97000": {
+    "description": "MX Eggrolls (32pcs)",
+    "order_count": 22,
+    "total_qty_shipped": 4855,
+    "total_revenue": 1325009.12,
+    "avg_unit_cost": 136.6369,
+    "min_unit_cost": 122.65,
+    "max_unit_cost": 156.196,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Wheat flour",
+      "Cabbage",
+      "Sesame oil"
+    ]
+  },
+  "F-12418": {
+    "description": "Ferrero Rocher 24 pcs Diamond Display(48)",
+    "order_count": 65,
+    "total_qty_shipped": 1683,
+    "total_revenue": 1296168.73,
+    "avg_unit_cost": 390.2628,
+    "min_unit_cost": 346.32,
+    "max_unit_cost": 468.375,
+    "country_of_origin": "Poland",
+    "shelf_life_months": "6 Months",
+    "key_ingredients": [
+      "tree nuts (hazelnuts)",
+      "wheat",
+      "milk",
+      "soy"
+    ]
+  },
+  "A-61117": {
+    "description": "AM GSG Candy 1 lb / Bag",
+    "order_count": 55,
+    "total_qty_shipped": 13492,
+    "total_revenue": 1267907.22,
+    "avg_unit_cost": 48.2149,
+    "min_unit_cost": 34.92,
+    "max_unit_cost": 73.09,
+    "country_of_origin": "China",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Cane sugar",
+      "Ginger",
+      "Natural flavors"
+    ]
+  },
+  "F-76010": {
+    "description": "Kjeldsens 1 lb Danish Cookie(#98838)",
+    "order_count": 49,
+    "total_qty_shipped": 11121,
+    "total_revenue": 1154380.85,
+    "avg_unit_cost": 51.9001,
+    "min_unit_cost": 51.89,
+    "max_unit_cost": 52.29,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Wheat flour",
+      "Butter",
+      "Sugar"
+    ]
+  },
+  "F-04075": {
+    "description": "POP Ginger Chews Blood Orange 8 oz",
+    "order_count": 71,
+    "total_qty_shipped": 75136,
+    "total_revenue": 1112109.41,
+    "avg_unit_cost": 7.8096,
+    "min_unit_cost": 6.9,
+    "max_unit_cost": 9.775,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Blood orange flavor",
+      "Coconut"
+    ]
+  },
+  "F-12998": {
+    "description": "Ferrero Rocher 48's Flat Gift Box",
+    "order_count": 142,
+    "total_qty_shipped": 380,
+    "total_revenue": 964961.17,
+    "avg_unit_cost": 4429.6566,
+    "min_unit_cost": 194.832,
+    "max_unit_cost": 7906.64,
+    "country_of_origin": "Poland",
+    "shelf_life_months": "6 Months",
+    "key_ingredients": [
+      "tree nuts (hazelnuts)",
+      "wheat",
+      "milk",
+      "soy"
+    ]
+  },
+  "F-04118": {
+    "description": "POP Ginger Chews Pineapple Coconut 4 oz (12ct/cs)",
+    "order_count": 49,
+    "total_qty_shipped": 72124,
+    "total_revenue": 962583.56,
+    "avg_unit_cost": 7.438,
+    "min_unit_cost": 5.717,
+    "max_unit_cost": 28.677,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Pineapple flavor",
+      "Coconut"
+    ]
+  },
+  "F-00491": {
+    "description": "Loacker Wafer Hazelnut 250g(#10491)",
+    "order_count": 51,
+    "total_qty_shipped": 18204,
+    "total_revenue": 851095.79,
+    "avg_unit_cost": 46.3909,
+    "min_unit_cost": 31.5,
+    "max_unit_cost": 47.0,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Hazelnuts",
+      "Wheat flour",
+      "Milk"
+    ]
+  },
+  "D-13206": {
+    "description": "POP OG Green Tea 1.8gx100 (6ct/cs)",
+    "order_count": 64,
+    "total_qty_shipped": 40059,
+    "total_revenue": 715036.06,
+    "avg_unit_cost": 8.925,
+    "min_unit_cost": 7.92,
+    "max_unit_cost": 11.438,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 MONTHS",
+    "key_ingredients": [
+      "Green tea",
+      "EGCG",
+      "Antioxidants"
+    ]
+  },
+  "D-14206": {
+    "description": "POP OG Jasmine Tea 1.8gx100 (6ct/cs)",
+    "order_count": 64,
+    "total_qty_shipped": 30502,
+    "total_revenue": 679958.2,
+    "avg_unit_cost": 11.2891,
+    "min_unit_cost": 9.6,
+    "max_unit_cost": 15.291,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 MONTHS",
+    "key_ingredients": [
+      "Jasmine green tea",
+      "Natural jasmine flavor",
+      "Antioxidants"
+    ]
+  },
+  "D-15206": {
+    "description": "POP OG Oolong Tea 1.8gx100 (6ct/cs)",
+    "order_count": 56,
+    "total_qty_shipped": 35632,
+    "total_revenue": 652739.88,
+    "avg_unit_cost": 9.2632,
+    "min_unit_cost": 8.16,
+    "max_unit_cost": 11.759,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 MONTHS",
+    "key_ingredients": [
+      "Oolong tea",
+      "Polyphenols",
+      "Antioxidants"
+    ]
+  },
+  "F-50139": {
+    "description": "Gavottes Crepes 500g",
+    "order_count": 19,
+    "total_qty_shipped": 8400,
+    "total_revenue": 587306.1,
+    "avg_unit_cost": 70.0146,
+    "min_unit_cost": 67.014,
+    "max_unit_cost": 72.579,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Wheat flour",
+      "Butter",
+      "Sugar"
+    ]
+  },
+  "D-18206": {
+    "description": "POP OG White Tea 1.8gx100 (6ct/cs)",
+    "order_count": 60,
+    "total_qty_shipped": 27030,
+    "total_revenue": 574778.11,
+    "avg_unit_cost": 10.6391,
+    "min_unit_cost": 9.54,
+    "max_unit_cost": 13.606,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 MONTHS",
+    "key_ingredients": [
+      "White tea",
+      "L-theanine",
+      "Antioxidants"
+    ]
+  },
+  "F-04131": {
+    "description": "POP Ginger Chews Plus+ Lemon 3 oz",
+    "order_count": 50,
+    "total_qty_shipped": 16377,
+    "total_revenue": 563529.01,
+    "avg_unit_cost": 18.6086,
+    "min_unit_cost": 13.4,
+    "max_unit_cost": 57.531,
+    "country_of_origin": "Indonesia",
+    "shelf_life_months": "24 months",
+    "key_ingredients": [
+      "Ginger extract",
+      "Lemon flavor",
+      "Peanuts"
+    ]
+  },
+  "D-04032": {
+    "description": "POP In Ginger H Cytl w/Turmeric 10ct(6x6)",
+    "order_count": 86,
+    "total_qty_shipped": 9827,
+    "total_revenue": 545679.69,
+    "avg_unit_cost": 27.8205,
+    "min_unit_cost": 22.076,
+    "max_unit_cost": 37.959,
+    "country_of_origin": "China",
+    "shelf_life_months": "36 months",
+    "key_ingredients": [
+      "Ginger",
+      "Turmeric",
+      "Honey"
+    ]
+  },
+  "F-50140": {
+    "description": "Gavottes Crepes 1250g #011120",
+    "order_count": 17,
+    "total_qty_shipped": 6220,
+    "total_revenue": 496381.72,
+    "avg_unit_cost": 80.7215,
+    "min_unit_cost": 77.572,
+    "max_unit_cost": 83.038,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Wheat flour",
+      "Butter",
+      "Sugar"
+    ]
+  },
+  "J-63004": {
+    "description": "Mazola Corn Oil 40 oz",
+    "order_count": 45,
+    "total_qty_shipped": 10635,
+    "total_revenue": 472329.89,
+    "avg_unit_cost": 44.3284,
+    "min_unit_cost": 40.45,
+    "max_unit_cost": 52.8,
+    "country_of_origin": "USA",
+    "shelf_life_months": "1.5yrs",
+    "key_ingredients": [
+      "Corn oil",
+      "Vitamin E",
+      "Soy lecithin"
+    ]
+  },
+  "D-03053": {
+    "description": "Blood Sugar Herbal Tea production D-03053",
+    "order_count": 7,
+    "total_qty_shipped": 150540,
+    "total_revenue": 125964.14,
+    "avg_unit_cost": 0.84,
+    "min_unit_cost": 0.819,
+    "max_unit_cost": 0.868,
+    "country_of_origin": "USA",
+    "shelf_life_months": "60",
+    "key_ingredients": [
+      "Gymnema sylvestre",
+      "Cinnamon",
+      "Berberine"
+    ]
+  },
+  "D-03052": {
+    "description": "Blood Pressure Herbal Tea production D-03052",
+    "order_count": 6,
+    "total_qty_shipped": 132236,
+    "total_revenue": 111588.01,
+    "avg_unit_cost": 0.8435,
+    "min_unit_cost": 0.819,
+    "max_unit_cost": 0.868,
+    "country_of_origin": "USA",
+    "shelf_life_months": "60",
+    "key_ingredients": [
+      "Hibiscus",
+      "Hawthorn berry",
+      "Valerian root"
+    ]
+  },
+  "D-03054": {
+    "description": "Cholesterol Herbal Tea production D-03054",
+    "order_count": 4,
+    "total_qty_shipped": 89064,
+    "total_revenue": 76413.21,
+    "avg_unit_cost": 0.8557,
+    "min_unit_cost": 0.819,
+    "max_unit_cost": 0.868,
+    "country_of_origin": "USA",
+    "shelf_life_months": "60",
+    "key_ingredients": [
+      "Red yeast rice",
+      "Psyllium husk",
+      "Green tea"
+    ]
+  },
+  "F-00372": {
+    "description": "Loacker GP Bisc Noisette Choc 3.53oz(#10392)",
+    "order_count": 31,
+    "total_qty_shipped": 2389,
+    "total_revenue": 63258.2,
+    "avg_unit_cost": 26.3851,
+    "min_unit_cost": 25.608,
+    "max_unit_cost": 28.617,
+    "country_of_origin": "Italy",
+    "shelf_life_months": "13",
+    "key_ingredients": [
+      "Contains milk",
+      "hazelnuts",
+      "coconut",
+      "wheat and soy. May contain almonds",
+      "peanuts",
+      "and sesame"
+    ]
+  },
+  "F-00378": {
+    "description": "Loacker GP Dark Hazelnut 3.53oz(#10338)",
+    "order_count": 25,
+    "total_qty_shipped": 2047,
+    "total_revenue": 54124.32,
+    "avg_unit_cost": 26.4512,
+    "min_unit_cost": 25.608,
+    "max_unit_cost": 28.617,
+    "country_of_origin": "Italy",
+    "shelf_life_months": "13",
+    "key_ingredients": [
+      "Contains milk",
+      "hazelnuts",
+      "coconut",
+      "wheat and soy. May contain almonds",
+      "peanuts",
+      "and sesame"
+    ]
+  },
+  "F-00375": {
+    "description": "Loacker GP Bisc Cappuc Choc 3.53oz(#10398)",
+    "order_count": 22,
+    "total_qty_shipped": 1684,
+    "total_revenue": 44449.04,
+    "avg_unit_cost": 26.4294,
+    "min_unit_cost": 25.608,
+    "max_unit_cost": 28.617,
+    "country_of_origin": "Italy",
+    "shelf_life_months": "13",
+    "key_ingredients": [
+      "Contains milk",
+      "hazelnuts",
+      "coconut",
+      "wheat and soy. May contain almonds",
+      "peanuts",
+      "and sesame"
+    ]
+  },
+  "F-00373": {
+    "description": "Loacker GP White Coconut 3.53oz",
+    "order_count": 22,
+    "total_qty_shipped": 1548,
+    "total_revenue": 40969.19,
+    "avg_unit_cost": 26.5661,
+    "min_unit_cost": 25.608,
+    "max_unit_cost": 28.617,
+    "country_of_origin": "Italy",
+    "shelf_life_months": "13",
+    "key_ingredients": [
+      "Contains milk",
+      "hazelnuts",
+      "coconut",
+      "wheat and soy. May contain almonds",
+      "peanuts",
+      "and sesame"
+    ]
+  },
+  "F-00376": {
+    "description": "Loacker GP Bisc Coconut Choc 3.53oz(#10396)",
+    "order_count": 19,
+    "total_qty_shipped": 1522,
+    "total_revenue": 40113.89,
+    "avg_unit_cost": 26.4005,
+    "min_unit_cost": 25.608,
+    "max_unit_cost": 28.617,
+    "country_of_origin": "Italy",
+    "shelf_life_months": "13",
+    "key_ingredients": [
+      "Contains milk",
+      "hazelnuts",
+      "coconut",
+      "wheat and soy. May contain almonds",
+      "peanuts",
+      "and sesame"
+    ]
+  },
+  "F-00377": {
+    "description": "Loacker GP Bisc Orange Choc 3.53oz(#10397)",
+    "order_count": 12,
+    "total_qty_shipped": 839,
+    "total_revenue": 21864.87,
+    "avg_unit_cost": 26.3609,
+    "min_unit_cost": 25.608,
+    "max_unit_cost": 28.617,
+    "country_of_origin": "Italy",
+    "shelf_life_months": "13",
+    "key_ingredients": [
+      "Contains milk",
+      "hazelnuts",
+      "coconut",
+      "wheat and soy. May contain almonds",
+      "peanuts",
+      "and sesame"
+    ]
+  },
+  "D-13200N": {
+    "description": "POP Organic Green Tea 1.8gx100",
+    "order_count": 2,
+    "total_qty_shipped": 350,
+    "total_revenue": 16366.0,
+    "avg_unit_cost": 46.76,
+    "min_unit_cost": 46.76,
+    "max_unit_cost": 46.76,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Organic green tea",
+      "EGCG",
+      "Antioxidants"
+    ]
+  },
+  "D-18200N": {
+    "description": "POP Organic White Tea 1.8gx100",
+    "order_count": 1,
+    "total_qty_shipped": 220,
+    "total_revenue": 12209.56,
+    "avg_unit_cost": 55.498,
+    "min_unit_cost": 55.498,
+    "max_unit_cost": 55.498,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Organic white tea",
+      "L-theanine",
+      "Antioxidants"
+    ]
+  },
+  "D-15200N": {
+    "description": "POP Organic Oolong Tea 1.8gx100",
+    "order_count": 1,
+    "total_qty_shipped": 240,
+    "total_revenue": 11539.44,
+    "avg_unit_cost": 48.081,
+    "min_unit_cost": 48.081,
+    "max_unit_cost": 48.081,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Organic oolong tea",
+      "Polyphenols",
+      "Antioxidants"
+    ]
+  },
+  "D-14200N": {
+    "description": "POP Organic Jasmine Tea 1.8gx100",
+    "order_count": 2,
+    "total_qty_shipped": 200,
+    "total_revenue": 10571.6,
+    "avg_unit_cost": 54.1335,
+    "min_unit_cost": 52.477,
+    "max_unit_cost": 55.79,
+    "country_of_origin": null,
+    "shelf_life_months": null,
+    "key_ingredients": [
+      "Organic jasmine tea",
+      "Natural jasmine flavor",
+      "Antioxidants"
+    ]
+  }
 }
