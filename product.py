@@ -103,13 +103,11 @@ class _NewProductBase:
 class GoogleTrendProduct(_NewProductBase):
     """A trending search query from Google Trends related_queries."""
 
-    def __init__(self, query: str, value: int, category_trends: dict, category: str = None):
+    def __init__(self, query: str, value: int, category_trends: dict):
         super().__init__()
         self.description      = query
         self.value            = value
         self._category_trends = category_trends
-        self._category        = category  # already known from registry, skip re-classification
-        self._category_sim    = 1.0 if category else None
 
     @property
     def signal_score(self) -> float:
@@ -200,7 +198,7 @@ class TrendRegistry:
         for category, trends in _trends_data.items():
             top = trends.get("related_queries", {}).get("top", [])[:5]
             self._by_category[category] = [
-                GoogleTrendProduct(item["query"], item["value"], trends, category=category)
+                GoogleTrendProduct(item["query"], item["value"], trends)
                 for item in top
             ]
         self._built = True
