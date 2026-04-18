@@ -35,6 +35,22 @@ def get_categories():
         _save_embeddings(embeddings_path, category_embeddings)
     return category_embeddings
 
+def get_newdataset_categories():
+  
+    embeddings_path = BASE / "new_dataset_embeddings.json"
+    if embeddings_path.exists():
+        with embeddings_path.open("r", encoding="utf-8") as f:
+            new_embeddings = {k: np.array(v) for k, v in json.load(f).items()}
+    else:
+        with (BASE / "new_dataset.json").open("r", encoding="utf-8") as f:
+            new_embeddings = json.load(f)
+        new_embeddings = {
+            category: model.encode(category)
+            for category in new_embeddings.keys()
+        }
+        _save_embeddings(embeddings_path, new_embeddings)
+    return new_embeddings
+
 
 def get_product_descriptions():
     embeddings_path = BASE / "product_descr_embeddings.json"
@@ -84,6 +100,37 @@ def classify_product_by_keyword(keyword: str) -> tuple[str, float]:
     category, score = classify_product_by_category(keyword)
     return category, score
 
+def classify_product_newdataset(product_name) -> Tuple[Optional[str], float]:
+    new_embeddings = get_newdataset_categories()
+    name_lower = product_name.lower()
+    product_embedding = model.encode(name_lower)
+    best_match, max_similarity = None, -1.0
+    for name, emb in new_embeddings.items():
+        if name_lower in name.lower():
+            return name, 1.0
+        sim = float(cosine_similarity([product_embedding], [emb])[0][0])
+        if sim > max_similarity:
+            max_similarity = sim
+            best_match = name
+    return best_match, max_similarity
+
+def get_newdataset_entry(product_name) -> Tuple[Optional[str], Optional[dict], float]:
+    """Returns (name, full_data_dict, similarity) for the closest new_dataset.json entry."""
+    with (BASE / "new_dataset.json").open("r", encoding="utf-8") as f:
+        new_dataset = json.load(f)
+    new_embeddings = get_newdataset_categories()
+    name_lower = product_name.lower()
+    product_embedding = model.encode(name_lower)
+    best_match, max_similarity = None, -1.0
+    for name, emb in new_embeddings.items():
+        if name_lower in name.lower():
+            return name, new_dataset.get(name), 1.0
+        sim = float(cosine_similarity([product_embedding], [emb])[0][0])
+        if sim > max_similarity:
+            max_similarity = sim
+            best_match = name
+    return best_match, new_dataset.get(best_match) if best_match else None, max_similarity
+
 
 def classify_product_by_description(product_name) -> Tuple[Optional[str], float]:
     """Returns (product_id, similarity_score). Score is 1.0 for exact string matches."""
@@ -104,8 +151,12 @@ def classify_product_by_description(product_name) -> Tuple[Optional[str], float]
 
 if __name__ == "__main__":
     # Example usage
-    category_embeddings = get_categories()
-    print("Category Embeddings:", category_embeddings)
+    #category_embeddings = get_categories()
+    #print("Category Embeddings:", category_embeddings)
 
-    product_descr_embeddings = get_product_descriptions()
-    print("Product Description Embeddings:", product_descr_embeddings)
+    #product_descr_embeddings = get_product_descriptions()
+    #print("Product Description Embeddings:", product_descr_embeddings)
+
+    new_embeddings = get_newdataset_categories()
+    print("New Dataset Embeddings:", new_embeddings)
+
