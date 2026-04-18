@@ -12,6 +12,12 @@ with (BASE / "product_sales_summary.json").open("r", encoding="utf-8") as f:
     product_sales_summary = json.load(f)
 
 
+def _save_embeddings(path: Path, embeddings: dict) -> None:
+    entries = {k: v.tolist() for k, v in embeddings.items()}
+    lines = [f"  {json.dumps(k)}: {json.dumps(v)}" for k, v in entries.items()]
+    path.write_text("{\n" + ",\n".join(lines) + "\n}\n", encoding="utf-8")
+
+
 def get_categories():
   
     embeddings_path = BASE / "category_embeddings.json"
@@ -25,8 +31,7 @@ def get_categories():
             category: model.encode(category)
             for category in categories.keys()
         }
-        with embeddings_path.open("w", encoding="utf-8") as f:
-            json.dump({k: v.tolist() for k, v in category_embeddings.items()}, f)
+        _save_embeddings(embeddings_path, category_embeddings)
     return category_embeddings
 
 
@@ -40,8 +45,7 @@ def get_product_descriptions():
             product_id: model.encode(product["description"])
             for product_id, product in product_sales_summary.items()
         }
-        with embeddings_path.open("w", encoding="utf-8") as f:
-            json.dump({k: v.tolist() for k, v in product_descr_embeddings.items()}, f)
+        _save_embeddings(embeddings_path, product_descr_embeddings)
 
     return product_descr_embeddings
 
