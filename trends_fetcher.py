@@ -54,12 +54,49 @@ for category, keywords in categories.items():
             'related_queries': related_data
         }
 
-        # Rate limiting: wait 60 seconds between requests to avoid 429 errors
-        time.sleep(60)
-
     except Exception as e:
-        print(f"Error fetching trends for {category}: {e}")
-        trends_data[category] = {"error": str(e)}
+        error_msg = str(e)
+        if "429" in error_msg:
+            # Check for Retry-After header
+            retry_after = None
+            if hasattr(e, 'response'):
+                retry_after = e.response.headers.get('Retry-After')
+            if retry_after:
+                wait_time = int(retry_after)
+                print(f"Retry-After header: {wait_time} seconds")
+            else:
+                wait_time = 300  # Default 5 minutes
+                print("No Retry-After header, using default 5 minutes")
+            print(f"Rate limited for {category}, waiting {wait_time} seconds...")
+            time.sleep(wait_time)
+            try:
+                # Retry once
+                pytrends.build_payload(kw_list, cat=0, timeframe='today 12-m', geo='', gprop='')
+                interest_over_time_df = pytrends.interest_over_time()
+                related_queries = pytrends.related_queries()
+                related_data = {}
+                for kw in kw_list:
+                    if kw in related_queries and related_queries[kw]['top'] is not None:
+                        related_data[kw] = {
+                            'top': related_queries[kw]['top'].to_dict('records') if related_queries[kw]['top'] is not None else [],
+                            'rising': related_queries[kw]['rising'].to_dict('records') if related_queries[kw]['rising'] is not None else []
+                        }
+                    else:
+                        related_data[kw] = {'top': [], 'rising': []}
+                trends_data[category] = {
+                    'interest_over_time': interest_over_time_df.to_json(),
+                    'related_queries': related_data
+                }
+                print(f"Successfully retried {category}")
+            except Exception as retry_e:
+                print(f"Retry failed for {category}: {retry_e}")
+                trends_data[category] = {"error": str(retry_e)}
+        else:
+            print(f"Error fetching trends for {category}: {e}")
+            trends_data[category] = {"error": str(e)}
+
+    # Rate limiting: wait 60 seconds between requests to avoid 429 errors
+    time.sleep(60)
 
 # Save to JSON
 with output_path.open("w", encoding="utf-8") as f:
