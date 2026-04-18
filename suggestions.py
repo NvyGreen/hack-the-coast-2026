@@ -12,9 +12,13 @@ class SuggestionModel:
         self.data = data
     
     # Sorts products by "key" and picks the top "count", only including rows meeting "filters" if provided
+    # what is the format for filters? who knows!
     def get_suggestions(self, count=5, key=None, filters=None):
-        filtered_data = self.data[filters,:] if filters else self.data
-        return self.data[filtered_data[:,(key if key else SuggestionModel.column_indexes["signal_strength"])].argsort(axis=0)[:-count-1],:]
+        return self.data[self.filter_data(filters)[:,(key if key else SuggestionModel.column_indexes["signal_strength"])].argsort(axis=0)[:-count-1],:]
+    
+    # goofy filtering function
+    def filter_data(self, filters=None):
+        return self.data[filters,:] if filters else self.data
 
     # Standardize column indices. Usage:
     # SuggestionModel.clean_data(data, product_name=0, signal_strength=4, ...)
