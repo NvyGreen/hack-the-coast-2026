@@ -1,0 +1,1752 @@
+{
+  "Coffee Beans": {
+    "keywords": [
+      "coffee",
+      "arabica",
+      "robusta",
+      "beans"
+    ],
+    "country_of_origin": "Ethiopia / Brazil",
+    "shelf_life": "6–18 months",
+    "key_ingredients": [
+      "caffeine",
+      "chlorogenic acids",
+      "coffee oils"
+    ]
+  },
+  "Milk": {
+    "keywords": [
+      "milk",
+      "dairy milk",
+      "whole milk"
+    ],
+    "country_of_origin": "Global (major production USA, India)",
+    "shelf_life": "5–10 days",
+    "key_ingredients": [
+      "water",
+      "lactose",
+      "fat",
+      "protein"
+    ]
+  },
+  "Cheddar Cheese": {
+    "keywords": [
+      "cheddar",
+      "cheese block",
+      "aged cheese"
+    ],
+    "country_of_origin": "United Kingdom",
+    "shelf_life": "3–6 months",
+    "key_ingredients": [
+      "milk",
+      "salt",
+      "enzymes",
+      "cultures"
+    ]
+  },
+  "Yogurt": {
+    "keywords": [
+      "yogurt",
+      "dahi",
+      "fermented milk"
+    ],
+    "country_of_origin": "Turkey / Middle East",
+    "shelf_life": "1–3 weeks",
+    "key_ingredients": [
+      "milk",
+      "lactobacillus",
+      "streptococcus cultures"
+    ]
+  },
+  "Butter": {
+    "keywords": [
+      "butter",
+      "dairy butter",
+      "unsalted butter"
+    ],
+    "country_of_origin": "France",
+    "shelf_life": "1–3 months",
+    "key_ingredients": [
+      "cream",
+      "fat",
+      "milk solids"
+    ]
+  },
+  "Eggs": {
+    "keywords": [
+      "eggs",
+      "chicken eggs",
+      "organic eggs"
+    ],
+    "country_of_origin": "Global",
+    "shelf_life": "3–5 weeks",
+    "key_ingredients": [
+      "protein",
+      "fat",
+      "vitamins",
+      "minerals"
+    ]
+  },
+  "Chicken Meat": {
+    "keywords": [
+      "chicken",
+      "poultry",
+      "chicken breast"
+    ],
+    "country_of_origin": "Global (USA, Brazil major producers)",
+    "shelf_life": "1–2 days fresh, 6–12 months frozen",
+    "key_ingredients": [
+      "protein",
+      "fat",
+      "water"
+    ]
+  },
+  "Beef": {
+    "keywords": [
+      "beef",
+      "steak",
+      "ground beef"
+    ],
+    "country_of_origin": "Argentina / USA",
+    "shelf_life": "3–5 days fresh",
+    "key_ingredients": [
+      "protein",
+      "fat",
+      "iron"
+    ]
+  },
+  "Pork": {
+    "keywords": [
+      "pork",
+      "ham",
+      "bacon"
+    ],
+    "country_of_origin": "China / Germany",
+    "shelf_life": "3–7 days fresh",
+    "key_ingredients": [
+      "protein",
+      "fat",
+      "sodium"
+    ]
+  },
+  "Salmon": {
+    "keywords": [
+      "salmon",
+      "fish fillet",
+      "omega fish"
+    ],
+    "country_of_origin": "Norway / Alaska",
+    "shelf_life": "1–2 days fresh",
+    "key_ingredients": [
+      "protein",
+      "omega-3 fatty acids",
+      "fat"
+    ]
+  },
+  "Shrimp": {
+    "keywords": [
+      "shrimp",
+      "prawns",
+      "seafood shrimp"
+    ],
+    "country_of_origin": "Thailand / Vietnam",
+    "shelf_life": "1–2 days fresh",
+    "key_ingredients": [
+      "protein",
+      "minerals",
+      "water"
+    ]
+  },
+  "Rice (White)": {
+    "keywords": [
+      "rice",
+      "white rice",
+      "jasmine rice"
+    ],
+    "country_of_origin": "China / Thailand",
+    "shelf_life": "2–5 years",
+    "key_ingredients": [
+      "carbohydrates",
+      "starch"
+    ]
+  },
+  "Brown Rice": {
+    "keywords": [
+      "brown rice",
+      "whole grain rice"
+    ],
+    "country_of_origin": "India / USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "fiber",
+      "starch",
+      "micronutrients"
+    ]
+  },
+  "Wheat Flour": {
+    "keywords": [
+      "flour",
+      "wheat flour",
+      "baking flour"
+    ],
+    "country_of_origin": "USA / India",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "gluten",
+      "starch",
+      "protein"
+    ]
+  },
+  "Oats": {
+    "keywords": [
+      "oats",
+      "rolled oats",
+      "porridge oats"
+    ],
+    "country_of_origin": "Scotland / Canada",
+    "shelf_life": "12–18 months",
+    "key_ingredients": [
+      "fiber",
+      "beta-glucan",
+      "carbohydrates"
+    ]
+  },
+  "Corn": {
+    "keywords": [
+      "corn",
+      "maize",
+      "sweet corn"
+    ],
+    "country_of_origin": "Mexico",
+    "shelf_life": "5–7 days fresh",
+    "key_ingredients": [
+      "starch",
+      "fiber",
+      "sugar"
+    ]
+  },
+  "Potato": {
+    "keywords": [
+      "potato",
+      "white potato",
+      "starch vegetable"
+    ],
+    "country_of_origin": "Peru",
+    "shelf_life": "1–3 months",
+    "key_ingredients": [
+      "starch",
+      "fiber",
+      "potassium"
+    ]
+  },
+  "Tomato": {
+    "keywords": [
+      "tomato",
+      "fresh tomato",
+      "vine tomato"
+    ],
+    "country_of_origin": "Mexico / South America",
+    "shelf_life": "5–10 days",
+    "key_ingredients": [
+      "lycopene",
+      "vitamin C",
+      "water"
+    ]
+  },
+  "Onion": {
+    "keywords": [
+      "onion",
+      "yellow onion",
+      "red onion"
+    ],
+    "country_of_origin": "Central Asia",
+    "shelf_life": "1–2 months",
+    "key_ingredients": [
+      "sulfur compounds",
+      "fiber"
+    ]
+  },
+  "Garlic": {
+    "keywords": [
+      "garlic",
+      "garlic cloves",
+      "fresh garlic"
+    ],
+    "country_of_origin": "Central Asia",
+    "shelf_life": "3–5 months",
+    "key_ingredients": [
+      "allicin",
+      "sulfur compounds"
+    ]
+  },
+  "Carrot": {
+    "keywords": [
+      "carrot",
+      "baby carrot",
+      "orange carrot"
+    ],
+    "country_of_origin": "Afghanistan",
+    "shelf_life": "2–4 weeks",
+    "key_ingredients": [
+      "beta carotene",
+      "fiber",
+      "vitamin A"
+    ]
+  },
+  "Spinach": {
+    "keywords": [
+      "spinach",
+      "leafy greens",
+      "baby spinach"
+    ],
+    "country_of_origin": "Persia (Iran)",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "iron",
+      "vitamin K",
+      "fiber"
+    ]
+  },
+  "Broccoli": {
+    "keywords": [
+      "broccoli",
+      "green vegetable"
+    ],
+    "country_of_origin": "Italy",
+    "shelf_life": "7–10 days",
+    "key_ingredients": [
+      "fiber",
+      "vitamin C",
+      "sulforaphane"
+    ]
+  },
+  "Apple": {
+    "keywords": [
+      "apple",
+      "red apple",
+      "green apple"
+    ],
+    "country_of_origin": "Kazakhstan",
+    "shelf_life": "1–2 months",
+    "key_ingredients": [
+      "fructose",
+      "fiber",
+      "polyphenols"
+    ]
+  },
+  "Banana": {
+    "keywords": [
+      "banana",
+      "ripe banana",
+      "yellow banana"
+    ],
+    "country_of_origin": "Southeast Asia",
+    "shelf_life": "3–7 days",
+    "key_ingredients": [
+      "potassium",
+      "sugar",
+      "fiber"
+    ]
+  },
+  "Orange": {
+    "keywords": [
+      "orange",
+      "citrus fruit",
+      "sweet orange"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "2–3 weeks",
+    "key_ingredients": [
+      "vitamin C",
+      "citric acid",
+      "fiber"
+    ]
+  },
+  "Mango": {
+    "keywords": [
+      "mango",
+      "tropical mango",
+      "ripe mango"
+    ],
+    "country_of_origin": "India",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "sugar",
+      "fiber",
+      "vitamin A"
+    ]
+  },
+  "Pineapple": {
+    "keywords": [
+      "pineapple",
+      "tropical fruit"
+    ],
+    "country_of_origin": "South America",
+    "shelf_life": "3–5 days",
+    "key_ingredients": [
+      "bromelain",
+      "vitamin C",
+      "sugar"
+    ]
+  },
+  "Grapes": {
+    "keywords": [
+      "grapes",
+      "red grapes",
+      "green grapes"
+    ],
+    "country_of_origin": "Mediterranean region",
+    "shelf_life": "5–14 days",
+    "key_ingredients": [
+      "glucose",
+      "antioxidants"
+    ]
+  },
+  "Olive Oil": {
+    "keywords": [
+      "olive oil",
+      "extra virgin olive oil"
+    ],
+    "country_of_origin": "Greece / Italy",
+    "shelf_life": "18–24 months",
+    "key_ingredients": [
+      "monounsaturated fats",
+      "polyphenols"
+    ]
+  },
+  "Vegetable Oil": {
+    "keywords": [
+      "vegetable oil",
+      "cooking oil",
+      "seed oil"
+    ],
+    "country_of_origin": "USA / Global",
+    "shelf_life": "12–18 months",
+    "key_ingredients": [
+      "fatty acids",
+      "lipids"
+    ]
+  },
+  "Soy Sauce": {
+    "keywords": [
+      "soy sauce",
+      "light soy",
+      "dark soy"
+    ],
+    "country_of_origin": "China / Japan",
+    "shelf_life": "2–3 years",
+    "key_ingredients": [
+      "soybeans",
+      "salt",
+      "wheat"
+    ]
+  },
+  "Ketchup": {
+    "keywords": [
+      "ketchup",
+      "tomato sauce",
+      "condiment"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "tomatoes",
+      "vinegar",
+      "sugar"
+    ]
+  },
+  "White Bread": {
+    "keywords": [
+      "white bread",
+      "sandwich bread",
+      "loaf"
+    ],
+    "country_of_origin": "Egypt / Europe",
+    "shelf_life": "3–7 days",
+    "key_ingredients": [
+      "wheat flour",
+      "yeast",
+      "water",
+      "salt"
+    ]
+  },
+  "Whole Wheat Bread": {
+    "keywords": [
+      "whole wheat bread",
+      "brown bread"
+    ],
+    "country_of_origin": "Europe",
+    "shelf_life": "5–10 days",
+    "key_ingredients": [
+      "whole wheat flour",
+      "yeast",
+      "water",
+      "fiber"
+    ]
+  },
+  "Bagels": {
+    "keywords": [
+      "bagel",
+      "plain bagel"
+    ],
+    "country_of_origin": "Poland / USA",
+    "shelf_life": "3–5 days",
+    "key_ingredients": [
+      "flour",
+      "yeast",
+      "water",
+      "salt"
+    ]
+  },
+  "Croissants": {
+    "keywords": [
+      "croissant",
+      "pastry croissant"
+    ],
+    "country_of_origin": "France",
+    "shelf_life": "2–3 days",
+    "key_ingredients": [
+      "flour",
+      "butter",
+      "milk",
+      "yeast"
+    ]
+  },
+  "Pizza Dough": {
+    "keywords": [
+      "pizza dough",
+      "pizza base"
+    ],
+    "country_of_origin": "Italy",
+    "shelf_life": "2–3 days",
+    "key_ingredients": [
+      "flour",
+      "yeast",
+      "water",
+      "salt"
+    ]
+  },
+  "Cheese Pizza": {
+    "keywords": [
+      "cheese pizza",
+      "margherita pizza"
+    ],
+    "country_of_origin": "Italy",
+    "shelf_life": "2–4 days",
+    "key_ingredients": [
+      "flour",
+      "cheese",
+      "tomato",
+      "olive oil"
+    ]
+  },
+  "Pepperoni Pizza": {
+    "keywords": [
+      "pepperoni pizza"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "2–4 days",
+    "key_ingredients": [
+      "flour",
+      "pepperoni",
+      "cheese",
+      "tomato sauce"
+    ]
+  },
+  "Hamburger": {
+    "keywords": [
+      "burger",
+      "hamburger"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "1–2 days",
+    "key_ingredients": [
+      "beef",
+      "bun",
+      "lettuce",
+      "tomato"
+    ]
+  },
+  "Hot Dog": {
+    "keywords": [
+      "hot dog",
+      "frankfurter"
+    ],
+    "country_of_origin": "Germany / USA",
+    "shelf_life": "1–2 days fresh",
+    "key_ingredients": [
+      "processed meat",
+      "bun",
+      "salt",
+      "spices"
+    ]
+  },
+  "Fried Chicken": {
+    "keywords": [
+      "fried chicken",
+      "crispy chicken"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "1–2 days",
+    "key_ingredients": [
+      "chicken",
+      "flour",
+      "oil",
+      "spices"
+    ]
+  },
+  "French Fries": {
+    "keywords": [
+      "fries",
+      "french fries",
+      "chips"
+    ],
+    "country_of_origin": "Belgium",
+    "shelf_life": "1–2 days",
+    "key_ingredients": [
+      "potato",
+      "oil",
+      "salt"
+    ]
+  },
+  "Mashed Potatoes": {
+    "keywords": [
+      "mashed potato",
+      "mashed potatoes"
+    ],
+    "country_of_origin": "Europe",
+    "shelf_life": "2–3 days",
+    "key_ingredients": [
+      "potato",
+      "butter",
+      "milk",
+      "salt"
+    ]
+  },
+  "Rice Noodles": {
+    "keywords": [
+      "rice noodles",
+      "vermicelli"
+    ],
+    "country_of_origin": "China / Vietnam",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "rice flour",
+      "water",
+      "starch"
+    ]
+  },
+  "Egg Noodles": {
+    "keywords": [
+      "egg noodles",
+      "noodle"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "wheat flour",
+      "eggs",
+      "water"
+    ]
+  },
+  "Udon": {
+    "keywords": [
+      "udon",
+      "thick noodles"
+    ],
+    "country_of_origin": "Japan",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "wheat flour",
+      "salt",
+      "water"
+    ]
+  },
+  "Soba": {
+    "keywords": [
+      "soba noodles"
+    ],
+    "country_of_origin": "Japan",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "buckwheat",
+      "wheat flour",
+      "water"
+    ]
+  },
+  "Ramen Noodles": {
+    "keywords": [
+      "ramen",
+      "instant ramen"
+    ],
+    "country_of_origin": "Japan",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "wheat flour",
+      "salt",
+      "oil"
+    ]
+  },
+  "Tofu": {
+    "keywords": [
+      "tofu",
+      "bean curd"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "5–10 days",
+    "key_ingredients": [
+      "soybeans",
+      "water",
+      "coagulant"
+    ]
+  },
+  "Tempeh": {
+    "keywords": [
+      "tempeh",
+      "fermented soy"
+    ],
+    "country_of_origin": "Indonesia",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "soybeans",
+      "fermentation culture"
+    ]
+  },
+  "Edamame": {
+    "keywords": [
+      "edamame",
+      "soybeans"
+    ],
+    "country_of_origin": "Japan",
+    "shelf_life": "3–5 days",
+    "key_ingredients": [
+      "soybeans",
+      "salt"
+    ]
+  },
+  "Lentils": {
+    "keywords": [
+      "lentils",
+      "dal"
+    ],
+    "country_of_origin": "India",
+    "shelf_life": "1–2 years",
+    "key_ingredients": [
+      "protein",
+      "fiber",
+      "carbohydrates"
+    ]
+  },
+  "Chickpeas": {
+    "keywords": [
+      "chickpeas",
+      "garbanzo beans"
+    ],
+    "country_of_origin": "Middle East",
+    "shelf_life": "1–2 years",
+    "key_ingredients": [
+      "protein",
+      "fiber",
+      "starch"
+    ]
+  },
+  "Black Beans": {
+    "keywords": [
+      "black beans"
+    ],
+    "country_of_origin": "Mexico",
+    "shelf_life": "1–2 years",
+    "key_ingredients": [
+      "protein",
+      "fiber",
+      "iron"
+    ]
+  },
+  "Kidney Beans": {
+    "keywords": [
+      "kidney beans"
+    ],
+    "country_of_origin": "Central America",
+    "shelf_life": "1–2 years",
+    "key_ingredients": [
+      "protein",
+      "fiber",
+      "carbohydrates"
+    ]
+  },
+  "Peas": {
+    "keywords": [
+      "peas",
+      "green peas"
+    ],
+    "country_of_origin": "Middle East",
+    "shelf_life": "5–7 days fresh",
+    "key_ingredients": [
+      "protein",
+      "fiber",
+      "vitamins"
+    ]
+  },
+  "Cauliflower": {
+    "keywords": [
+      "cauliflower"
+    ],
+    "country_of_origin": "Mediterranean region",
+    "shelf_life": "7–10 days",
+    "key_ingredients": [
+      "fiber",
+      "vitamin C",
+      "antioxidants"
+    ]
+  },
+  "Cabbage": {
+    "keywords": [
+      "cabbage",
+      "green cabbage"
+    ],
+    "country_of_origin": "Europe",
+    "shelf_life": "2–4 weeks",
+    "key_ingredients": [
+      "fiber",
+      "vitamin K",
+      "vitamin C"
+    ]
+  },
+  "Bell Pepper": {
+    "keywords": [
+      "bell pepper",
+      "capsicum"
+    ],
+    "country_of_origin": "Central America",
+    "shelf_life": "5–10 days",
+    "key_ingredients": [
+      "vitamin C",
+      "fiber",
+      "antioxidants"
+    ]
+  },
+  "Zucchini": {
+    "keywords": [
+      "zucchini",
+      "courgette"
+    ],
+    "country_of_origin": "Italy",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "water",
+      "fiber",
+      "vitamin C"
+    ]
+  },
+  "Cucumber": {
+    "keywords": [
+      "cucumber"
+    ],
+    "country_of_origin": "India",
+    "shelf_life": "5–10 days",
+    "key_ingredients": [
+      "water",
+      "fiber",
+      "vitamin K"
+    ]
+  },
+  "Lettuce": {
+    "keywords": [
+      "lettuce",
+      "leaf lettuce"
+    ],
+    "country_of_origin": "Egypt",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "water",
+      "fiber",
+      "vitamins"
+    ]
+  },
+  "Strawberries": {
+    "keywords": [
+      "strawberry",
+      "berries"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "3–5 days",
+    "key_ingredients": [
+      "vitamin C",
+      "antioxidants",
+      "fiber"
+    ]
+  },
+  "Blueberries": {
+    "keywords": [
+      "blueberry"
+    ],
+    "country_of_origin": "North America",
+    "shelf_life": "5–10 days",
+    "key_ingredients": [
+      "antioxidants",
+      "fiber",
+      "vitamin C"
+    ]
+  },
+  "Raspberries": {
+    "keywords": [
+      "raspberry"
+    ],
+    "country_of_origin": "Europe",
+    "shelf_life": "3–5 days",
+    "key_ingredients": [
+      "fiber",
+      "antioxidants",
+      "vitamin C"
+    ]
+  },
+  "Watermelon": {
+    "keywords": [
+      "watermelon"
+    ],
+    "country_of_origin": "Africa",
+    "shelf_life": "5–7 days cut",
+    "key_ingredients": [
+      "water",
+      "lycopene",
+      "sugar"
+    ]
+  },
+  "Cantaloupe": {
+    "keywords": [
+      "cantaloupe",
+      "melon"
+    ],
+    "country_of_origin": "Iran",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "vitamin A",
+      "water",
+      "sugar"
+    ]
+  },
+  "Avocado": {
+    "keywords": [
+      "avocado"
+    ],
+    "country_of_origin": "Mexico",
+    "shelf_life": "3–7 days",
+    "key_ingredients": [
+      "healthy fats",
+      "fiber",
+      "potassium"
+    ]
+  },
+  "Lemon": {
+    "keywords": [
+      "lemon",
+      "citrus lemon"
+    ],
+    "country_of_origin": "India",
+    "shelf_life": "2–3 weeks",
+    "key_ingredients": [
+      "citric acid",
+      "vitamin C"
+    ]
+  },
+  "Lime": {
+    "keywords": [
+      "lime"
+    ],
+    "country_of_origin": "Southeast Asia",
+    "shelf_life": "2–3 weeks",
+    "key_ingredients": [
+      "citric acid",
+      "vitamin C"
+    ]
+  },
+  "Peach": {
+    "keywords": [
+      "peach"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "3–5 days",
+    "key_ingredients": [
+      "vitamin C",
+      "fiber",
+      "sugar"
+    ]
+  },
+  "Plum": {
+    "keywords": [
+      "plum"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "vitamin C",
+      "fiber",
+      "antioxidants"
+    ]
+  },
+  "Cherries": {
+    "keywords": [
+      "cherry"
+    ],
+    "country_of_origin": "Europe / Asia",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "antioxidants",
+      "vitamin C",
+      "sugar"
+    ]
+  },
+  "Coconut Water": {
+    "keywords": [
+      "coconut water"
+    ],
+    "country_of_origin": "Southeast Asia",
+    "shelf_life": "2–3 days fresh",
+    "key_ingredients": [
+      "electrolytes",
+      "potassium",
+      "water"
+    ]
+  },
+  "Coconut Meat": {
+    "keywords": [
+      "coconut meat",
+      "fresh coconut"
+    ],
+    "country_of_origin": "Philippines",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "fat",
+      "fiber",
+      "water"
+    ]
+  },
+  "Soy Milk": {
+    "keywords": [
+      "soy milk",
+      "plant milk"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "7–10 days",
+    "key_ingredients": [
+      "soybeans",
+      "water",
+      "protein"
+    ]
+  },
+  "Almond Milk": {
+    "keywords": [
+      "almond milk"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "7–10 days",
+    "key_ingredients": [
+      "almonds",
+      "water",
+      "stabilizers"
+    ]
+  },
+  "Oat Milk": {
+    "keywords": [
+      "oat milk"
+    ],
+    "country_of_origin": "Sweden",
+    "shelf_life": "7–10 days",
+    "key_ingredients": [
+      "oats",
+      "water",
+      "oil"
+    ]
+  },
+  "Frozen Pizza": {
+    "keywords": [
+      "frozen pizza",
+      "ready pizza"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "flour",
+      "cheese",
+      "tomato sauce",
+      "oil"
+    ]
+  },
+  "Frozen Fries": {
+    "keywords": [
+      "frozen fries",
+      "french fries frozen"
+    ],
+    "country_of_origin": "Belgium / USA",
+    "shelf_life": "8–12 months",
+    "key_ingredients": [
+      "potatoes",
+      "vegetable oil",
+      "salt"
+    ]
+  },
+  "Frozen Dumplings": {
+    "keywords": [
+      "dumplings",
+      "frozen dumplings",
+      "gyoza"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "flour",
+      "pork",
+      "cabbage",
+      "ginger"
+    ]
+  },
+  "Frozen Vegetables Mix": {
+    "keywords": [
+      "frozen vegetables",
+      "mixed veg"
+    ],
+    "country_of_origin": "Global",
+    "shelf_life": "8–12 months",
+    "key_ingredients": [
+      "peas",
+      "carrots",
+      "corn",
+      "beans"
+    ]
+  },
+  "Frozen Fruits Mix": {
+    "keywords": [
+      "frozen fruit",
+      "berry mix"
+    ],
+    "country_of_origin": "Global",
+    "shelf_life": "8–12 months",
+    "key_ingredients": [
+      "strawberries",
+      "blueberries",
+      "mango"
+    ]
+  },
+  "Canned Tuna": {
+    "keywords": [
+      "canned tuna",
+      "tuna fish"
+    ],
+    "country_of_origin": "Japan / Global",
+    "shelf_life": "2–5 years",
+    "key_ingredients": [
+      "tuna",
+      "water",
+      "salt"
+    ]
+  },
+  "Canned Salmon": {
+    "keywords": [
+      "canned salmon"
+    ],
+    "country_of_origin": "USA / Canada",
+    "shelf_life": "2–5 years",
+    "key_ingredients": [
+      "salmon",
+      "salt",
+      "water"
+    ]
+  },
+  "Canned Corn": {
+    "keywords": [
+      "canned corn"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "2–3 years",
+    "key_ingredients": [
+      "corn",
+      "water",
+      "salt"
+    ]
+  },
+  "Canned Peas": {
+    "keywords": [
+      "canned peas"
+    ],
+    "country_of_origin": "Europe",
+    "shelf_life": "2–3 years",
+    "key_ingredients": [
+      "peas",
+      "water",
+      "salt"
+    ]
+  },
+  "Canned Beans": {
+    "keywords": [
+      "canned beans",
+      "baked beans"
+    ],
+    "country_of_origin": "USA / UK",
+    "shelf_life": "2–5 years",
+    "key_ingredients": [
+      "beans",
+      "tomato sauce",
+      "sugar"
+    ]
+  },
+  "Canned Soup": {
+    "keywords": [
+      "canned soup"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "2–3 years",
+    "key_ingredients": [
+      "broth",
+      "vegetables",
+      "salt"
+    ]
+  },
+  "Instant Soup Mix": {
+    "keywords": [
+      "instant soup",
+      "soup packet"
+    ],
+    "country_of_origin": "Japan",
+    "shelf_life": "12–24 months",
+    "key_ingredients": [
+      "salt",
+      "flavor powder",
+      "dehydrated veg"
+    ]
+  },
+  "Instant Rice Pack": {
+    "keywords": [
+      "instant rice",
+      "microwave rice"
+    ],
+    "country_of_origin": "USA / Asia",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "rice",
+      "water"
+    ]
+  },
+  "Meal Kits": {
+    "keywords": [
+      "meal kit",
+      "recipe kit"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "3–7 days",
+    "key_ingredients": [
+      "fresh vegetables",
+      "protein",
+      "sauces"
+    ]
+  },
+  "Ready Meals Pasta": {
+    "keywords": [
+      "ready pasta",
+      "microwave pasta"
+    ],
+    "country_of_origin": "Italy / USA",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "pasta",
+      "sauce",
+      "cheese"
+    ]
+  },
+  "Ready Meals Curry": {
+    "keywords": [
+      "curry meal",
+      "ready curry"
+    ],
+    "country_of_origin": "India / UK",
+    "shelf_life": "5–10 days",
+    "key_ingredients": [
+      "meat",
+      "spices",
+      "sauce"
+    ]
+  },
+  "Sushi Packaged": {
+    "keywords": [
+      "sushi",
+      "packaged sushi"
+    ],
+    "country_of_origin": "Japan",
+    "shelf_life": "1 day",
+    "key_ingredients": [
+      "rice",
+      "fish",
+      "seaweed"
+    ]
+  },
+  "Onigiri": {
+    "keywords": [
+      "onigiri",
+      "rice ball"
+    ],
+    "country_of_origin": "Japan",
+    "shelf_life": "1–2 days",
+    "key_ingredients": [
+      "rice",
+      "seaweed",
+      "fillings"
+    ]
+  },
+  "Pasta Sauce Tomato": {
+    "keywords": [
+      "tomato sauce",
+      "pasta sauce"
+    ],
+    "country_of_origin": "Italy",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "tomatoes",
+      "olive oil",
+      "garlic"
+    ]
+  },
+  "Pasta Sauce Cream": {
+    "keywords": [
+      "alfredo",
+      "cream sauce"
+    ],
+    "country_of_origin": "Italy",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "cream",
+      "butter",
+      "cheese"
+    ]
+  },
+  "BBQ Sauce": {
+    "keywords": [
+      "bbq sauce",
+      "barbecue sauce"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "tomato",
+      "vinegar",
+      "sugar",
+      "spices"
+    ]
+  },
+  "Hot Sauce": {
+    "keywords": [
+      "hot sauce",
+      "chili sauce"
+    ],
+    "country_of_origin": "Mexico",
+    "shelf_life": "1–2 years",
+    "key_ingredients": [
+      "chili",
+      "vinegar",
+      "salt"
+    ]
+  },
+  "Salsa": {
+    "keywords": [
+      "salsa",
+      "dip sauce"
+    ],
+    "country_of_origin": "Mexico",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "tomato",
+      "onion",
+      "chili"
+    ]
+  },
+  "Hummus": {
+    "keywords": [
+      "hummus",
+      "chickpea dip"
+    ],
+    "country_of_origin": "Middle East",
+    "shelf_life": "5–7 days",
+    "key_ingredients": [
+      "chickpeas",
+      "tahini",
+      "olive oil"
+    ]
+  },
+  "Guacamole": {
+    "keywords": [
+      "guacamole",
+      "avocado dip"
+    ],
+    "country_of_origin": "Mexico",
+    "shelf_life": "1–2 days",
+    "key_ingredients": [
+      "avocado",
+      "lime",
+      "onion"
+    ]
+  },
+  "Peanut Butter": {
+    "keywords": [
+      "peanut butter",
+      "nut butter"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "peanuts",
+      "oil",
+      "salt"
+    ]
+  },
+  "Jam Strawberry": {
+    "keywords": [
+      "strawberry jam",
+      "fruit jam"
+    ],
+    "country_of_origin": "UK",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "strawberries",
+      "sugar",
+      "pectin"
+    ]
+  },
+  "Honey": {
+    "keywords": [
+      "honey",
+      "raw honey"
+    ],
+    "country_of_origin": "Global",
+    "shelf_life": "indefinite",
+    "key_ingredients": [
+      "glucose",
+      "fructose",
+      "enzymes"
+    ]
+  },
+  "Maple Syrup": {
+    "keywords": [
+      "maple syrup"
+    ],
+    "country_of_origin": "Canada",
+    "shelf_life": "1–2 years",
+    "key_ingredients": [
+      "maple sap sugars"
+    ]
+  },
+  "Chocolate Spread": {
+    "keywords": [
+      "chocolate spread",
+      "nutella style"
+    ],
+    "country_of_origin": "Italy",
+    "shelf_life": "12 months",
+    "key_ingredients": [
+      "cocoa",
+      "hazelnut",
+      "sugar"
+    ]
+  },
+  "Granola": {
+    "keywords": [
+      "granola",
+      "oat clusters"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "oats",
+      "honey",
+      "nuts"
+    ]
+  },
+  "Breakfast Cereal": {
+    "keywords": [
+      "cereal",
+      "cornflakes",
+      "flakes"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "corn",
+      "sugar",
+      "vitamins"
+    ]
+  },
+  "Rice Cakes": {
+    "keywords": [
+      "rice cakes",
+      "puffed rice"
+    ],
+    "country_of_origin": "Asia",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "rice",
+      "salt"
+    ]
+  },
+  "Popcorn Kernels": {
+    "keywords": [
+      "popcorn",
+      "kernels"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "1–2 years",
+    "key_ingredients": [
+      "corn",
+      "starch"
+    ]
+  },
+  "Trail Mix": {
+    "keywords": [
+      "trail mix",
+      "nut mix"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "nuts",
+      "raisins",
+      "chocolate"
+    ]
+  },
+  "Beef Jerky": {
+    "keywords": [
+      "jerky",
+      "beef jerky"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "beef",
+      "salt",
+      "spices"
+    ]
+  },
+  "Instant Noodles Cup": {
+    "keywords": [
+      "cup noodles",
+      "instant cup"
+    ],
+    "country_of_origin": "Japan",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "wheat flour",
+      "oil",
+      "seasoning"
+    ]
+  },
+  "Protein Bars": {
+    "keywords": [
+      "protein bar",
+      "fitness bar"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "protein isolate",
+      "oats",
+      "sweeteners"
+    ]
+  },
+  "Energy Bars": {
+    "keywords": [
+      "energy bar",
+      "nutrition bar"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "oats",
+      "honey",
+      "nuts"
+    ]
+  },
+  "Dark Chocolate": {
+    "keywords": [
+      "dark chocolate",
+      "cocoa bar"
+    ],
+    "country_of_origin": "Switzerland",
+    "shelf_life": "12–24 months",
+    "key_ingredients": [
+      "cocoa mass",
+      "cocoa butter",
+      "sugar"
+    ]
+  },
+  "Milk Chocolate": {
+    "keywords": [
+      "milk chocolate"
+    ],
+    "country_of_origin": "Switzerland",
+    "shelf_life": "12–18 months",
+    "key_ingredients": [
+      "cocoa",
+      "milk",
+      "sugar"
+    ]
+  },
+  "Gummy Candy": {
+    "keywords": [
+      "gummy",
+      "gummy bears"
+    ],
+    "country_of_origin": "Germany",
+    "shelf_life": "12–18 months",
+    "key_ingredients": [
+      "gelatin",
+      "sugar",
+      "flavoring"
+    ]
+  },
+  "Hard Candy": {
+    "keywords": [
+      "hard candy",
+      "sweets"
+    ],
+    "country_of_origin": "Global",
+    "shelf_life": "1–2 years",
+    "key_ingredients": [
+      "sugar",
+      "glucose syrup",
+      "flavor"
+    ]
+  },
+  "Ice Cream": {
+    "keywords": [
+      "ice cream",
+      "gelato"
+    ],
+    "country_of_origin": "Italy",
+    "shelf_life": "2–3 months",
+    "key_ingredients": [
+      "milk",
+      "cream",
+      "sugar"
+    ]
+  },
+  "Sorbet": {
+    "keywords": [
+      "sorbet",
+      "fruit ice"
+    ],
+    "country_of_origin": "France",
+    "shelf_life": "2–3 months",
+    "key_ingredients": [
+      "fruit",
+      "sugar",
+      "water"
+    ]
+  },
+  "Custard": {
+    "keywords": [
+      "custard",
+      "pudding"
+    ],
+    "country_of_origin": "UK",
+    "shelf_life": "3–5 days",
+    "key_ingredients": [
+      "milk",
+      "eggs",
+      "sugar"
+    ]
+  },
+  "Cheese Slices": {
+    "keywords": [
+      "cheese slices",
+      "processed cheese"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "1–2 months",
+    "key_ingredients": [
+      "milk",
+      "emulsifiers",
+      "salt"
+    ]
+  },
+  "Sour Cream": {
+    "keywords": [
+      "sour cream"
+    ],
+    "country_of_origin": "Eastern Europe",
+    "shelf_life": "7–14 days",
+    "key_ingredients": [
+      "cream",
+      "bacterial culture"
+    ]
+  },
+  "Whipping Cream": {
+    "keywords": [
+      "whipping cream",
+      "heavy cream"
+    ],
+    "country_of_origin": "France",
+    "shelf_life": "7–10 days",
+    "key_ingredients": [
+      "cream",
+      "fat"
+    ]
+  },
+  "Ice Tea Bottled": {
+    "keywords": [
+      "iced tea",
+      "bottled tea"
+    ],
+    "country_of_origin": "USA",
+    "shelf_life": "6–12 months",
+    "key_ingredients": [
+      "tea extract",
+      "sugar",
+      "flavor"
+    ]
+  },
+  "Fruit Juice Pack": {
+    "keywords": [
+      "juice box",
+      "fruit juice"
+    ],
+    "country_of_origin": "Global",
+    "shelf_life": "6–9 months",
+    "key_ingredients": [
+      "fruit concentrate",
+      "water",
+      "sugar"
+    ]
+  },
+  "Coconut Milk": {
+    "keywords": [
+      "coconut milk"
+    ],
+    "country_of_origin": "Southeast Asia",
+    "shelf_life": "6–12 months (canned)",
+    "key_ingredients": [
+      "coconut extract",
+      "water"
+    ]
+  },
+  "Soy Yogurt": {
+    "keywords": [
+      "soy yogurt",
+      "plant yogurt"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "1–2 weeks",
+    "key_ingredients": [
+      "soy milk",
+      "cultures"
+    ]
+  },
+  "Kombucha Drink": {
+    "keywords": [
+      "kombucha",
+      "fermented tea drink"
+    ],
+    "country_of_origin": "China",
+    "shelf_life": "1–3 months",
+    "key_ingredients": [
+      "tea",
+      "sugar",
+      "scoby culture"
+    ]
+  }
+}
