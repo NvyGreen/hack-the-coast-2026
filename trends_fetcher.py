@@ -3,103 +3,83 @@ import time
 from pathlib import Path
 from pytrends.request import TrendReq
 
-# Load categories
-categories_path = Path(__file__).resolve().parent / "datasets" / "categories.txt"
-with categories_path.open("r", encoding="utf-8") as f:
-    categories = json.load(f)
+CATEGORIES_PATH = Path(__file__).resolve().parent / "datasets" / "categories.txt"
+OUTPUT_PATH = Path(__file__).resolve().parent / "datasets" / "trends_data.json"
 
-# Initialize pytrends with rate limiting
-pytrends = TrendReq(hl='en-US', tz=360)
 
-# Load existing trends data if available
-output_path = Path(__file__).resolve().parent / "datasets" / "trends_data.json"
-if output_path.exists():
-    with output_path.open("r", encoding="utf-8") as f:
-        trends_data = json.load(f)
-else:
-    trends_data = {}
+def fetch_category(pytrends, category):
+    keyword = category.lower()
+    pytrends.build_payload([keyword], cat=0, timeframe='today 12-m', geo='', gprop='')
 
-for category, keywords in categories.items():
-    # Skip if already successfully fetched
-    if category in trends_data and "error" not in trends_data[category]:
-        continue
-    
-    # Limit to 5 keywords per request
-    kw_list = keywords[:5]
-    if not kw_list:
-        continue
+    iot_df = pytrends.interest_over_time()
+    if keyword in iot_df.columns:
+        iot_df = iot_df[[keyword]]
+    else:
+        cols = [c for c in iot_df.columns if c != 'isPartial']
+        iot_df = iot_df[cols] if cols else iot_df.drop(columns=['isPartial'], errors='ignore')
 
-    try:
-        # Build payload
-        pytrends.build_payload(kw_list, cat=0, timeframe='today 12-m', geo='', gprop='')
-
-        # Get interest over time
-        interest_over_time_df = pytrends.interest_over_time()
-
-        # Get related queries
-        related_queries = pytrends.related_queries()
-        related_data = {}
-        for kw in kw_list:
-            if kw in related_queries and related_queries[kw]['top'] is not None:
-                related_data[kw] = {
-                    'top': related_queries[kw]['top'].to_dict('records') if related_queries[kw]['top'] is not None else [],
-                    'rising': related_queries[kw]['rising'].to_dict('records') if related_queries[kw]['rising'] is not None else []
-                }
-            else:
-                related_data[kw] = {'top': [], 'rising': []}
-
-        # Store both
-        trends_data[category] = {
-            'interest_over_time': interest_over_time_df.to_json(),
-            'related_queries': related_data
+    rq = pytrends.related_queries()
+    if keyword in rq and rq[keyword]['top'] is not None:
+        related = {
+            'top': rq[keyword]['top'].to_dict('records'),
+            'rising': rq[keyword]['rising'].to_dict('records') if rq[keyword]['rising'] is not None else []
         }
+    else:
+        related = {'top': [], 'rising': []}
 
-    except Exception as e:
-        error_msg = str(e)
-        if "429" in error_msg:
-            # Check for Retry-After header
-            retry_after = None
-            if hasattr(e, 'response'):
-                retry_after = e.response.headers.get('Retry-After')
-            if retry_after:
-                wait_time = int(retry_after)
-                print(f"Retry-After header: {wait_time} seconds")
+    return {
+        'interest_over_time': json.loads(iot_df.to_json()),
+        'related_queries': related
+    }
+
+
+def needs_fetch(entry):
+    """Return True if the category still needs fetching."""
+    if not entry:
+        return True
+    if 'error' in entry:
+        return True
+    iot = entry.get('interest_over_time', {})
+    # Empty dict or all-empty sub-dicts means no real data
+    return not any(iot.values())
+
+
+def run_fetcher():
+    with CATEGORIES_PATH.open("r", encoding="utf-8") as f:
+        categories = json.load(f)
+
+    if OUTPUT_PATH.exists():
+        with OUTPUT_PATH.open("r", encoding="utf-8") as f:
+            trends_data = json.load(f)
+    else:
+        trends_data = {}
+
+    pytrends = TrendReq(hl='en-US', tz=360)
+
+    pending = [cat for cat in categories if needs_fetch(trends_data.get(cat))]
+    print(f"{len(pending)} categories to fetch: {pending}")
+
+    for category in pending:
+        print(f"Fetching: {category}")
+        try:
+            trends_data[category] = fetch_category(pytrends, category)
+            print(f"  OK: {category}")
+        except Exception as e:
+            error_msg = str(e)
+            if "429" in error_msg:
+                print(f"  Rate limited. Waiting 60s and skipping...")
+                time.sleep(60)
             else:
-                wait_time = 300  # Default 5 minutes
-                print("No Retry-After header, using default 5 minutes")
-            print(f"Rate limited for {category}, waiting {wait_time} seconds...")
-            time.sleep(wait_time)
-            try:
-                # Retry once
-                pytrends.build_payload(kw_list, cat=0, timeframe='today 12-m', geo='', gprop='')
-                interest_over_time_df = pytrends.interest_over_time()
-                related_queries = pytrends.related_queries()
-                related_data = {}
-                for kw in kw_list:
-                    if kw in related_queries and related_queries[kw]['top'] is not None:
-                        related_data[kw] = {
-                            'top': related_queries[kw]['top'].to_dict('records') if related_queries[kw]['top'] is not None else [],
-                            'rising': related_queries[kw]['rising'].to_dict('records') if related_queries[kw]['rising'] is not None else []
-                        }
-                    else:
-                        related_data[kw] = {'top': [], 'rising': []}
-                trends_data[category] = {
-                    'interest_over_time': interest_over_time_df.to_json(),
-                    'related_queries': related_data
-                }
-                print(f"Successfully retried {category}")
-            except Exception as retry_e:
-                print(f"Retry failed for {category}: {retry_e}")
-                trends_data[category] = {"error": str(retry_e)}
-        else:
-            print(f"Error fetching trends for {category}: {e}")
-            trends_data[category] = {"error": str(e)}
+                print(f"  Error: {e}")
+            trends_data[category] = {"error": error_msg}
 
-    # Rate limiting: wait 60 seconds between requests to avoid 429 errors
-    time.sleep(60)
+        with OUTPUT_PATH.open("w", encoding="utf-8") as f:
+            json.dump(trends_data, f, indent=4)
 
-# Save to JSON
-with output_path.open("w", encoding="utf-8") as f:
-    json.dump(trends_data, f, indent=4)
+        time.sleep(60)
 
-print("Trends data saved to datasets/trends_data.json")
+    print("Done. Trends data saved to datasets/trends_data.json")
+
+
+if __name__ == "__main__":
+    run_fetcher()
