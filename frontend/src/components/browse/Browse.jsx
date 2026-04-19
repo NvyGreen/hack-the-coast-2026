@@ -1,5 +1,5 @@
-import { useReducer, useMemo, useState } from 'react'
-import { PRODUCTS } from '../../data/data.js'
+import { useReducer, useMemo, useState, useEffect } from 'react'
+import { fetchBrowse } from '../../data/api.js'
 import Sidebar from './Sidebar.jsx'
 import ProductCard from './ProductCard.jsx'
 import ProductPopup from './ProductPopup.jsx'
@@ -42,9 +42,14 @@ function filterProducts(products, { cat, type, checks, search, sort }) {
 
 export default function Browse() {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [products, setProducts] = useState([])
   const [selectedProduct, setSelectedProduct] = useState(null)
 
-  const filtered = useMemo(() => filterProducts(PRODUCTS, state), [state])
+  useEffect(() => {
+    fetchBrowse().then(setProducts).catch(console.error)
+  }, [])
+
+  const filtered = useMemo(() => filterProducts(products, state), [products, state])
 
   const sortLabel = state.sort === 'signal' ? 'signal strength' : state.sort
 
@@ -119,7 +124,7 @@ export default function Browse() {
       </div>
 
       {selectedProduct && (
-        <ProductPopup name={selectedProduct} onClose={() => setSelectedProduct(null)} />
+        <ProductPopup product={selectedProduct} onClose={() => setSelectedProduct(null)} />
       )}
     </div>
   )

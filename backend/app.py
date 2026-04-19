@@ -1,6 +1,7 @@
 import sys
 import os
 import functools
+from pathlib import Path
 
 # Ensure CWD is the project root so dataset paths in product.py resolve correctly
 _project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,8 +21,28 @@ CORS(app)
 
 _filter = FilterIngredients()
 
-# Derived directly from the 12 keys in datasets/categories.txt
+# Blocklist for non-food terms
+_NONFOOD_BLOCKLIST = set()
+_nonfood_path = (
+    Path(_project_root) / "datasets" / "restrictions" / "non_food_keywords.txt"
+)
+if _nonfood_path.exists():
+    with _nonfood_path.open("r") as f:
+        _NONFOOD_BLOCKLIST = set(line.strip().lower() for line in f if line.strip())
+
+
+def _is_nonfood(keyword: str) -> bool:
+    """Check if keyword contains blocklisted non-food terms (substring match for all)."""
+    kw_lower = keyword.lower()
+    for blocked in _NONFOOD_BLOCKLIST:
+        # Match as substring for all (aggressive filtering)
+        if blocked in kw_lower:
+            return True
+    return False
+
+
 CATEGORY_ICONS = {
+    # Original categories
     "American Ginseng": "🌿",
     "Asian Ginseng": "🌾",
     "Candies": "🍬",
@@ -34,6 +55,96 @@ CATEGORY_ICONS = {
     "Supplements/Personal Care": "💊",
     "Teas/Instant Beverage": "🍵",
     "Tiger Balm": "🏮",
+    # New dataset categories
+    "Coffee": "☕",
+    "Milk": "🥛",
+    "Yogurt": "🥛",
+    "Cheese": "🧀",
+    "Butter": "🧈",
+    "Eggs": "🥚",
+    "Bread": "🍞",
+    "Rice": "🍚",
+    "Noodles": "🍜",
+    "Pasta": "🍝",
+    "Pizza": "🍕",
+    "Chicken": "🍗",
+    "Beef": "🥩",
+    "Pork": "🥓",
+    "Fish": "🐟",
+    "Shrimp": "🦐",
+    "Salmon": "🍣",
+    "Tofu": "🧊",
+    "Tempeh": "🧊",
+    "Peanut Butter": "🥜",
+    "Almond": "🥜",
+    "Honey": "🍯",
+    "Jam": "🍯",
+    "Maple Syrup": "🍯",
+    "Olive Oil": "🫒",
+    "Vegetable Oil": "🫒",
+    "Soy Sauce": "🥫",
+    "Ketchup": "🥫",
+    "Salsa": "🥫",
+    "Hot Sauce": "🌶️",
+    "BBQ Sauce": "🥫",
+    "Hummus": "🫘",
+    "Guacamole": "🥑",
+    "Chips": "🥔",
+    "Popcorn": "🍿",
+    "Granola": "🥣",
+    "Cereal": "🥣",
+    "Oats": "🥣",
+    "Rice Cakes": "🍘",
+    "Pretzels": "🥨",
+    "Gummy": "🍬",
+    "Hard Candy": "🍭",
+    "Chocolate": "🍫",
+    "Ice Cream": "🍨",
+    "Sorbet": "🧊",
+    "Frozen": "❄️",
+    "Canned": "🥫",
+    "Instant": "♨️",
+    "Kombucha": "🧃",
+    "Coffee Beans": "☕",
+    "Energy Bars": "🍫",
+    "Protein Bars": "🍫",
+    "Meal Kits": "📦",
+    "Fruit Juice": "🧃",
+    "Coconut Water": "🥥",
+    "Tea": "🍵",
+    "Apple": "🍎",
+    "Banana": "🍌",
+    "Orange": "🍊",
+    "Mango": "🥭",
+    "Peach": "🍑",
+    "Plum": "🟣",
+    "Watermelon": "🍉",
+    "Grapes": "🍇",
+    "Blueberries": "🫐",
+    "Raspberries": "🫐",
+    "Strawberries": "🍓",
+    "Cherries": "🍒",
+    "Lemon": "🍋",
+    "Lime": "🍋",
+    "Avocado": "🥑",
+    "Broccoli": "🥦",
+    "Spinach": "🥬",
+    "Carrot": "🥕",
+    "Cucumber": "🥒",
+    "Onion": "🧅",
+    "Garlic": "🧄",
+    "Tomato": "🍅",
+    "Potato": "🥔",
+    "Corn": "🌽",
+    "Pepper": "🫑",
+    "Cabbage": "🥬",
+    "Cauliflower": "🥦",
+    "Zucchini": "🥒",
+    "Edamame": "🫛",
+    "Peas": "🫛",
+    "Beans": "🫘",
+    "Lentils": "🫘",
+    "Chickpeas": "🫘",
     "Other": "📦",
 }
 
@@ -93,12 +204,12 @@ def _ranked_candidates(limit: Optional[int] = None) -> list:
     candidates = []
 
     for p in tiktok_registry.all():
-        if p.is_food_related:
+        if p.is_food_related and not _is_nonfood(p.description):
             candidates.append(p)
 
     for products in trend_registry.all().values():
         for p in products:
-            if p.is_food_related:
+            if p.is_food_related and not _is_nonfood(p.description):
                 candidates.append(p)
 
     candidates.sort(key=lambda p: p.signal_score, reverse=True)
@@ -195,6 +306,13 @@ def dashboard():
     )
 
 
+def _format_category(cat: str) -> str:
+    """Convert category to Title Case with spaces."""
+    if not cat:
+        return "Other"
+    return cat.replace("/", " / ").replace("-", " - ").title()
+
+
 @app.route("/api/browse")
 def browse():
     candidates = _ranked_candidates(limit=None)
@@ -202,7 +320,7 @@ def browse():
     for i, p in enumerate(candidates):
         d = _product_dict(p, i + 1)
         d["type"] = "distribute" if p.existing else "develop"
-        d["cat"] = (p.category or "other").lower().replace("/", "").replace(" ", "")
+        d["cat"] = _format_category(p.category or "other")
         result.append(d)
     return jsonify(result)
 

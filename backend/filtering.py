@@ -7,6 +7,7 @@ from backend.product import registry
 
 _DATASETS = Path(__file__).resolve().parent.parent / "datasets"
 
+
 class FilterIngredients:
     def __init__(self):
         with (_DATASETS / "restrictions" / "ingredients.txt").open("r") as i:
@@ -16,12 +17,12 @@ class FilterIngredients:
             self.restricted_countries = set(c.read().splitlines())
 
     def filter(self, allergens, country):
-        if country in self.restricted_countries:
+        if country and country.strip().lower() in self.restricted_countries:
             return False
 
         if allergens:
             for allergen in allergens.split(","):
-                if allergen.strip() in self.banned_ingredients:
+                if allergen.strip().lower() in self.banned_ingredients:
                     return False
 
         return True
