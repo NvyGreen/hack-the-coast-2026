@@ -42,7 +42,7 @@ const stats = data
             Find the next trend <em>before</em> competitors do.
           </div>
           <div className="hero-sub">
-            AI-powered signal scanning across Amazon, Google Trends, and social
+            AI-powered signal scanning across TikTok, Google Trends, and social
             platforms — filtered against PoP&apos;s sourcing criteria and product categories.
           </div>
         </div>
