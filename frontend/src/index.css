@@ -128,14 +128,15 @@ body { font-family: var(--fb); background: var(--cream); color: var(--text-prima
 .section-link:hover { gap: 6px; }
 
 /* ── Home: Top cards grid ── */
-.top5-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.top5-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .card {
   background: white; border-radius: 18px; border: 0.5px solid var(--bd);
-  padding: 1.5rem 1.25rem;
+  padding: 2rem 1.5rem 1.75rem;
   display: flex; flex-direction: column; align-items: center; text-align: center;
   position: relative; overflow: hidden; cursor: pointer;
   box-shadow: 0 2px 12px rgba(27,58,92,0.04);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 240px;
 }
 .card:hover {
   border-color: rgba(37,87,167,0.35);
