@@ -69,7 +69,7 @@ const stats = data
           </div>
         )}
 
-        <div>
+        <div className="section">
           <div className="section-header">
             <div className="section-title">
               <div className="section-dot" />
@@ -101,8 +101,13 @@ const stats = data
           </div>
         </div>
 
-        <KeywordCloud keywords={data ? data.keywords : null} />
-        <InsightsGrid opportunities={data ? data.opportunities : null} />
+        <div className="section">
+          <KeywordCloud keywords={data ? data.keywords : null} />
+        </div>
+        
+        <div className="section">
+          <InsightsGrid opportunities={data ? data.opportunities : null} />
+        </div>
       </div>
     </>
   )
