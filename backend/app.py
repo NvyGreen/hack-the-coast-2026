@@ -74,7 +74,7 @@ def _product_dict(p, rank: int) -> dict:
         "signal":            round(score * 10, 1),
         "bar":               round(score * 100),
         "color":             ["#1B3A5C", "#2557A7", "#3A7BD5", "#4A8FE8", "#5FA3F5"][(rank - 1) % 5],
-        "badge":             "hot" if score >= 0.7 else "new",
+        "badge":             "hot" if score >= 0.75 else "rising" if score >= 0.5 else "new",
         "approved":          approved,
         "existing":          existing,
         "opportunity_type":  badge,
@@ -177,6 +177,18 @@ def dashboard():
         "opportunities": _build_opportunities(top_products),
         "stats":         _build_stats(top_products),
     })
+
+
+@app.route("/api/browse")
+def browse():
+    candidates = _ranked_candidates(limit=None)
+    result = []
+    for i, p in enumerate(candidates):
+        d = _product_dict(p, i + 1)
+        d["type"] = "distribute" if p.existing else "develop"
+        d["cat"] = (p.category or "other").lower().replace("/", "").replace(" ", "")
+        result.append(d)
+    return jsonify(result)
 
 
 @app.route("/api/health")
