@@ -1,5 +1,6 @@
 import sys
 import os
+import functools
 
 # Ensure CWD is the project root so dataset paths in product.py resolve correctly
 _project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,20 +22,21 @@ _filter = FilterIngredients()
 
 # Derived directly from the 12 keys in datasets/categories.txt
 CATEGORY_ICONS = {
-    "American Ginseng":          "🌿",
-    "Asian Ginseng":             "🌾",
-    "Candies":                   "🍬",
-    "Chocolates":                "🍫",
-    "Cookies":                   "🍪",
-    "Ginger":                    "🫚",
-    "Instant Food/Seasonings":   "🍜",
-    "Mooncakes":                 "🥮",
-    "Nuts/Dried Fruits":         "🥜",
+    "American Ginseng": "🌿",
+    "Asian Ginseng": "🌾",
+    "Candies": "🍬",
+    "Chocolates": "🍫",
+    "Cookies": "🍪",
+    "Ginger": "🫚",
+    "Instant Food/Seasonings": "🍜",
+    "Mooncakes": "🥮",
+    "Nuts/Dried Fruits": "🥜",
     "Supplements/Personal Care": "💊",
-    "Teas/Instant Beverage":     "🍵",
-    "Tiger Balm":                "🏮",
-    "Other":                     "📦",
+    "Teas/Instant Beverage": "🍵",
+    "Tiger Balm": "🏮",
+    "Other": "📦",
 }
+
 
 def _icon_for(category: str) -> str:
     # Exact match first
@@ -68,20 +70,22 @@ def _product_dict(p, rank: int) -> dict:
         ingredients = [i.strip() for i in ingredients.split(",")]
 
     return {
-        "rank":              rank,
-        "name":              p.description,
-        "category":          p.category,
-        "signal":            round(score * 10, 1),
-        "bar":               round(score * 100),
-        "color":             ["#1B3A5C", "#2557A7", "#3A7BD5", "#4A8FE8", "#5FA3F5"][(rank - 1) % 5],
-        "badge":             "hot" if score >= 0.75 else "rising" if score >= 0.5 else "new",
-        "approved":          approved,
-        "existing":          existing,
-        "opportunity_type":  badge,
-        "icon":              _icon_for(p.category),
-        "shelf_life":        p.shelf_life_months,
+        "rank": rank,
+        "name": p.description,
+        "category": p.category,
+        "signal": round(score * 10, 1),
+        "bar": round(score * 100),
+        "color": ["#1B3A5C", "#2557A7", "#3A7BD5", "#4A8FE8", "#5FA3F5"][
+            (rank - 1) % 5
+        ],
+        "badge": "hot" if score >= 0.75 else "rising" if score >= 0.5 else "new",
+        "approved": approved,
+        "existing": existing,
+        "opportunity_type": badge,
+        "icon": _icon_for(p.category),
+        "shelf_life": p.shelf_life_months,
         "country_of_origin": p.country_of_origin,
-        "ingredients":       ingredients,
+        "ingredients": ingredients,
     }
 
 
@@ -129,7 +133,15 @@ def _build_keywords() -> list:
         seen.add(kw)
         score = p.signal_score
         tier = "hot" if score >= 0.6 else "mid" if score >= 0.35 else "low"
-        size = "xl" if score >= 0.8 else "lg" if score >= 0.6 else "md" if score >= 0.4 else "sm"
+        size = (
+            "xl"
+            if score >= 0.8
+            else "lg"
+            if score >= 0.6
+            else "md"
+            if score >= 0.4
+            else "sm"
+        )
         keywords.append({"text": p.description, "tier": tier, "size": size})
 
     return keywords[:20]
@@ -143,40 +155,44 @@ def _build_opportunities(top_products: list) -> list:
             bc, bt = "#EBF3FD", "#185FA5"
         else:
             bc, bt = "#EAF5EE", "#2E7D52"
-        opps.append({
-            "icon":  p["icon"],
-            "name":  p["name"],
-            "sub":   f"{p['category']} — signal {p['signal']}/10",
-            "badge": badge,
-            "bc":    bc,
-            "bt":    bt,
-        })
+        opps.append(
+            {
+                "icon": p["icon"],
+                "name": p["name"],
+                "sub": f"{p['category']} — signal {p['signal']}/10",
+                "badge": badge,
+                "bc": bc,
+                "bt": bt,
+            }
+        )
     return opps
 
 
 def _build_stats(top_products: list) -> dict:
     all_tiktok = tiktok_registry.all()
     all_trends = [p for products in trend_registry.all().values() for p in products]
-    total      = len(all_tiktok) + len(all_trends)
+    total = len(all_tiktok) + len(all_trends)
     actionable = len([p for p in top_products if p["signal"] >= 6])
     fda_removed = len([p for p in top_products if not p["approved"]])
     return {
-        "trends_scanned":     total,
+        "trends_scanned": total,
         "actionable_signals": actionable,
-        "pop_adjacencies":    len(top_products),
-        "fda_flags_removed":  fda_removed,
+        "pop_adjacencies": len(top_products),
+        "fda_flags_removed": fda_removed,
     }
 
 
 @app.route("/api/dashboard")
 def dashboard():
     top_products = _build_top_products(limit=5)
-    return jsonify({
-        "top_products":  top_products,
-        "keywords":      _build_keywords(),
-        "opportunities": _build_opportunities(top_products),
-        "stats":         _build_stats(top_products),
-    })
+    return jsonify(
+        {
+            "top_products": top_products,
+            "keywords": _build_keywords(),
+            "opportunities": _build_opportunities(top_products),
+            "stats": _build_stats(top_products),
+        }
+    )
 
 
 @app.route("/api/browse")
@@ -198,6 +214,7 @@ def health():
 
 _frontend = os.path.join(_project_root, "frontend")
 
+
 @app.route("/")
 @app.route("/<path:filename>")
 def serve_frontend(filename="index.html"):
@@ -205,4 +222,4 @@ def serve_frontend(filename="index.html"):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5000, use_reloader=False)
