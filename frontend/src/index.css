@@ -169,7 +169,7 @@ body { font-family: var(--fb); background: var(--cream); color: var(--text-prima
 .card-name { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.35; margin-bottom: 6px; }
 .card-cat { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
 .bar-wrap { width: 100%; height: 6px; background: var(--cream-dark); border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
-.bar { height: 100%; border-radius: 4px; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+.bar { height: 100%; border-radius: 4px; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); opacity: 0.65; }
 .card-score { font-size: 13px; color: var(--text-sec); font-weight: 600; }
 
 /* ── Home: Keyword cloud ── */
