@@ -16,7 +16,7 @@ export default function ProductCard({ product, index, onClick }) {
     <div
       className="product-card"
       style={{ animationDelay: `${index * 30}ms` }}
-      onClick={() => onClick(name)}
+      onClick={() => onClick(product)}
     >
       <span className={`product-card-status ${approved ? 'status-approved' : 'status-rejected'}`}>
         {approved ? '✔' : '✖'}
