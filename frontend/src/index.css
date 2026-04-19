@@ -115,7 +115,9 @@ body { font-family: var(--fb); background: var(--cream); color: var(--text-prima
 .stat-label { font-size: 11px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
 /* ── Home: Body layout ── */
-.home-body { padding: 2.5rem 2rem 2.5rem; display: flex; flex-direction: column; gap: 2.5rem; }
+.home-body { padding: 2.5rem 2rem 2.5rem; display: flex; flex-direction: column; gap: 3rem; }
+.section { margin-bottom: 0.5rem; padding-top: 1rem; }
+.section:first-of-type { padding-top: 0; }
 .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1rem; }
 .section-title { font-family: var(--fd); font-size: 18px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
 .section-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
