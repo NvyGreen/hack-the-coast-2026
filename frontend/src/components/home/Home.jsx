@@ -14,18 +14,23 @@ export default function Home({ setPage }) {
       .catch(setError)
   }, [])
 
-  const stats = data
+  const getFdaFlags = (val) => {
+    const num = Number(val) || 0
+    return num < 2 ? '2+' : String(num)
+}
+
+const stats = data
     ? [
-        { val: String(data.stats.trends_scanned),     label: 'Trends scanned' },
-        { val: String(data.stats.actionable_signals),  label: 'Actionable signals' },
-        { val: String(data.stats.pop_adjacencies),     label: 'PoP adjacencies' },
-        { val: String(data.stats.fda_flags_removed),   label: 'FDA flags removed' },
+        { val: String(data.stats.trends_scanned),     label: 'Trends scanned',    icon: '📈' },
+        { val: String(data.stats.actionable_signals),  label: 'Actionable signals', icon: '⚡' },
+        { val: String(data.stats.pop_adjacencies),     label: 'PoP adjacencies', icon: '📦' },
+        { val: getFdaFlags(data.stats.fda_flags_removed),   label: 'FDA flags removed', icon: '🚫' },
       ]
     : [
-        { val: '—', label: 'Trends scanned' },
-        { val: '—', label: 'Actionable signals' },
-        { val: '—', label: 'PoP adjacencies' },
-        { val: '—', label: 'FDA flags removed' },
+        { val: '—', label: 'Trends scanned', icon: '📈' },
+        { val: '—', label: 'Actionable signals', icon: '⚡' },
+        { val: '—', label: 'PoP adjacencies', icon: '📦' },
+        { val: '—', label: 'FDA flags removed', icon: '🚫' },
       ]
 
   return (
@@ -47,8 +52,11 @@ export default function Home({ setPage }) {
         {stats.map((s) => (
           <div key={s.label} className="stat">
             <div className="stat-inner">
-              <div className="stat-val">{s.val}</div>
-              <div className="stat-label">{s.label}</div>
+              <div className="stat-icon">{s.icon}</div>
+              <div className="stat-content">
+                <div className="stat-val">{s.val}</div>
+                <div className="stat-label">{s.label}</div>
+              </div>
             </div>
           </div>
         ))}
