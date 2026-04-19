@@ -133,5 +133,5 @@ export const CATEGORIES = [
   { key: 'personalcare',  label: 'Teas',                     color: '#2E7D52' },
   { key: 'teas',          label: 'Confections',              color: '#C9963A' },
   { key: 'tigerbalm',     label: 'Wellness',                 color: '#993556' },
-  { key: 'other',         label: 'Personal care',            color: '#534AB7' },
+  { key: 'other',         label: 'Other',                     color: '#534AB7' },
 ]
