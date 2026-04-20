@@ -13,7 +13,7 @@ Businesses—especially small and mid-sized brands—struggle to identify emergi
 
 Key challenges include:
 - Trend signals are fragmented across platforms (TikTok, Google, etc.)
-- Data is noisy and difficult to interpret without technical expertise
+- Raw data is difficult to interpret without technical expertise
 - Decisions are often reactive rather than data-driven
 - Lack of a centralized system to validate and prioritize opportunities
 
@@ -25,7 +25,7 @@ TrendSense aggregates and processes trend data from multiple sources to generate
 
 The platform:
 - Combines TikTok keyword signals with Google search trends
-- Cleans, filters, and deduplicates raw trend data
+- Cleans and filters raw trend data
 - Ranks opportunities based on signal strength and relevance
 - Classifies opportunities into:
   - Develop → New product opportunity
@@ -38,7 +38,7 @@ This enables faster, data-backed decision-making for product strategy.
 ## 🧩 Key Features
 - 📊 Multi-source trend aggregation (TikTok + Google Trends)
 - 🧠 Opportunity ranking and scoring engine
-- 🔍 Intelligent filtering and deduplication of noisy data
+- 🔍 Intelligent filtering of data that does not match minimum criteria
 - ⚖️ Business decision classification (Develop vs Distribute)
 - 🖥️ Interactive dashboard for exploration and insights
 - 🔗 REST API backend powering frontend UI
@@ -47,28 +47,30 @@ This enables faster, data-backed decision-making for product strategy.
 ## 🏗️ Architecture
 
 ### High-Level Flow
+```
 TikTok Trend Signals         Google Search Trends
         │                           │
         └────────────┬──────────────┘
                      │
              Data ingestion layer
                      │
-     Cleaning, filtering, deduplication
+             Cleaning, filtering
                      │
-         Ranking & scoring engine
+          Ranking & scoring engine
                      │
-    Opportunity classification logic
+      Opportunity classification logic
                      │
             Flask REST API backend
-          ┌──────────────┴──────────────┐
-          │                             │
-   /api/dashboard                 /api/browse
-          │                             │
-          └──────────────┬──────────────┘
-                         │
-                React + Vite frontend
-                         │
-             Interactive user dashboard
+      ┌──────────────┴──────────────┐
+      │                             │
+/api/dashboard                 /api/browse
+      │                             │
+      └──────────────┬──────────────┘
+                     │
+           React + Vite frontend
+                     │
+        Interactive user dashboard
+```
 
 ### Components
 - Frontend (React + Vite)  
@@ -79,32 +81,30 @@ TikTok Trend Signals         Google Search Trends
   Aggregates trend signals into structured registries for processing.
 - Processing Pipeline
   - Filter relevant signals
-  - Remove noise and irrelevant terms
-  - Deduplicate repeated candidates
+  - Remove data about items that do not meet minimal criteria
   - Rank based on signal strength
   - Classify into actionable categories
 
 
 ## 📊 Data Sources
 - TikTok Trend Signals  
-  Derived from curated datasets capturing early-stage consumer interest.
+  - Derived from curated datasets capturing early-stage consumer interest.
 - Google Search Trends  
-  Used to validate demand and measure search interest over time.
+  - Used to validate demand and measure search interest over time.
 - Data Processing
-  - Cleaning and normalization
-  - Deduplication
+  - Cleaning and filtering
   - Ranking based on combined signals
 
 *Note: A combination of real and curated datasets was used for this hackathon prototype.*
 
 
-## API Endpoints
+## 🧱 API Endpoints
 **GET /api/dashboard**  
 Returns:
-- top_products
-- keywords
-- opportunities
-- stats
+- Top 5 most popular products
+- Trending keywords
+- Opportunity type
+- Statistics on how the dashboard has helped users
 
 **GET /api/browse**  
 Returns ranked product candidates with metadata and opportunity type.
@@ -113,7 +113,7 @@ Returns ranked product candidates with metadata and opportunity type.
 Returns `{ "status": "ok" }`
 
 
-## Tech Stack
+## 🏗️ Tech Stack
 Frontend
 - React
 - Vite
@@ -127,18 +127,17 @@ Data
 - TikTok datasets
 
 
-## How It Works
+## 🎯 How It Works
 1. Collect trend data
-2. Clean and normalize
-3. Filter relevant signals
-4. Deduplicate
-5. Rank opportunities
-6. Classify (Develop vs Distribute)
-7. Serve via APIs
-8. Display in dashboard
+2. Clean and filter
+3. Calculate relevant signals
+4. Rank opportunities
+5. Classify (Develop vs Distribute)
+6. Serve via APIs built in Flask
+7. Display in dashboard
 
 
-## Setup Instructions
+## ⚙️ Setup Instructions
 **Backend**  
 `cd backend`  
 Install required modules  
@@ -150,20 +149,14 @@ Install required modules
 `npm run dev`
 
 
-## Challenges and Learning
-- Handling noisy trend data
+## 🧠 Challenges and Learning
+- Cleaning and filtering trend data
 - Designing ranking logic across multiple sources
-- Deduplication challenges
 - Aligning cross-platform signals (TikTok vs Google)
 
 
-## Future Improvements
+## 🚀 Future Improvements
 - Real-time data ingestion
 - ML-based trend prediction
 - Cloud deployment
 - Improved UI/UX
-
-
-## Contributors
-Varshini - Backend, APIs, ranking logic
-Nivedha - Frontend, data processing
