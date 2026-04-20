@@ -1,0 +1,9 @@
+requests
+python-dotenv
+flask
+flask-cors
+scikit-learn
+sentence-transformers
+numpy
+matplotlib
+pytrends

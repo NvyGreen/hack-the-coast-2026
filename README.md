@@ -138,9 +138,12 @@ Data
 
 
 ## ⚙️ Setup Instructions
+**Initial setup**
+Create and activate a virtual environment
+`pip install -r requirements.txt`
+
 **Backend**  
-`cd backend`  
-Install required modules  
+`cd backend`    
 `python app.py`  
 
 **Frontend**  
