@@ -99,18 +99,31 @@ TikTok Trend Signals         Google Search Trends
 
 
 ## 🧱 API Endpoints
+**GET /api/health**  
+Simple health check to confirm the backend is running.
+```
+{
+  "status": "ok"
+}
+```
+
 **GET /api/dashboard**  
-Returns:
-- Top 5 most popular products
+Returns aggregated insights for the main dashboard view, including:
+- Top products (ranked opportunities)
 - Trending keywords
-- Opportunity type
-- Statistics on how the dashboard has helped users
+- Opportunity highlights
+- Summary stats
 
 **GET /api/browse**  
-Returns ranked product candidates with metadata and opportunity type.
+Returns the full ranked list of product opportunities.
+- Combines TikTok + Google Trends data
+- Filters non-food items
+- Deduplicates and ranks by signal score
 
-**GET /api/health**  
-Returns `{ "status": "ok" }`
+Each item includes:
+- Name, category, score
+- Opportunity type (Develop / Distribute)
+- Approval status, ingredients, metadata
 
 
 ## 🏗️ Tech Stack
@@ -150,6 +163,8 @@ Create and activate a virtual environment
 `cd frontend`  
 `npm install`  
 `npm run dev`
+
+The frontend is configured to proxy API requests to the Flask backend. Make sure the backend is running before starting the frontend.
 
 
 ## 🧠 Challenges and Learning
