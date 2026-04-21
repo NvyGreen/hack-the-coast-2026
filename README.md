@@ -73,17 +73,18 @@ TikTok Trend Signals         Google Search Trends
 ```
 
 ### Components
-- Frontend (React + Vite)  
-  Displays dashboard views, ranked opportunities, and keyword insights.
+- Processing Pipeline  
+  Cleans, filters, and standardizes raw signals to produce high-quality inputs for ranking.
+- Ranking & Scoring Engine  
+  Ranks opportunities based on combined signal strength (e.g., frequency, growth, consistency) and generates an overall opportunity score to identify actionable product opportunities.
+- Opportunity Classification Logic  
+  Classifies ranked opportunities into actionable categories:
+  - Develop → New product opportunities
+  - Distribute → Existing product alignment opportunities
 - Backend (Flask)  
-  Handles API requests, ranking logic, filtering, and classification.
-- Data Layer  
-  Aggregates trend signals into structured registries for processing.
-- Processing Pipeline
-  - Filter relevant signals
-  - Remove data about items that do not meet minimal criteria
-  - Rank based on signal strength
-  - Classify into actionable categories
+  Handles API requests and exposes processed data via endpoints `/api/dashboard` and `/api/browse`.
+- Frontend (React + Vite)  
+  Displays dashboard views, ranked opportunities, and keyword insights
 
 
 ## 📊 Data Sources
@@ -91,9 +92,6 @@ TikTok Trend Signals         Google Search Trends
   - Derived from curated datasets capturing early-stage consumer interest.
 - Google Search Trends  
   - Used to validate demand and measure search interest over time.
-- Data Processing
-  - Cleaning and filtering
-  - Ranking based on combined signals
 
 *Note: A combination of real and curated datasets was used for this hackathon prototype.*
 
@@ -151,6 +149,12 @@ Data
 
 
 ## ⚙️ Setup Instructions
+**Prerequisites**
+Make sure you have installed
+- Python 3.9+
+- Node.js (v16+ recommended)
+- npm
+
 **Initial setup**
 Create and activate a virtual environment
 `pip install -r requirements.txt`
@@ -159,10 +163,14 @@ Create and activate a virtual environment
 `cd backend`    
 `python app.py`  
 
+Backend will run at `http://127.0.0.1:5000`
+
 **Frontend**  
 `cd frontend`  
 `npm install`  
 `npm run dev`
+
+Frontend will run at `http://localhost:5173/`
 
 The frontend is configured to proxy API requests to the Flask backend. Make sure the backend is running before starting the frontend.
 
