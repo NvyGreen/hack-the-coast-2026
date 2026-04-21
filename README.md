@@ -47,30 +47,7 @@ This enables faster, data-backed decision-making for product strategy.
 ## 🏗️ Architecture
 
 ### High-Level Flow
-```
-TikTok Trend Signals         Google Search Trends
-        │                           │
-        └────────────┬──────────────┘
-                     │
-             Data ingestion layer
-                     │
-             Cleaning, filtering
-                     │
-          Ranking & scoring engine
-                     │
-      Opportunity classification logic
-                     │
-            Flask REST API backend
-      ┌──────────────┴──────────────┐
-      │                             │
-/api/dashboard                 /api/browse
-      │                             │
-      └──────────────┬──────────────┘
-                     │
-           React + Vite frontend
-                     │
-        Interactive user dashboard
-```
+<img src="images/Architecture_HTC.png" alt="Image showing high-level flow" width=500>
 
 ### Components
 - Processing Pipeline  
@@ -186,3 +163,8 @@ The frontend is configured to proxy API requests to the Flask backend. Make sure
 - ML-based trend prediction
 - Cloud deployment
 - Improved UI/UX
+
+
+## 📷 Demo/Screenshots
+<img src="images/homepage_1.png" alt="First half of homepage" width=500> <img src="images/homepage_2.png" alt="Second half of homepage" width=500>
+<img src="images/dashboard.png" alt="Dashboard" width=500>
