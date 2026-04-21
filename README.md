@@ -137,15 +137,19 @@ Create and activate a virtual environment
 `pip install -r requirements.txt`
 
 **Backend**  
-`cd backend`    
-`python app.py`  
+```
+cd backend  
+python app.py
+```
 
 Backend will run at `http://127.0.0.1:5000`
 
 **Frontend**  
-`cd frontend`  
-`npm install`  
-`npm run dev`
+```
+cd frontend  
+npm install  
+npm run dev
+```
 
 Frontend will run at `http://localhost:5173/`
 
