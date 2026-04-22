@@ -1,11 +1,9 @@
-# 🚀 TrendSense: AI-Powered Market Opportunity Discovery Platform
+# 🚀 TrendSense: Market Opportunity Discovery Platform
 Discover emerging product opportunities by combining TikTok trend signals with Google search data — enabling faster, data-driven product decisions.
 
 
 ## Overview
-TrendSense is a full-stack data-driven platform that identifies and ranks emerging product opportunities by analyzing multi-source trend signals. By combining TikTok keyword trends with Google search interest, the platform helps businesses validate demand and decide whether to develop new products or distribute existing ones.
-
-This project was built as part of Hack the Coast 2026, with a focus on solving real-world product discovery challenges for consumer brands.
+TrendSense is a trend intelligence prototype that aggregates TikTok and Google trend signals to identify and rank emerging food product opportunities, and classify them into develop vs distribute recommendations.
 
 
 ## 📌 Problem
@@ -47,9 +45,11 @@ This enables faster, data-backed decision-making for product strategy.
 ## 🏗️ Architecture
 
 ### High-Level Flow
-<img src="images/Architecture_HTC.png" alt="Image showing high-level flow" width=500>
+<img src="images/Updated Architecture_HTC_v3-20260421-223425.png" alt="Image showing high-level flow" width=500>
 
 ### Components
+- Data Ingestion Layer  
+  Collects raw trend data from TikTok and Google Trends. Each data source is processed independently through separate pipelines, with outputs later combined for ranking and insights.
 - Processing Pipeline  
   Cleans, filters, and standardizes raw signals to produce high-quality inputs for ranking.
 - Ranking & Scoring Engine  
@@ -115,26 +115,26 @@ Data
 - TikTok datasets
 
 
-## 🎯 How It Works
+## 🎯 How It Works from TikTok datasets and Google Trends
 1. Collect trend data
-2. Clean and filter
-3. Calculate relevant signals
-4. Rank opportunities
-5. Classify (Develop vs Distribute)
-6. Serve via APIs built in Flask
-7. Display in dashboard
+2. Clean and filter non-relevant or duplicate entries
+3. Calculate trend signals using keyword popularity (TikTok) and search interest (Google Trends)
+4. Rank opportunities using a combined score that prioritizes both rapid growth and sustained demand
+5. Classify opportunities into **Develop** or **Distribute** based on trend strength and market saturation
+6. Serve results via Flask APIs
+7. Display insights in an interactive dashboard
 
 
 ## ⚙️ Setup Instructions
-**Prerequisites**
+**Prerequisites**  
 Make sure you have installed
 - Python 3.9+
 - Node.js (v16+ recommended)
 - npm
 
-**Initial setup**
-Create and activate a virtual environment
-`pip install -r requirements.txt`
+**Initial setup**  
+Create and activate a virtual environment  
+Install dependencies using `pip install -r requirements.txt`
 
 **Backend**  
 ```
@@ -153,7 +153,11 @@ npm run dev
 
 Frontend will run at `http://localhost:5173/`
 
-The frontend is configured to proxy API requests to the Flask backend. Make sure the backend is running before starting the frontend.
+Open `http://localhost:5173/` to view the application.
+
+Notes
+- The frontend is configured to proxy API requests to the Flask backend
+- Make sure the backend is running before starting the frontend.
 
 
 ## 🧠 Challenges and Learning
